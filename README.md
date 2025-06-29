@@ -1,6 +1,6 @@
 ## <p align="center"> <ins>Color Studio Images for Kodi</ins> ( <ins> All Versions</ins> )</p>
 
-<!--  ![Madnox Logo](https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/skin.madnox/resources/icon.png) -->
+<!--  ![Color Studio Images Logo](https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png) -->
 
 <p align="center" width="100%">
     <img width="50%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png">
@@ -16,16 +16,16 @@
 
 #### <ins>Installation Method with Auto Updating</ins>
 
-1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK: Add source -> DOUBLE CLICK: <None> -> Copy/Paste this link: **`https://lynxstrike.github.io/lynxstrike.repo/`** -> Click "Done".
+1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK: Add source -> DOUBLE CLICK: <None> -> Copy/Paste or type this link: **`https://lynxstrike.github.io/lynxstrike.repo/`** -> Click "Done".
 2. If you MANUALLY typed/onscreen keyboard, the URL link is CASE SENSITIVE! If you type any letter in CAPS, Kodi will not see the Repo!    
-3. Name the repository, or leave as KODI parsed it (Recommended).
+3. Name the repository, or leave as KODI parsed it. ** (Recommended) **
 4. Click "OK".
-3. The lynxstrike.repo Repository will now be installed as a **source option** (like SMB, mapped drive, etc) in the Add-ons browser to install the skin.
-4. Go to System -> Add-ons -> Install from repository -> Select **lynxstrike.repo** ( or the name you provided ) -> Look and Feel -> Skin -> Click Madnox to install skin and any/all of its dependencies if prompted.
+3. The lynxstrike.repo repository will now be installed as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser to install the addon.
+4. Go to System -> Add-ons -> Install from repository -> Select **lynxstrike.repo** ( or the name you provided ) -> TODO -> ----- -> Click Color Studio Images for Kodi to install addon and any/all of its dependencies if prompted.
 5. Installation is complete, the addon will update the required files and Kodi will render any studio image that is called for if it is matched by the addon.
 
 ### <ins>Translations</ins>
-Not applicable, internal operation only
+Not applicable, internal operation only.
 
 ### <ins>Credits</ins>
 TODO
