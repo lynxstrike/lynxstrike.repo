@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0001" provider-name="lynxstrike">
+<addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0002" provider-name="lynxstrike">
 	<extension point="kodi.resource.images" compile="true" type="studios" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0"/>
@@ -12,5 +12,10 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
+		<news>v1.0.0001
+		Initial launch of Coloured Studio Icons addon
+		Initial launch of Repo
+		Update test
+		</news>
 	</extension>
 </addon>
