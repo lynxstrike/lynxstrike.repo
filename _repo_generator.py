@@ -35,7 +35,9 @@ _COLORS = {
     "black": "30",
     "red": "31",
     "green": "4;32",
+    "green2": "32",
     "yellow": "3;33",
+    "yellow2": "33",
     "blue": "34",
     "magenta": "35",
     "cyan": "1;36",
@@ -401,5 +403,7 @@ if __name__ == "__main__":
 
 print()
 print()        
-input("Press Enter to Exit...")
-
+print("{} {} any modified scripts/modules/addons/skins are built successfully!".format(color_text("Process complete...", "green2"), color_text("Verify", "yellow2")))
+print()      
+input("Press {} key to close this command prompt window...".format(color_text("Enter", "red")))
+os._exit(0)
