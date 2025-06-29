@@ -8,5 +8,9 @@
 		<summary lang="en">Coloured Studio Icons</summary>
 		<description lang="en">Coloured Studio Icons</description>
 		<platform>all</platform>
+		<assets>
+			<icon>icon.png</icon>
+			<fanart>fanart.jpg</fanart>
+		</assets>
 	</extension>
 </addon></addons>
