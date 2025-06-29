@@ -7,9 +7,9 @@
 			<datadir zip="true">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/repo/zips/</datadir>
 		</dir>
 		<dir>
-			<info compressed="false">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/add-ons/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/addons/zips/add-ons.xml.md5</checksum>
-			<datadir zip="true">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/add-ons/zips/</datadir>
+			<info compressed="false">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/lynxstrike_addons/zips/addons.xml</info>
+			<checksum>https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/addons/zips/lynxstrike_addons.xml.md5</checksum>
+			<datadir zip="true">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/lynxstrike_addons/zips/</datadir>
 		</dir>		
 	</extension>
 	<extension point="xbmc.addon.metadata">
