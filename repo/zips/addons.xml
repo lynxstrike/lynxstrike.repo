@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.lynxstrike" name="lynxstrike's Repo" version="1.0.02" provider-name="lynxstrike">
+<?xml version='1.0' encoding='utf-8'?>
+<addons><addon id="repository.lynxstrike" name="lynxstrike's Repo" version="1.0.02" provider-name="lynxstrike">
 	<extension point="xbmc.addon.repository" name="Lynxstrike's Repo">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/repo/zips/addons.xml</info>
@@ -28,4 +28,4 @@
 		Put your updates here
 		</news>
 	</extension>
-</addon>
+</addon></addons>
