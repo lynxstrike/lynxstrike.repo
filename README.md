@@ -1,4 +1,4 @@
-## <p align="center"> <ins>Color Studio Images for Kodi</ins> ( <ins> All Versions</ins> )</p>
+## <p align="center"> <ins>Studio Icons - Coloured - Modded for Kodi</ins> ( <ins> All Versions</ins> )</p>
 
 <!--  ![Color Studio Images Logo](https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png) -->
 
@@ -25,7 +25,7 @@
 3. Name the repository, or leave as KODI parsed it. **(Recommended)**
 4. Click "OK".
 3. The lynxstrike.repo repository will now be installed as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser to install the addon.
-4. Go to System > Add-ons > Install from repository > Select **lynxstrike.repo** ( or the name you provided ) > TODO > ----- > Click Color Studio Images for Kodi to install addon and any/all of its dependencies if prompted.
+4. Go to System > Add-ons > Install from repository > Select **lynxstrike.repo** ( or the name you provided ) > Look and Feel > Image Collection > Click Studio Icons - Coloured - Modded to install addon and any/all of its dependencies if prompted.
 5. Installation is complete, the addon will update the required files and Kodi will render any studio image that is called for if it is matched by the addon.
 
 ### <ins>Translations</ins>
