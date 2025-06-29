@@ -1,118 +1,84 @@
-## <p align="center"><ins>Madnox for Kodi</ins> ( <ins>Nexus / Omega+</ins> )</p>
+## <p align="center"><ins>Studio Icons - Coloured - Modded for Kodi</ins> ( <ins>All Versions</ins> )</p>
 
 <p align="center">
-  <img width="50%" src="https://github.com/kittmaster/KittmasterRepo/blob/master/omega/skin.madnox/resources/icon.png" alt="Madnox Logo">
+  <img width="20%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png" alt="Studio Icons Logo">
 </p>
 
-<p align="center"><strong>Madnox is one of the most eye-candy-driven skins for Kodi.</strong></p>
+<p align="center">
+  <img width="80%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/fanart.jpg" alt="Studio Icons Fanart">
+</p>
+
+<p align="center"><strong>Color Studio Images for Kodi, maintained by lynxstrike for the Kodi community.</strong></p>
 
 ---
 
 ### 🎨 <ins>Features</ins>
 
-- Clean and simple user interface
-- Smooth transitions and animations
-- Dynamic theme and customization
-- Supports multiple languages
-- Optimized for low-powered devices
-- Compatible with Amazon Fire devices
-- Mouse and touchscreen capable
-- Enhanced color picker for granular control
+- Continual updates to reflect evolving studio branding
+- Multiple internal file matches for broad compatibility
+- Uniform icon sizing for consistent aspect ratio and rendering quality
 
 ---
 
-### 📦 <ins>Installation</ins> (2 Options)
-
-You can install Madnox in one of two ways:
-
-1. **Manual ZIP install** (no auto-updates)  
-2. **Install via Kittmaster's Repository** (auto-update notifications & installation) **← Recommended**
-
-> 📝 **Note:**  
-> Madnox is a retooled derivative of a skin originally intended for the official Kodi repository. Due to life priorities, the original author never submitted it. We aim to meet that original goal by modernizing and maintaining the skin to Kodi’s latest standards.  
-> _– Statement by Kittmaster, 2024-03-01_
-
----
-
-### 🗂️ <ins>Option 1: Manual ZIP Install</ins> (Legacy Method)
-
-1. Download the latest ZIP from:  
-   [📁 Repository ZIPs](https://github.com/kittmaster/KittmasterRepo/tree/master/repo/zips/repository.kittmaster)
-2. Click the download icon next to the file (hover left of the pencil icon).
-3. In Kodi:  
-   Go to **System > Settings > Add-ons > Install from zip file**  
-   → Enable **Unknown sources** if prompted  
-   → Set **Update official add-ons** to **Any repositories**
-4. Browse to the downloaded ZIP and click **OK**.
-5. The skin and dependencies will install (may take a few minutes).
-6. When prompted, select **Yes** to keep the new skin.
-
----
-
-### 🚀 <ins>Option 2: Install via Repository</ins> (Recommended)
+### 📦 <ins>Installation via Repository</ins>
 
 1. In Kodi:  
    Go to **System > Settings > File Manager > Left Panel**  
    → Double-click: **Add source**  
    → Double-click: `<None>`  
-   → Enter this URL:  
-   **`https://kittmaster.github.io/KittmasterRepo/`**  
+   → Enter the following URL:  
+   **`https://lynxstrike.github.io/lynxstrike.repo/`**  
    → Click **Done**
 
 2. ⚠️ **The URL is _caseSensitive_ — not case-insensitive!**  
-   - You must type it exactly as shown: `KittmasterRepo` with capital **K** and **R**  
-   - If you type it in lowercase, **Kodi will not detect the repo**
+   - You must type it exactly as shown: `lynxstrike.repo`  
+   - If you type any capital letters (e.g., `LynxStrike`), **Kodi will not detect the repo**
 
 3. Name the repository or leave it as Kodi parsed it (recommended)
 
 4. Click **OK**
 
-5. The Kittmaster Repository will now appear as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser
+5. The `lynxstrike.repo` repository will now appear as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser
 
 6. Go to:  
    **System > Add-ons > Install from repository**  
-   → Select **KittmasterRepo** (or the name you provided)  
-   → **Look and Feel > Skin**  
-   → Click **Madnox** to install the skin and its dependencies
+   → Select **lynxstrike.repo** (or the name you provided)  
+   → **Look and Feel > Image Collection**  
+   → Click **Studio Icons - Coloured - Modded** to install the addon and its dependencies
 
-7. When prompted, select **Yes** to keep the new skin
-
----
-
-### 🎥 <ins>Installation Videos</ins>
-
-- Install via ZIP: _(Coming Soon)_  
-- Install via Repository: _(Coming Soon)_
+7. ✅ Installation complete!  
+   Kodi will now render any studio image that matches the **Studio Icons - Coloured - Modded** collection
 
 ---
 
-### 🌍 <ins>Translations</ins>
+### 🌐 <ins>Translations</ins>
 
-We aim to support as many languages as possible. However, translation is a lower priority while we stabilize the skin for Omega and future Kodi versions. Localization will improve as development progresses.
+Not applicable — this addon operates internally and does not require localization.
 
 ---
 
 ### 🙏 <ins>Credits</ins>
 
-Huge thanks to **Mr. V** and all contributors whose work laid the foundation for Madnox. This is a continuation of their legacy.
+_**TODO** — Acknowledgments to be added._
 
 ---
 
 ### 📚 <ins>Further Information</ins>
 
-Visit the official Kodi forum for updates and discussion:  
-🔗 [Kodi Forum – Madnox](https://forum.kodi.tv/forumdisplay.php?fid=314)
+For more details and community discussion, visit the official Kodi forum thread:  
+🔗 [Kodi Forum – Studio Icons](https://forum.kodi.tv/showthread.php?tid=368342)
 
 ---
 
 ### 📄 <ins>License</ins>
 
-Please respect the skin’s license. All parts, including textures, are for **non-commercial use only**.
+Please respect all licenses. All provided textures are for **non-commercial use only**.
 
 ---
 
 ### 📬 <ins>Contact & Support</ins>
 
-- For support, visit the [Kodi Forum](https://forum.kodi.tv/forumdisplay.php?fid=314)  
-- For bug reports, use the forum or create a GitHub issue  
-- All issues will be tracked and resolved here on GitHub
+- For support, visit the [Kodi Forum Thread](https://forum.kodi.tv/showthread.php?tid=368342)  
+- For bug reports:  
+  → Post on the forum for visibility  
+  → Create a GitHub issue for proper tracking and resolution
