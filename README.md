@@ -20,13 +20,28 @@
 
 #### <ins>Installation From Repository</ins>
 
-1. Go to System > Settings > File Manager > Left Panel > DOUBLE CLICK: Add source > DOUBLE CLICK: <None> > Copy/Paste or type this link: **`https://lynxstrike.github.io/lynxstrike.repo/`** > Click "Done".
-2. If you MANUALLY typed/onscreen keyboard, the URL link is CASE SENSITIVE! If you type any letter in CAPS, Kodi will not see the Repo!    
-3. Name the repository, or leave as KODI parsed it. **(Recommended)**
-4. Click "OK".
-3. The lynxstrike.repo repository will now be installed as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser to install the Studio Icons - Coloured - Modded addon
-4. Go to System > Add-ons > Install from repository > Select **lynxstrike.repo** ( or the name you provided ) > Look and Feel > Image Collection > Click Studio Icons - Coloured - Modded to install and all of its dependencies if prompted.
-5. Installation is complete, the Studio Icons - Coloured - Modded addon will update the required files and Kodi will render any studio image that is called for if it is matched by the Studio Icons - Coloured - Modded addon.
+1. Go to **System > Settings > File Manager > Left Panel**  
+   → Double-click: **Add source**  
+   → Double-click: `<None>`  
+   → Copy/paste or type this link:  
+   **`https://lynxstrike.github.io/lynxstrike.repo/`**  
+   → Click **Done**.
+
+2. ⚠️ **The URL is _caseSensitive_ — not case-insensitive!**  
+   If you type any letter in CAPS (e.g., `LynxStrike` instead of `lynxstrike`), **Kodi will not recognize the repo** and it will fail to load.
+
+3. Name the repository, or leave it as Kodi parsed it. **(Recommended)**
+
+4. Click **OK**.
+
+5. The `lynxstrike.repo` repository will now appear as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser. Use it to install the **Studio Icons - Coloured - Modded** addon.
+
+6. Go to **System > Add-ons > Install from repository**  
+   → Select **lynxstrike.repo** (or the name you provided)  
+   → **Look and Feel > Image Collection**  
+   → Click **Studio Icons - Coloured - Modded** to install it and all required dependencies if prompted.
+
+7. ✅ Installation complete! The **Studio Icons - Coloured - Modded** addon will update the required files, and Kodi will render any studio image that matches the addon’s collection.
 
 ### <ins>Translations</ins>
 Not applicable, internal operation only.
