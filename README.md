@@ -38,7 +38,7 @@ TODO
 See https://forum.kodi.tv/showthread.php?tid=368342 for more information.
 
 ### <ins>License</ins>
-Please make sure you observe all licenses. All provided textures are for **non-commercial use**.
+Please make sure you observe all licenses. All provided textures are for **non-commercial use only**.
 
 ### <ins>Contact</ins>
 Support should only be obtained via the forum link: https://forum.kodi.tv/showthread.php?tid=368342 
