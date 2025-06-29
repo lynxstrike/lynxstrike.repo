@@ -12,5 +12,9 @@
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
+		<news>v1.00.0001
+		Initial launch of Coloured Studio Icons addon
+		Initial launch of Repo
+		</news>
 	</extension>
 </addon>
