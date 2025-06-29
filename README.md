@@ -18,7 +18,7 @@
 * Multiple file internal matches for wide array of studio image rendering
 * All icons are sized identically to ensure aspect ratio and rendering quality
 
-#### <ins>Installation Method with Auto Updating</ins>
+#### <ins>Installation From Repository</ins>
 
 1. Go to System -> Settings -> File Manager -> Left Panel -> DOUBLE CLICK: Add source -> DOUBLE CLICK: <None> -> Copy/Paste or type this link: **`https://lynxstrike.github.io/lynxstrike.repo/`** -> Click "Done".
 2. If you MANUALLY typed/onscreen keyboard, the URL link is CASE SENSITIVE! If you type any letter in CAPS, Kodi will not see the Repo!    
@@ -34,7 +34,7 @@ Not applicable, internal operation only.
 ### <ins>Credits</ins>
 TODO
 
-### <ins>Further information</ins>
+### <ins>Further Information</ins>
 See https://forum.kodi.tv/showthread.php?tid=368342 for more information.
 
 ### <ins>License</ins>
