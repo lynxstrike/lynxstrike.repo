@@ -24,9 +24,9 @@
 2. If you MANUALLY typed/onscreen keyboard, the URL link is CASE SENSITIVE! If you type any letter in CAPS, Kodi will not see the Repo!    
 3. Name the repository, or leave as KODI parsed it. **(Recommended)**
 4. Click "OK".
-3. The lynxstrike.repo repository will now be installed as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser to install the addon.
-4. Go to System > Add-ons > Install from repository > Select **lynxstrike.repo** ( or the name you provided ) > Look and Feel > Image Collection > Click Studio Icons - Coloured - Modded to install addon and any/all of its dependencies if prompted.
-5. Installation is complete, the addon will update the required files and Kodi will render any studio image that is called for if it is matched by the addon.
+3. The lynxstrike.repo repository will now be installed as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser to install the Studio Icons - Coloured - Modded addon
+4. Go to System > Add-ons > Install from repository > Select **lynxstrike.repo** ( or the name you provided ) > Look and Feel > Image Collection > Click Studio Icons - Coloured - Modded to install and all of its dependencies if prompted.
+5. Installation is complete, the Studio Icons - Coloured - Modded addon will update the required files and Kodi will render any studio image that is called for if it is matched by the Studio Icons - Coloured - Modded addon.
 
 ### <ins>Translations</ins>
 Not applicable, internal operation only.
