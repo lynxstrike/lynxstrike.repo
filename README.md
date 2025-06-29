@@ -1,4 +1,4 @@
-## <p align="center"> <ins>Madnox for Kodi</ins> ( <ins>Nexus / Omega+</ins> )</p>
+## <p align="center"> <ins>Color Studio Images for Kodi</ins> ( <ins> All Versions</ins> )</p>
 
 <!--  ![Madnox Logo](https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/skin.madnox/resources/icon.png) -->
 
@@ -6,7 +6,7 @@
     <img width="50%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png">
 </p>
 
-<p align="center">Madnox is one of the most eye candy driven skins for Kodi.</p>
+<p align="center">Color Studio Images for Kodi is maintained by lynxstrike for the Kodi community.</p>
 
 ### <ins>Features</ins>
 
