@@ -6,6 +6,10 @@
     <img width="20%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png">
 </p>
 
+<p align="center" width="100%">
+    <img width="50%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/fanart.jpg">
+</p>
+
 <p align="center">Color Studio Images for Kodi is maintained by lynxstrike for the Kodi community.</p>
 
 ### <ins>Features</ins>
