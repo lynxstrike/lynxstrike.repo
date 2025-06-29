@@ -20,7 +20,7 @@ compiled, if not, it will be ignored. "Versions" is deceptive.
 Original variable: KODI_VERSIONS
 
 """
-KODI_VERSIONS_FOLDER_ROOTS = ["Addons", "scripts-addons", "repo", "skin", "krypton", "leia", "matrix", "nexus", "omega", "piers"]
+KODI_VERSIONS_FOLDER_ROOTS = ["addons", "scripts-addons", "repo", "skin", "krypton", "leia", "matrix", "nexus", "omega", "piers"]
 IGNORE = [
     ".git",
     ".github",
