@@ -8,7 +8,7 @@
 		</dir>
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/lynxstrike_addons/zips/addons.xml</info>
-			<checksum>https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/addons/zips/lynxstrike_addons.xml.md5</checksum>
+			<checksum>https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/lynxstrike_addons/zips/addons.xml.md5</checksum>
 			<datadir zip="true">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/lynxstrike_addons/zips/</datadir>
 		</dir>		
 	</extension>
