@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.lynxstrike" name="Lynxstrike's Repo" version="1.0.03" provider-name="lynxstrike">
+<addon id="repository.lynxstrike" name="Lynxstrike's Repo" version="1.0.04" provider-name="lynxstrike">
 	<extension point="xbmc.addon.repository" name="lynxstrike.repo">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/repo/zips/addons.xml</info>
@@ -13,9 +13,12 @@
 		</dir>		
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>lynxstrike's Repository for Studio Images</summary>
-		<description>lynxstrike's Repository was built for sustained support for the Studio Images. It will contain the skin and additional support files ensuring continued support as Kodi continues to evolve.</description>
-		<disclaimer>The skin is a derivative retooled version of an official Kodi repository skin, it may never make its way into the official Kodi repository, so GitHub will be the primary source of updates going forward for Studio Images.</disclaimer>
+		<summary>lynxstrike's Repository for Resource Images Studios Coloured</summary>
+		<description>lynxstrike's Repository was built for sustained support for Resource Images Studios Coloured.</description>
+		<disclaimer>This software is provided "as is" without any warranties or guarantees of any kind.
+Use it at your own risk. The developer is not affiliated with or endorsed by the Kodi Foundation or any of the studios whose logos may appear in this add-on.
+All logos included are the property of their respective owners and are used solely for informational and identification purposes under fair use guidelines.
+By using or contributing to this repository, you agree that the developer is not liable for any damages or issues arising from its use.</disclaimer>
 		<platform>all</platform>
 		<forum>https://forum.kodi.tv/showthread.php?tid=368342</forum>
 		<source>https://github.com/lynxstrike/lynxstrike.repo/tree/master/repo/zips/repository.lynxstrike</source>
@@ -25,7 +28,7 @@
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-		Put your updates here
+			Sustained support for Resource Images Studios Coloured.
 		</news>
 	</extension>
 </addon>
