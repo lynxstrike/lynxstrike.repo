@@ -59,7 +59,7 @@ Not applicable — this addon operates internally and does not require localizat
 
 ### 🙏 <ins>Credits</ins>
 
-_**TODO** — Acknowledgments to be added._
+This add-on would not exist without the work, teachings, and patience of kittmaster.
 
 ---
 
