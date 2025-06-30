@@ -34,7 +34,7 @@
    - You must type it exactly as shown: `lynxstrike.repo`  
    - If you type any capital letters (e.g., `LynxStrike`), **Kodi will not detect the repo**
 
-3. Name the repository or leave it as Kodi parsed it (recommended)
+3. Name the repository or leave it as Kodi parsed it (Recommended)
 
 4. Click **OK**
 
