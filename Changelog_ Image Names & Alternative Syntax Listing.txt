@@ -358,6 +358,7 @@ Cedar Park Entertainment
 Centaur Entertainment
 Centre National de la Cinematographie (CNC)
 Centre National de la Cinématographie (CNC)
+Centre National Du Cinéma Et De l'Image Animée (CNC)
 Centro Nacional Autónomo de Cinematografía
 Channel 10
 Channel 14
@@ -733,6 +734,7 @@ Hallmark Movie Mysteries
 Hallmark Studios
 Hallmark_Channel
 Halloween VI Productions
+Hamster Productions
 Hard Eight Pictures
 HBO
 HBO Asia
@@ -1007,6 +1009,8 @@ Mandarin Films Productions Ltd.
 Mandarin Motion Pictures Limited
 Mandarin Production
 Mannequin
+Mansfield Dark
+Mansfield Dark Productions
 MAPPA
 Mar-Key Pictures
 Marimark Productions
@@ -1239,6 +1243,10 @@ Pensa & Rocca Producciones
 Perspectives Pictures
 Phantom Four
 Phoenix Film Partners
+Picture This
+Picture This Entertainment
+Picture This!
+Picture This! Entertainment
 Picturestart
 Pink Elephant Productions
 Pinstripe Productions
