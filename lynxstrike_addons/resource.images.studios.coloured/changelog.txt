@@ -1,3 +1,8 @@
+v1.0.0019 (2026-03-29)
+- Logo requested by @Wildlife8769
+- More logos, mostly indie studios
+- Testing new distribution method
+
 v1.0.0018 (2026-03-29)
 - Logo requested by @Wildlife8769
 - More logos, mostly indie studios
