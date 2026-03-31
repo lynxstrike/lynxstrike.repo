@@ -1,3 +1,8 @@
+v1.0.0020 (2026-03-31)
+- Testing new distribution method
+- Specific build for Windows and Android platforms
+- Separation of platforms
+
 v1.0.0019 (2026-03-29)
 - Logo requested by @Wildlife8769
 - More logos, mostly indie studios
