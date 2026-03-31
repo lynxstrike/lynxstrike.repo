@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0020" provider-name="lynxstrike">
+<addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0021" provider-name="lynxstrike">
 	<extension point="kodi.resource.images" compile="false" type="studios" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0"/>
@@ -13,7 +13,7 @@
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-			v1.0.0020 (2026-03-31)
+			v1.0.0021 (2026-03-31)
 			- Testing new distribution method
 			- Specific build for Windows and Android platforms
 			- Separation of platforms
