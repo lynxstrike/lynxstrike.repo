@@ -1,3 +1,6 @@
+v1.0.0021 (2026-03-31)
+- Restoring Visibility in Linux
+
 v1.0.0020 (2026-03-31)
 - Testing new distribution method
 - Specific build for Windows and Android platforms
