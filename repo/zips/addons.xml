@@ -31,7 +31,7 @@ By using or contributing to this repository, you agree that the developer is not
 			Sustained support for Resource Images Studios Coloured.
 		</news>
 	</extension>
-</addon><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0021" provider-name="lynxstrike">
+</addon><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0022" provider-name="lynxstrike">
 	<extension point="kodi.resource.images" compile="false" type="studios" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -39,15 +39,15 @@ By using or contributing to this repository, you agree that the developer is not
 	<extension point="xbmc.addon.metadata">
 		<summary lang="en">Studio Icons – A clean, unified pack that makes your Kodi library shine</summary>
 		<description lang="en">Bring your Kodi library to life with Color Studio Icons – Modded. This addon delivers a full suite of studio logos in bold, uniform designs, ensuring your media collection looks sharp, consistent, and up-to-date across all versions of Kodi.</description>
-		<platform>linux</platform>
+		<platform>linux android</platform>
 		<assets>
 			<icon>icon.png</icon>
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-			v1.0.0021 (2026-03-31)
-			- Specific build for Linux platforms
+			v1.0.0022 (2026-04-09)
 			- Testing new distribution method
+			- Specific build for Windows and, Android and Linux platforms
 			- Separation of platforms
 		</news>
 	</extension>
