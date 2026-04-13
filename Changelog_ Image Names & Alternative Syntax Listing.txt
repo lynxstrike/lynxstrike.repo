@@ -597,6 +597,7 @@ Fifht Season
 Film Base Berlin
 Film Bridge International
 Film Estonia
+Film Fatales
 Film Futures
 Film I Vast
 Film i Väst
@@ -1081,6 +1082,7 @@ Mondo Home Entertainment
 Mongrel
 Monkeypaw Productions
 Monterey Media
+Monteverde Pictures
 Morgan Creek Entertainment
 Morgan_Creek
 Morgane Production
@@ -1596,6 +1598,8 @@ SWR
 Sycamore Pictures
 Syfy
 Syfy Universal
+Syldavia
+Syldavia Cinema
 Syndicated
 Syndicated Productions
 Syndication
