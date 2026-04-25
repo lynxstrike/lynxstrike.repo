@@ -127,6 +127,8 @@ American Movie Classics (amc)
 American Playhouse
 AMG Entertainment
 Amicus Productions
+Amuse Soft Entertainment
+Amuse, Inc.
 Amusement Park Films
 ANCINE
 Angel Studios
@@ -153,6 +155,7 @@ ARD
 Ardustry Entertainment
 Ariztical
 Ariztical Entertainment
+Ark Entertainment
 Armory Films
 Arnold Kopelson Productions
 Array Filmworks
@@ -244,6 +247,7 @@ Bigfoot Entertainment
 Bigfoot Studios
 Binge
 Black Dragon Entertainment
+Black Fawn Films
 Black Label Media
 Black Mandala
 Black Mandala Films
@@ -520,6 +524,8 @@ Double Dare You Productions
 Double Dutch International
 Double Feature Films
 Dovemead Films
+DREAD
+DREAD - An Epic Pictures Genre Label
 Dreamworks
 Dreamworks Animation
 Dreamworks Animation SKG
@@ -757,6 +763,7 @@ Here! Films
 HERE! TV
 Hero
 Hero Productions
+Hideout Pictures
 High Frequency Entertainment
 Highland Film Group
 Highland Film Group (HFG)
@@ -801,6 +808,7 @@ Indie Rights Movies
 Indie Sales
 Indigo
 Indigo Film
+Indy Entertainment
 Infinite Studios
 Infinitum Nihil
 Ingenious
@@ -1004,6 +1012,7 @@ magiCity Studios
 Magnum Pictures Inc.
 Maipo Film
 Makeready
+Makerville
 Mammoth Screen
 Mandarin Cinema
 Mandarin Cinéma
@@ -1011,6 +1020,7 @@ Mandarin et Compagnie
 Mandarin Films
 Mandarin Films Distribution Co.
 Mandarin Films Productions Ltd.
+Mandarin Motion Pictures
 Mandarin Motion Pictures Limited
 Mandarin Production
 Mannequin
@@ -1108,6 +1118,7 @@ Muse Entertainment
 Muse Entertainment Enterprises
 Music Box Films
 MVP Pictures
+My Way Pictures
 Mycontent Distribution
 Natant
 National Film Finance Corporation
@@ -1515,6 +1526,7 @@ Sony Pictures
 Sony Pictures Classics
 Sony Wonder
 South Side Amusement Company
+SP Media Group
 Spaett Film
 Sparke Films
 Sparkle Roll Media
@@ -1776,6 +1788,7 @@ USA Network hd
 Utah Film Studios
 Utopia
 VAF
+Variety Distribution
 Vega Film
 Vendaval Producciones S.L.
 Vendian Entertainment
@@ -1904,3 +1917,4 @@ Zieglerfilm München
 Zurich Avenue
 Één
 Österreichischer Rundfunk (ORF)
+東方影業Mandarin Motion Pictures
