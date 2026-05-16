@@ -571,6 +571,7 @@ Elisa Viihde
 Elisa_Viihde
 Elkins Entertainment
 Embankment
+Embassy Pictures
 Empire Pictures
 ENA
 ENBU Seminar
@@ -766,8 +767,10 @@ HBO
 HBO Asia
 HBO Espana
 HBO España
+HBO Europe
 HBO Max
 HBO Max Amazon Channel
+HBO Nordic
 HBO_Max
 HBOMax
 Head Gear Films
@@ -803,6 +806,7 @@ Hype Film
 Hyperobject Industries
 IAC Films
 Idea(L)
+Ideaman Studios
 IDN Pictures
 Iervolino Entertainment
 IFC
@@ -1722,6 +1726,7 @@ Three (New Zealand)
 Throwing Star Films
 THT
 Thunder Road
+Thunder Road Pictures
 Tiberius Film
 Tilia Entertainment
 TIMvision
@@ -1934,6 +1939,7 @@ Yle TV1
 Yle TV2
 YouTube
 YouTube Premium
+Youtube Red
 YouTube TV
 YTV
 ZDF

@@ -1,3 +1,8 @@
+v1.0.0024 (2026)
+- Logos requested by @Brynner
+- HBO Asia, HBO Europe, HBO Nordic
+- Youtube Red
+
 v1.0.0023 (2026-05-02)
 - Logos requested by @GBUK83
 - Some more logos
