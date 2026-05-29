@@ -1,4 +1,4 @@
-v1.0.0024 (2026)
+v1.0.0024 (29.05.2026)
 - Logos requested by @Brynner
 - HBO Asia, HBO Europe, HBO Nordic
 - Youtube Red
