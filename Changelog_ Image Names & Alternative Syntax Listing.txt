@@ -9,6 +9,7 @@
 20-20
 20th Century Fox Animation
 20th Century Studios
+20th Digital Studio
 24 25 Films
 2521 Entertainment
 3000 Pictures
@@ -80,6 +81,7 @@ Acemaker movieworks
 Acorn
 Acorn TV
 AcornTV
+Act III Productions
 Ad Vitam
 Ad Vitam Productions
 Adler Entertainment
@@ -103,6 +105,7 @@ Alfa Matrix
 Alfama Films
 Alfred Hitchcock Productions
 Alfred j. hitchcock productions
+Alibaba Pictures
 All 4
 Allfilm
 Allied Artists Pictures
@@ -239,6 +242,9 @@ BBC3
 BBC4
 BCDF Pictures
 Beast of the East Productions
+Beijing Damai Entertainment
+Beijing Dengfeng International Culture Communications Company
+Beijing Dengfeng International Culture Communications Company (China)
 Beijing Enlight Pictures
 Bel Air Entertainment
 BelAir Entertainment
@@ -253,6 +259,7 @@ Big Talk Studios
 Bigfoot Entertainment
 Bigfoot Studios
 Binge
+Black Bear Entertainment
 Black Dragon Entertainment
 Black Fawn Films
 Black Label Media
@@ -487,6 +494,7 @@ CW Television Network
 D'Souza Media
 Daiei Film
 DailyWire+
+Damai Entertainment
 Dan Curtis Productions
 Daniel Wilson Productions
 Dapur Film
@@ -717,6 +725,7 @@ Ghost Corps
 Gidden Media
 Gladden Entertainment
 Glanzrock Productions
+Glitch Productions
 Global
 Global Medien KG
 Global Television Network
@@ -795,6 +804,7 @@ HK Films
 Hoopla
 HOT
 HT Film
+Huaxia Film
 Hughes Entertainment
 HUM
 HUM Europe
@@ -1039,6 +1049,7 @@ Magnum Pictures Inc.
 Maipo Film
 Makeready
 Makerville
+Malibu, Bro Productions
 Mammoth Screen
 Mandarin Cinema
 Mandarin Cinéma
@@ -1047,6 +1058,7 @@ Mandarin Films
 Mandarin Films Distribution Co.
 Mandarin Films Productions Ltd.
 Mandarin Motion Pictures
+Mandarin Motion Pictures (Hong Kong)
 Mandarin Motion Pictures Limited
 Mandarin Production
 Mannequin
@@ -1066,6 +1078,7 @@ Matchbox Films
 Matt Tolmach Productions
 Matten Productions
 Maven Screen Media
+Mavx Productions
 Max
 Max Pictures
 Maxdome
@@ -1082,6 +1095,7 @@ Mei Ah Entertainment
 Melniker-Uslan Productions
 Mels Cite du Cinema
 Melvin Simon Productions
+Mengqi Film
 MEP Capital
 Mer Film
 Merchant Ivory Productions
@@ -1112,6 +1126,7 @@ ML Delphi Premier Productions
 MM2 Entertainment
 Mockingbird Pictures
 Mollywood
+Momento Film
 Momentum Pictures
 Monarchy Enterprises B.V.
 Monarchy Enterprises S.a.r.l.
@@ -1739,6 +1754,7 @@ TNT
 TNT (US)
 TNT Serie
 TNT Spain
+Toff Guy Films
 Toho Company Ltd.
 Tokyo Movie Shinsha
 Toledo Pictures
