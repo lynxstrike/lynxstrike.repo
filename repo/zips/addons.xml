@@ -31,7 +31,7 @@ By using or contributing to this repository, you agree that the developer is not
 			Sustained support for Resource Images Studios Coloured.
 		</news>
 	</extension>
-</addon><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0024" provider-name="lynxstrike">
+</addon><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0025" provider-name="lynxstrike">
 	<extension point="kodi.resource.images" compile="false" type="studios" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -45,10 +45,9 @@ By using or contributing to this repository, you agree that the developer is not
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-v1.0.0024 (29.05.2026)
-- Logos requested by @Brynner
-- HBO Asia, HBO Europe, HBO Nordic
-- Youtube Red
+v1.0.0025 (28.06.2026)
+- Logos requested by @shaktoo
+- More logos, mainly less known studios
 		</news>
 	</extension>
 </addon></addons>

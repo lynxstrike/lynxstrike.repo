@@ -1,3 +1,7 @@
+v1.0.0025 (28.06.2026)
+- Logos requested by @shaktoo
+- More logos, mainly less known studios
+
 v1.0.0024 (29.05.2026)
 - Logos requested by @Brynner
 - HBO Asia, HBO Europe, HBO Nordic
