@@ -1,5 +1,9 @@
 ## <p align="center"><ins>ScenePass for KODI</ins></p>
 
+<p align="center">
+  <img width="70%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/lynxstrike_addons/service.scenepass/banner.png" alt="ScenePass banner">
+</p>
+
 <p align="center"><strong>Skip TV intros and recaps, Netflix-style.</strong></p>
 
 <p align="center"><strong>ScenePass is a Kodi service add-on that reads <code>.sp.json</code> sidecar files sitting next to your video files and automatically detects intro and recap segments during playback — offering on-screen Skip Intro / Skip Recap buttons, or auto-skipping them entirely.
