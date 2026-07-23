@@ -9,6 +9,7 @@
         <description lang="en_GB">Reads ScenePass .sp.json sidecars next to video files and skips detected intro and recap segments during playback.</description>
         <platform>all</platform>
         <license>MIT</license>
+        <disclaimer>AI-Generated Content Disclosure: this add-on's source code and its icon/fanart artwork were generated with the assistance of AI tools. This notice is provided for transparency and regulatory compliance.</disclaimer>
         <assets>
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>

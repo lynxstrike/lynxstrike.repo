@@ -47,6 +47,12 @@ English (en_GB) only at present.
 
 ---
 
+### 🤖 <ins>AI-Generated Content Disclosure</ins>
+
+This add-on's source code, and its icon/fanart artwork, were generated with the assistance of AI tools. Provided for transparency and regulatory compliance.
+
+---
+
 ### 📄 <ins>License</ins>
 
 MIT.

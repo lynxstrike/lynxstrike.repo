@@ -45,6 +45,16 @@
 
 ---
 
+### 🤖 <ins>AI-Generated Content Disclosure</ins>
+
+In the interest of transparency: the **ScenePass** add-on's source code was written with the assistance of AI tools, and its icon/fanart artwork, along with this repository's own icon/fanart, were generated using AI image tools.
+
+This does **not** apply to the **Studio Icons - Coloured - Modded** add-on's logo resources — those are real studio/broadcaster logos sourced from the community (see its own README for credits), not AI-generated.
+
+This notice is provided for transparency and to comply with applicable AI-generated-content disclosure regulations.
+
+---
+
 ### 📄 <ins>License</ins>
 
 Each add-on carries its own license — see its README for details. Please respect all licenses.
