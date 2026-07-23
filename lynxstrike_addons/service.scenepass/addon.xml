@@ -9,6 +9,10 @@
         <description lang="en_GB">Reads ScenePass .sp.json sidecars next to video files and skips detected intro and recap segments during playback.</description>
         <platform>all</platform>
         <license>MIT</license>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
         <news>v0.01.4
 - Closer label-to-arrow spacing (~2-character gap; narrower pill)
 v0.01.3
