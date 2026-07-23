@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.lynxstrike" name="Lynxstrike's Repo" version="1.0.04" provider-name="lynxstrike">
+<addon id="repository.lynxstrike" name="Lynxstrike's Repo" version="1.0.05" provider-name="Lynxstrike">
 	<extension point="xbmc.addon.repository" name="lynxstrike.repo">
 		<dir>
 			<info compressed="false">https://raw.githubusercontent.com/lynxstrike/lynxstrike.repo/master/repo/zips/addons.xml</info>
@@ -13,8 +13,8 @@
 		</dir>		
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>lynxstrike's Repository for Resource Images Studios Coloured</summary>
-		<description>lynxstrike's Repository was built for sustained support for Resource Images Studios Coloured.</description>
+		<summary>Lynxstrike's Repository for Kodi add-ons</summary>
+		<description>Lynxstrike's central repository for Studio Logos and ScenePass add-ons</description>
 		<disclaimer>This software is provided "as is" without any warranties or guarantees of any kind.
 Use it at your own risk. The developer is not affiliated with or endorsed by the Kodi Foundation or any of the studios whose logos may appear in this add-on.
 All logos included are the property of their respective owners and are used solely for informational and identification purposes under fair use guidelines.
@@ -28,7 +28,7 @@ By using or contributing to this repository, you agree that the developer is not
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-			Sustained support for Resource Images Studios Coloured.
+New support for ScenePass (intro and recap skipping).
 		</news>
 	</extension>
 </addon>

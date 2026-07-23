@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <defaultcontrol always="true">101</defaultcontrol>
+    <animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+    <controls>
+        <control type="group" id="100">
+            <left>1620</left>
+            <bottom>96</bottom>
+            <width>237</width>
+            <height>52</height>
+            <!-- Orange rounded rectangle background, fully opaque -->
+            <control type="image" id="104">
+                <left>0</left>
+                <top>0</top>
+                <width>237</width>
+                <height>52</height>
+                <texture border="10">button_bg.png</texture>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+                <aspectratio>stretch</aspectratio>
+            </control>
+            <!-- White label text -->
+            <control type="label" id="102">
+                <left>14</left>
+                <top>0</top>
+                <width>200</width>
+                <height>52</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <font>font25_title</font>
+                <textcolor>FFFFFFFF</textcolor>
+                <shadowcolor>00000000</shadowcolor>
+                <label>Skip Intro</label>
+            </control>
+            <!-- White play arrow -->
+            <control type="image" id="103">
+                <left>186</left>
+                <top>10</top>
+                <width>28</width>
+                <height>28</height>
+                <texture colordiffuse="FFFFFFFF">skip_arrow.png</texture>
+                <aspectratio>keep</aspectratio>
+            </control>
+            <!-- Invisible hit/focus button -->
+            <control type="button" id="101">
+                <left>0</left>
+                <top>0</top>
+                <width>237</width>
+                <height>52</height>
+                <label></label>
+                <font></font>
+                <textcolor>00FFFFFF</textcolor>
+                <focusedcolor>00FFFFFF</focusedcolor>
+                <texturefocus border="10">button_bg.png</texturefocus>
+                <texturenofocus border="10">button_bg.png</texturenofocus>
+                <colordiffuse>00FFFFFF</colordiffuse>
+            </control>
+        </control>
+    </controls>
+</window>

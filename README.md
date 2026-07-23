@@ -1,25 +1,14 @@
-## <p align="center"><ins>Studio Icons - Coloured - Modded for KODI</ins> ( <ins>All Versions</ins> )</p>
+## <p align="center"><ins>Lynxstrike's Kodi Add-on Repository</ins></p>
 
 <p align="center">
-  <img width="20%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png" alt="Studio Icons Logo">
+  <img width="20%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/icon.png" alt="Lynxstrike's Repo Logo">
 </p>
 
 <p align="center">
-  <img width="80%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/fanart.jpg" alt="Studio Icons Fanart">
+  <img width="80%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/repo/repository.lynxstrike/fanart.jpg" alt="Lynxstrike's Repo Fanart">
 </p>
 
-<p align="center"><strong>Color Studio Images.</strong></p>
-
-<p align="center"><strong>Bring your Kodi library to life with Color Studio Icons – Coloured & Modded, a vibrant image pack. This addon delivers a full suite of studio logos in bold, uniform designs, ensuring your media collection looks sharp, consistent, and up-to-date across all versions of Kodi.
-</strong></p>
-
----
-
-### 🎨 <ins>Features</ins>
-
-- Continual updates to reflect evolving studio branding
-- Multiple internal file matches for broad compatibility
-- Uniform icon sizing for consistent aspect ratio and rendering quality
+<p align="center"><strong>A personal Kodi add-on repository, currently hosting an image pack and a video-skipping service.</strong></p>
 
 ---
 
@@ -43,45 +32,25 @@
 
 5. The `lynxstrike.repo` repository will now appear as a **source option** (like SMB, mapped drive, etc.) in the Add-ons browser
 
-6. Go to:  
-   **System > Add-ons > Install from repository**  
-   → Select **lynxstrike.repo** (or the name you provided)  
-   → **Look and Feel > Image Collection**  
-   → Click **Studio Icons - Coloured - Modded** to install the addon and its dependencies
-
-7. ✅ Installation complete!  
-   KODI will now render any studio image that matches the **Studio Icons - Coloured - Modded** collection
+6. Go to **System > Add-ons > Install from repository** → select **lynxstrike.repo** (or the name you provided), then pick one of the add-ons below
 
 ---
 
-### 🌐 <ins>Translations</ins>
+### 🧩 <ins>Add-ons in this repository</ins>
 
-Not applicable — this addon operates internally and does not require localization.
-
----
-
-### 🙏 <ins>Credits</ins>
-
-This add-on would not exist without the work, teachings, and patience of kittmaster.
-
----
-
-### 📚 <ins>Further Information</ins>
-
-For more details and community discussion, visit the official KODI forum thread:  
-🔗 [KODI Forum – Studio Icons](https://forum.kodi.tv/showthread.php?tid=368342)
+| Add-on | What it does | Details |
+|---|---|---|
+| **Studio Icons - Coloured - Modded** | A colour studio-logo image pack — makes your Kodi library's studio icons sharp, consistent, and up-to-date. Found under **Look and Feel > Image Collection**. | [README](lynxstrike_addons/resource.images.studios.coloured/README.md) |
+| **ScenePass** | Reads ScenePass `.sp.json` sidecars next to your video files and skips detected intro/recap segments during playback, Netflix-style. Found under **Services**. | [README](lynxstrike_addons/service.scenepass/README.md) |
 
 ---
 
 ### 📄 <ins>License</ins>
 
-Please respect all licenses. All provided textures are for **non-commercial use only**.
+Each add-on carries its own license — see its README for details. Please respect all licenses.
 
 ---
 
 ### 📬 <ins>Contact & Support</ins>
 
-- For support, visit the [KODI Forum Thread](https://forum.kodi.tv/showthread.php?tid=368342)  
-- For bug reports:  
-  → Post on the forum for visibility  
-  → Create a GitHub issue for proper tracking and resolution
+For support or bug reports, see the relevant add-on's README above.
