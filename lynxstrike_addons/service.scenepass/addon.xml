@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="service.scenepass" name="ScenePass" version="0.01.4" provider-name="lynxstrike">
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+    <extension point="xbmc.service" library="service.py"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en_GB">Skip TV intros and recaps</summary>
+        <description lang="en_GB">Reads ScenePass .sp.json sidecars next to video files and skips detected intro and recap segments during playback.</description>
+        <platform>all</platform>
+        <license>MIT</license>
+        <disclaimer>AI-Generated Content Disclosure: this add-on's source code and its icon/fanart artwork were generated with the assistance of AI tools. This notice is provided for transparency and regulatory compliance.</disclaimer>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+        <news>v0.01.4
+- Closer label-to-arrow spacing (~2-character gap; narrower pill)
+v0.01.3
+- Tighter skip button width (~3-letter gap before arrow); lighter grey background
+v0.01.2
+- Skip overlay: grey pill background, PNG play arrow (fixes skin font/icon glitches)
+v0.01.1
+- Netflix-style Skip Intro / Skip Recap overlay buttons (replaces blocking dialog)
+v0.01.0
+- ScenePass .sp.json consumer
+- Auto-skip or on-screen prompt for intro and recap
+- Confidence and minimum-duration gates</news>
+    </extension>
+</addon>
