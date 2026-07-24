@@ -1,28 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0025" provider-name="lynxstrike">
-	<extension point="kodi.resource.images" compile="false" type="studios" />
-	<requires>
-		<import addon="kodi.resource" version="1.0.0" />
-	</requires>
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Studio Icons – A clean, unified pack that makes your Kodi library shine</summary>
-		<description lang="en">Bring your Kodi library to life with Color Studio Icons – Modded. This addon delivers a full suite of studio logos in bold, uniform designs, ensuring your media collection looks sharp, consistent, and up-to-date across all versions of Kodi.</description>
-		<platform>windows</platform>
-		<assets>
-			<icon>icon.png</icon>
-			<fanart>fanart.jpg</fanart>
-		</assets>
-		<news>
-v1.0.0025 (28.06.2026)
-- Logos requested by @shaktoo
-- More logos, mainly less known studios
-		</news>
-	</extension>
-</addon><addon id="service.scenepass" name="ScenePass" version="0.01.4" provider-name="lynxstrike">
+<?xml version="1.0" encoding="UTF-8"?>
+<addon id="service.scenepass" name="ScenePass" version="0.01.4" provider-name="lynxstrike">
     <requires>
-        <import addon="xbmc.python" version="3.0.0" />
+        <import addon="xbmc.python" version="3.0.0"/>
     </requires>
-    <extension point="xbmc.service" library="service.py" />
+    <extension point="xbmc.service" library="service.py"/>
     <extension point="xbmc.addon.metadata">
         <summary lang="en_GB">Skip TV intros and recaps</summary>
         <description lang="en_GB">Reads ScenePass .sp.json sidecars next to video files and skips detected intro and recap segments during playback.</description>
@@ -46,4 +27,4 @@ v0.01.0
 - Auto-skip or on-screen prompt for intro and recap
 - Confidence and minimum-duration gates</news>
     </extension>
-</addon></addons>
+</addon>

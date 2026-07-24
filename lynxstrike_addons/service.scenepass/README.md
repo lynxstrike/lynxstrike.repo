@@ -53,7 +53,9 @@ English (en_GB) only at present.
 
 ### 🤖 <ins>AI-Generated Content Disclosure</ins>
 
-This add-on's source code, and its icon/fanart artwork, were generated with the assistance of AI tools. Provided for transparency and regulatory compliance.
+All source code and artwork for this add-on were produced through AI tools. This disclosure is provided for transparency and regulatory compliance.
+
+This notice is provided for transparency and to comply with applicable regulations on AI-generated content.
 
 ---
 
