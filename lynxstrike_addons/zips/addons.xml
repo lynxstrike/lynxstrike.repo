@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<addons><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0025" provider-name="lynxstrike">
+<addons><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0026" provider-name="lynxstrike">
 	<extension point="kodi.resource.images" compile="false" type="studios" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -13,9 +13,8 @@
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-v1.0.0025 (28.06.2026)
-- Logos requested by @shaktoo
-- More logos, mainly less known studios
+v1.0.0026 (25.07.2026)
+Logos requested by @kittmaster
 		</news>
 	</extension>
 </addon><addon id="service.scenepass" name="ScenePass" version="0.01.4" provider-name="lynxstrike">
