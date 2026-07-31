@@ -224,6 +224,7 @@ BangorFilms
 Barclays Mercantile Industrial Finance
 Barry Linen Motion Pictures
 Barry Mendel Productions
+Barunson E&A
 Basque Films
 Bathysphere Productions
 Batjac Productions
@@ -281,6 +282,7 @@ Blue Ribbon Content
 Blue Seraph Productions
 Bluegrass Films
 Blueskin Films
+Bluestone Entertainment
 Blumhouse Productions
 Blumhouse Television
 BNNVARA
@@ -548,6 +550,7 @@ Double Feature Films
 Dovemead Films
 DREAD
 DREAD - An Epic Pictures Genre Label
+Dream Well Studio
 Dreamworks
 Dreamworks Animation
 Dreamworks Animation SKG
@@ -574,6 +577,7 @@ El Dorado Pictures
 El Otro Film
 El Pico S.A.
 Electromagnetic Productions
+Element Pictures
 Elevation Pictures
 ELEVEN ARTS Studios
 Elisa Viihde
@@ -910,6 +914,8 @@ JW Productions
 JWProductions
 Jürgen Brüning Filmproduktion
 K2 Pictures
+K5 Film
+K5 Media Group
 Kaijyu Theater
 Kaleidoscope Home Entertainment
 Kameleon Productions
@@ -1022,6 +1028,7 @@ Los Angeles Media Fund
 Los Griegos Films
 Los Hooligans Productions
 Lotte Entertainment
+Lotus Entertainment
 Lotus Pictures
 Loupe Films
 Lucasfilm Ltd.
@@ -1208,6 +1215,7 @@ Nizra Entertainment
 Nizra Group
 NL Film
 No Frills Film
+No Frills Film Production
 Noovo
 Nord-Ouest Films
 Nordisk Film
@@ -1342,6 +1350,7 @@ Producciones Alatriste
 Producciones Balcázar
 Propaganda Films
 Proton Cinema
+Protozoa Pictures
 PTV
 PTV Networks
 PTV Pakistan Television
@@ -1438,6 +1447,7 @@ Roserock Films
 Rossen Films
 Roth-Kirschenbaum Films
 Rough House Pictures
+Royal Budapest Film Company
 RPI Group Productions
 RPS Productions
 RT Features
