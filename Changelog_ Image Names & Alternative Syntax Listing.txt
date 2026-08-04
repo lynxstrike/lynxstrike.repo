@@ -209,6 +209,7 @@ Austrian Film Institute
 Autumn Bailey Entertainment
 Ava
 Avante Filmes
+Avatar Studios
 B2B
 BA Productions
 Babe Films
@@ -322,6 +323,7 @@ Broken Road Productions
 Bron Studios
 Bronte Pictures
 Brown Boy Productions
+Brownstone Productions
 Bryna Productions
 BTEAM pics
 Buena Vista
@@ -354,6 +356,7 @@ Cappricielli
 Carcass Studios
 Carlino Productions
 Carlotta Films
+Carnival Films
 Cartoon Network
 Cartoon Network HD
 Cartoon Network Studios
@@ -444,6 +447,9 @@ CMC Pictures
 CMV Laservision
 CNC
 CNFF
+Cobalt
+Cobalt Media
+Cobalt Media Group
 Colecar Productions
 Colony
 Colony Pictures
@@ -488,6 +494,7 @@ CTV Life
 CTV Sci-Fi
 Cult Epics
 Curiosity Stream
+Curious Films
 Curzon
 Curzon Film World
 Cutare Film
@@ -656,6 +663,7 @@ Firststep Production
 Flare Film
 FlixHouse
 Florin Productions
+Flower Films
 Flynn Picture Company
 Focine
 Fonds Eurimages du Conseil de l'Europe
@@ -942,6 +950,7 @@ Kids WB
 KidsWB
 Killer Films
 Kimstim
+Kinberg Genre Films
 Kino Lorber
 Kirlian Pictures
 KISI
@@ -1021,6 +1030,7 @@ Local Films
 Lolafilms
 LOLflix
 Lopez-Li Films
+Lord Miller
 Lorry
 Lorton
 Lorton Entertainment
@@ -1246,6 +1256,7 @@ Orange Cinema Series
 Orange Cinema Series (OCS)
 Orange Cinéma Séries
 Orange Cinéma Séries (OCS)
+Orange Sky Golden Harvest
 Orange Studio.
 Orange Studios
 Orbrock
@@ -1403,6 +1414,7 @@ Raven Banner Entertainment
 RCR Media Group
 Real Fiction Studios
 Rebel Road Films
+Red Hour
 Red Planet Entertainment
 Red Planet Pictures
 Red Rock Films
@@ -1413,6 +1425,7 @@ RedPeter Film
 Reel FX Creative Studios
 ReelzChannel
 Refugee Films
+Regal Entertainment
 Regent Entertainment
 Regent Productions
 Regent Releasing
@@ -1694,6 +1707,7 @@ Tantan Films
 Taryn Prov
 Taylor & Dodge
 Taylor Dodge
+Tea Shop Productions
 Tele-Quebec
 Telecinco
 Telecinco Cinema
@@ -1703,6 +1717,7 @@ Temps Noir
 Ten
 Ten HD
 Ten Thousand Hearts
+Territory Pictures
 TF1 Films Production
 Thanhouser Film Corporation
 That's Wonderful Productions
