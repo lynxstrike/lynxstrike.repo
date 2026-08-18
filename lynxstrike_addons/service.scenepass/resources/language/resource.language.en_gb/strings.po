@@ -44,11 +44,3 @@ msgstr ""
 msgctxt "#32010"
 msgid "Debug logging"
 msgstr ""
-
-msgctxt "#32011"
-msgid "Skip Intro"
-msgstr ""
-
-msgctxt "#32012"
-msgid "Skip Recap"
-msgstr ""

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="service.scenepass" name="ScenePass" version="0.01.4" provider-name="lynxstrike">
+<addon id="service.scenepass" name="ScenePass" version="0.01.16" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -9,12 +9,18 @@
         <description lang="en_GB">Reads ScenePass .sp.json sidecars next to video files and skips detected intro and recap segments during playback.</description>
         <platform>all</platform>
         <license>MIT</license>
-        <disclaimer>AI-Generated Content Disclosure: this add-on's source code and its icon/fanart artwork were generated with the assistance of AI tools. This notice is provided for transparency and regulatory compliance.</disclaimer>
-        <assets>
-            <icon>icon.png</icon>
-            <fanart>fanart.jpg</fanart>
-        </assets>
-        <news>v0.01.4
+        <news>v0.01.16
+- Switched intro/recap text art from the neon-glow look to a flat solid-color style (still no pill background)
+v0.01.15
+- Skip Intro switched from the dark-pill design to the unified glow-text-only style (matching Skip Recap): orange for intro, blue for recap, no pill background on either
+v0.01.14
+- Fixed: skip overlay could render invisible (or briefly flash then vanish) on some systems. Root cause: a &lt;visible&gt; condition on a control in a dialog stacked over fullscreen video — whether a literal true/false or a Window.Property() condition — never evaluates true here, so the control never paints no matter what Python sets. Visibility is now handled purely by Control.setVisible(), the one mechanism confirmed to work; no control in the skin uses a &lt;visible&gt; tag anymore.
+v0.01.6
+- Skip Intro now renders from a designed baked-art asset (dark pill, hollow-outline text/icon)
+- Skip Recap test variant: glowing text/icon only, no pill background, for side-by-side evaluation against Skip Intro
+v0.01.5
+- Skip overlay: colored pill (orange for intro, blue for recap) with a circular play badge overlapping the right edge, ring baked into the badge texture
+v0.01.4
 - Closer label-to-arrow spacing (~2-character gap; narrower pill)
 v0.01.3
 - Tighter skip button width (~3-letter gap before arrow); lighter grey background

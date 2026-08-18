@@ -35,6 +35,8 @@ class SkipEngine:
 
     def _tick(self) -> None:
         if not self.player.isPlayingVideo():
+            if self._overlay is not None:
+                log('Playback stopped, closing overlay')
             self._close_overlay()
             self._last_playback_key = None
             self._last_position = 0.0
@@ -46,6 +48,9 @@ class SkipEngine:
             return
 
         if playback_key != self._last_playback_key:
+            if self._overlay is not None:
+                log(f'Playback key changed ({self._last_playback_key!r} -> '
+                    f'{playback_key!r}), closing overlay')
             self._last_playback_key = playback_key
             self._last_position = 0.0
             self._close_overlay()
@@ -84,6 +89,8 @@ class SkipEngine:
 
         active = schedule.active_at(position)
         if active is None or active.kind != self._overlay_kind:
+            log(f'Segment no longer active at {position:.2f}s '
+                f'(overlay was for {self._overlay_kind!r}), closing overlay')
             overlay.close()
 
     def _finish_overlay(self, overlay: SkipOverlayDialog, schedule) -> None:

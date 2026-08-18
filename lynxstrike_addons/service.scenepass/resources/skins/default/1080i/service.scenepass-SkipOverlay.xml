@@ -1,58 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
     <defaultcontrol always="true">101</defaultcontrol>
-    <animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
-    <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
     <controls>
         <control type="group" id="100">
-            <left>1620</left>
+            <left>1642</left>
             <bottom>96</bottom>
-            <width>237</width>
+            <width>238</width>
             <height>52</height>
-            <!-- Orange rounded rectangle background, fully opaque -->
-            <control type="image" id="104">
+            <!-- Baked full-button art (background + label + icon all in one texture,
+                 no pill). Texture/size are set in Python — see
+                 SkipOverlayDialog._apply_layout(). Deliberately no <visible> tag:
+                 on this system, any <visible> condition on a control in a dialog stacked
+                 over fullscreen video — literal constant or Window.Property() alike —
+                 never evaluates true, so the control never paints no matter what
+                 Control.setVisible()/setProperty() does from Python. Confirmed via an
+                 isolated test dialog (unconditional control rendered and persisted; an
+                 otherwise-identical Window.Property()-gated control never appeared). -->
+            <control type="image" id="106">
                 <left>0</left>
                 <top>0</top>
-                <width>237</width>
+                <width>238</width>
                 <height>52</height>
-                <texture border="10">button_bg.png</texture>
-                <colordiffuse>FFFFFFFF</colordiffuse>
-                <aspectratio>stretch</aspectratio>
-            </control>
-            <!-- White label text -->
-            <control type="label" id="102">
-                <left>14</left>
-                <top>0</top>
-                <width>200</width>
-                <height>52</height>
-                <align>left</align>
-                <aligny>center</aligny>
-                <font>font25_title</font>
-                <textcolor>FFFFFFFF</textcolor>
-                <shadowcolor>00000000</shadowcolor>
-                <label>Skip Intro</label>
-            </control>
-            <!-- White play arrow -->
-            <control type="image" id="103">
-                <left>186</left>
-                <top>10</top>
-                <width>28</width>
-                <height>28</height>
-                <texture colordiffuse="FFFFFFFF">skip_arrow.png</texture>
+                <texture>skip_intro_button.png</texture>
                 <aspectratio>keep</aspectratio>
             </control>
-            <!-- Invisible hit/focus button -->
+            <!-- Invisible hit/focus button, sized to match the baked art -->
             <control type="button" id="101">
                 <left>0</left>
                 <top>0</top>
-                <width>237</width>
+                <width>238</width>
                 <height>52</height>
                 <label></label>
                 <font></font>
                 <textcolor>00FFFFFF</textcolor>
                 <focusedcolor>00FFFFFF</focusedcolor>
-                <texturefocus border="10">button_bg.png</texturefocus>
-                <texturenofocus border="10">button_bg.png</texturenofocus>
                 <colordiffuse>00FFFFFF</colordiffuse>
             </control>
         </control>
