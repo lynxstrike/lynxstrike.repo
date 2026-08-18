@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="service.scenepass" name="ScenePass" version="0.01.17" provider-name="lynxstrike">
+<addon id="service.scenepass" name="ScenePass" version="0.01.18" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -13,7 +13,9 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.17
+        <news>v0.01.18
+- Fixed: the invisible hit-button behind the overlay art was showing the active Kodi skin's own default focused-button box (a colored pill), because it lost its explicit texture override when the old composed-pill assets were removed. Restored an explicit (fully transparent) texture reference.
+v0.01.17
 - Fixed: repo listing showed a generic/black thumbnail. addon.xml never declared an &lt;assets&gt; block, so the repo generator wasn't copying icon.png/fanart.jpg alongside the packaged zip where Kodi actually fetches them from (repo uses datadir zip="true").
 v0.01.16
 - Switched intro/recap text art from the neon-glow look to a flat solid-color style (still no pill background)
