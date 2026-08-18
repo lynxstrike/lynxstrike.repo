@@ -24,7 +24,14 @@
                 <texture>skip_intro_button.png</texture>
                 <aspectratio>keep</aspectratio>
             </control>
-            <!-- Invisible hit/focus button, sized to match the baked art -->
+            <!-- Invisible hit/focus button, sized to match the baked art. Must have an
+                 explicit texturefocus/texturenofocus — without one, Kodi falls back to
+                 the active skin's own default button chrome for the focused state (this
+                 control gets focus immediately via <defaultcontrol>), and that fallback
+                 does not fully honor colordiffuse the way an explicit <texture> override
+                 does, so the skin's own focus box was showing through behind the art.
+                 The referenced file is irrelevant content-wise — colordiffuse makes it
+                 fully transparent regardless — it just needs to be a texture that exists. -->
             <control type="button" id="101">
                 <left>0</left>
                 <top>0</top>
@@ -34,6 +41,8 @@
                 <font></font>
                 <textcolor>00FFFFFF</textcolor>
                 <focusedcolor>00FFFFFF</focusedcolor>
+                <texturefocus>skip_intro_button.png</texturefocus>
+                <texturenofocus>skip_intro_button.png</texturenofocus>
                 <colordiffuse>00FFFFFF</colordiffuse>
             </control>
         </control>
