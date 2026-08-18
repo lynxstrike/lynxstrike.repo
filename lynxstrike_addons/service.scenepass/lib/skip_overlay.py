@@ -4,46 +4,35 @@ from __future__ import annotations
 
 from typing import Optional
 
+import xbmc
 import xbmcaddon
 import xbmcgui
+
+from lib.sidecar import log
 
 ADDON = xbmcaddon.Addon()
 ADDON_PATH = ADDON.getAddonInfo('path')
 
 CTRL_GROUP = 100
 CTRL_HIT = 101
-CTRL_LABEL = 102
-CTRL_ARROW = 103
-CTRL_BG = 104
+CTRL_BAKED = 106
 
 _ACTION_BACK = (10, 92)
 
-# Layout tuned for 1080p reference coordinates.
-PAD_LEFT = 14
-PAD_RIGHT = 12
-CHAR_W = 15
-GAP_CHARS = 2
-GAP_PX = 22   # exact half of original 45 px gap (3 * CHAR_W)
-ARROW_W = 28
-BTN_H = 52
 MARGIN_RIGHT = 40
 MARGIN_BOTTOM = 96
 REF_WIDTH = 1920
 REF_HEIGHT = 1080
 
-
-def _button_labels() -> dict[str, str]:
-    intro = ADDON.getLocalizedString(32011) or 'Skip Intro'
-    recap = ADDON.getLocalizedString(32012) or 'Skip Recap'
-    return {'intro': intro, 'recap': recap}
-
-
-def _layout_width(label: str) -> tuple[int, int, int]:
-    """Return (total_width, label_width, arrow_left)."""
-    text_w = len(label) * CHAR_W
-    arrow_left = PAD_LEFT + text_w + GAP_PX
-    total = arrow_left + ARROW_W + PAD_RIGHT
-    return total, text_w, arrow_left
+# Baked full-button art per segment kind: background, label, and icon all in
+# one texture, no pill. Each entry is (texture filename, width/height aspect
+# ratio, reference display height). Both are flat solid-color text/icon
+# designs that crop almost tight to the glyphs (~94% solid content), so a
+# shared reference height keeps them the same apparent size on screen.
+_BAKED_ASSETS = {
+    'intro': ('skip_intro_button.png', 5.26, 50),
+    'recap': ('skip_recap_text.png', 5.70, 50),
+}
 
 
 class SkipOverlayDialog(xbmcgui.WindowXMLDialog):
@@ -60,57 +49,45 @@ class SkipOverlayDialog(xbmcgui.WindowXMLDialog):
         self.is_open = False
         super().close()
 
-    def _apply_layout(self, label: str) -> None:
-        total_w, text_w, arrow_left = _layout_width(label)
+    def _apply_layout(self, texture: str, aspect: float, height_ref: float) -> None:
         scale = self.getWidth() / REF_WIDTH if self.getWidth() else 1.0
-        total_w = int(total_w * scale)
-        text_w = int(text_w * scale)
-        arrow_left = int(arrow_left * scale)
-        arrow_w = int(ARROW_W * scale)
-        btn_h = int(BTN_H * scale)
-        pad_left = int(PAD_LEFT * scale)
+        btn_h = int(height_ref * scale)
+        btn_w = int(btn_h * aspect)
         margin_right = int(MARGIN_RIGHT * scale)
         margin_bottom = int(MARGIN_BOTTOM * scale)
 
         screen_w = self.getWidth() or REF_WIDTH
         screen_h = self.getHeight() or REF_HEIGHT
-        left = screen_w - total_w - margin_right
+        left = screen_w - btn_w - margin_right
         top = screen_h - margin_bottom - btn_h
 
         group = self.getControl(CTRL_GROUP)
         group.setPosition(left, top)
-        group.setWidth(total_w)
+        group.setWidth(btn_w)
         group.setHeight(btn_h)
 
-        bg = self.getControl(CTRL_BG)
-        bg.setWidth(total_w)
-        bg.setHeight(btn_h)
-
-        lbl = self.getControl(CTRL_LABEL)
-        lbl.setPosition(pad_left, 0)
-        lbl.setWidth(text_w)
-        lbl.setHeight(btn_h)
-        lbl.setLabel(label)
-
-        arrow = self.getControl(CTRL_ARROW)
-        arrow.setPosition(arrow_left, int(10 * scale))
-        arrow.setWidth(arrow_w)
-        arrow.setHeight(arrow_w)
+        baked = self.getControl(CTRL_BAKED)
+        baked.setImage(texture)
+        baked.setPosition(0, 0)
+        baked.setWidth(btn_w)
+        baked.setHeight(btn_h)
 
         hit = self.getControl(CTRL_HIT)
-        hit.setWidth(total_w)
+        hit.setPosition(0, 0)
+        hit.setWidth(btn_w)
         hit.setHeight(btn_h)
 
     def onInit(self) -> None:
         self.is_open = True
-        label = _button_labels().get(self.kind or '', 'Skip')
-        try:
-            self._apply_layout(label)
-        except RuntimeError:
+        kind = self.kind or ''
+        asset = _BAKED_ASSETS.get(kind)
+        if asset is None:
+            log(f'No overlay art for segment kind {kind!r}', xbmc.LOGWARNING)
+        else:
             try:
-                self.getControl(CTRL_LABEL).setLabel(label)
-            except RuntimeError:
-                pass
+                self._apply_layout(*asset)
+            except RuntimeError as exc:
+                log(f'Overlay layout failed for kind {kind!r}: {exc!r}', xbmc.LOGWARNING)
         self.setFocusId(CTRL_HIT)
 
     def onClick(self, controlId: int) -> None:
