@@ -32,7 +32,7 @@ AI-Generated Content Disclosure: the ScenePass add-on's source code, and the ico
 New support for ScenePass (intro and recap skipping).
 		</news>
 	</extension>
-</addon><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0026" provider-name="lynxstrike">
+</addon><addon id="resource.images.studios.coloured" name="Studio Icons - Coloured - Modded" version="1.0.0027" provider-name="lynxstrike">
 	<extension point="kodi.resource.images" compile="false" type="studios" />
 	<requires>
 		<import addon="kodi.resource" version="1.0.0" />
@@ -46,8 +46,12 @@ New support for ScenePass (intro and recap skipping).
 			<fanart>fanart.jpg</fanart>
 		</assets>
 		<news>
-v1.0.0026 (25.07.2026)
-Logos requested by @kittmaster
+v1.0.0027 (28.08.2026)
+- Logos requested by @Copyright^
+- Logos requested by @GBUK83
+- Logos requested by @signde
+
+Updated ITV1, ITV 1 logos
 		</news>
 	</extension>
 </addon></addons>
