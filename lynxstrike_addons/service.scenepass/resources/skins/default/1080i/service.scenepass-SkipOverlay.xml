@@ -7,9 +7,11 @@
             <bottom>96</bottom>
             <width>238</width>
             <height>52</height>
-            <!-- Baked full-button art (background + label + icon all in one texture,
-                 no pill). Texture/size are set in Python — see
-                 SkipOverlayDialog._apply_layout(). Deliberately no <visible> tag:
+            <!-- Baked button art: control 106 (Text theme: label+icon glyph, no
+                 background; Pill theme: translucent pill background) plus control 107
+                 (Pill theme only: the same glyph drawn on top, independently tinted).
+                 Texture/size are set in Python — see SkipOverlayDialog._apply_layout().
+                 Deliberately no <visible> tag:
                  on this system, any <visible> condition on a control in a dialog stacked
                  over fullscreen video — literal constant or Window.Property() alike —
                  never evaluates true, so the control never paints no matter what
@@ -21,7 +23,38 @@
                 <top>0</top>
                 <width>238</width>
                 <height>52</height>
-                <texture>skip_intro_button.png</texture>
+                <!-- Initial texture/colordiffuse are a placeholder, not what actually
+                     shows: onInit() (see SkipOverlayDialog._apply_layout in
+                     lib/skip_overlay.py) always calls setImage()/setColorDiffuse()
+                     with the correct theme/kind texture before the button should be
+                     visible. But that first frame, before onInit's Python runs,
+                     paints whatever this XML says, and a hardcoded real texture here
+                     (previously skip_intro_button.png, unconditionally) flashed the
+                     wrong glyph for one frame: always the Text-theme intro art, even
+                     for Recap or for the Pill theme, since Python hasn't corrected it
+                     yet. Same fix as control 101 below: start fully transparent
+                     (00FFFFFF) so that first frame shows nothing instead of the wrong
+                     art, rather than a visible swap a moment later. -->
+                <texture>swatch.png</texture>
+                <colordiffuse>00FFFFFF</colordiffuse>
+                <aspectratio>keep</aspectratio>
+            </control>
+            <!-- Pill-theme only: draws the exact same icon/label glyph texture used by
+                 control 106 in Text theme, on top of control 106's pill background here,
+                 independently tinted via settings.pill_text_color() (default white, i.e.
+                 no added tint). Unused and left fully transparent in Text theme; see
+                 SkipOverlayDialog._apply_layout() in lib/skip_overlay.py, which sets its
+                 texture/position/size/colour (or blanks it out for Text theme) every time.
+                 Declared after control 106 so it paints on top of it. Starts fully
+                 transparent for the same reason as control 106 above: a hardcoded real
+                 texture here would flash for one frame before onInit's Python corrects it. -->
+            <control type="image" id="107">
+                <left>0</left>
+                <top>0</top>
+                <width>238</width>
+                <height>52</height>
+                <texture>swatch.png</texture>
+                <colordiffuse>00FFFFFF</colordiffuse>
                 <aspectratio>keep</aspectratio>
             </control>
             <!-- Invisible hit/focus button, sized to match the baked art. Must have an
