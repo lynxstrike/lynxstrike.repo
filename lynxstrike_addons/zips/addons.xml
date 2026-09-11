@@ -21,7 +21,7 @@ v1.0.0027 (28.08.2026)
 Updated ITV1, ITV 1 logos
 		</news>
 	</extension>
-</addon><addon id="service.scenepass" name="ScenePass" version="0.01.18" provider-name="lynxstrike">
+</addon><addon id="service.scenepass" name="ScenePass" version="0.01.29" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -35,7 +35,35 @@ Updated ITV1, ITV 1 logos
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.18
+        <news>v0.01.29
+- Fixed: "Pill text colour" stayed visible as an empty heading in Text theme even though every setting under it was correctly hidden -- a plain settings-group heading doesn't hide itself just because its contents do. Replaced with an lsep (a real, individually hideable setting) carrying the same visibility rule as its siblings.
+- New: a "Pill colour" heading now appears above the Skip Intro/Recap button colour settings when Button theme is set to Pill (no heading there in Text theme, where a "pill" label wouldn't make sense).
+- New: a second "Restore default colours" button now also appears in the Pill text colour section (Pill theme only) -- same action as the one further up, so there's no need to scroll back to reset while working in this section.
+v0.01.28
+- Changed: Settings &gt; Appearance's "Pill text colour" section (Skip Intro/Recap pill text colour, and their "Choose colour..." buttons) is now only shown when Button theme is set to Pill -- it has no effect in Text theme, so it's hidden there rather than always shown.
+- Changed: "Preview themes..." now shows Skip Intro AND Skip Recap stacked in each theme panel (previously just Intro stood in for both), each independently coloured from its own accent/pill-text settings, and always re-reads the current settings fresh -- never a stale/cached example.
+v0.01.27
+- Changed: the colour picker's palette grid now jumps focus straight to OK after picking a swatch, so confirming a preset is a single further press.
+- New: Settings &gt; Appearance has a "Preview themes..." button showing an actual live render of Text vs Pill side by side (using your current colours, not a static mockup), with a caption under each; click either to select it.
+- New: in Pill theme, the icon/label text drawn on top of the pill now has its own independent colour (Settings &gt; Appearance's new "Pill text colour" section), separate from the pill's own colour. Defaults to white (no added tint, i.e. the plain glyph). The pill background texture and the glyph texture are now two separately-tinted layers instead of one fused image.
+v0.01.26
+- Fixed: the button briefly flashed the wrong art on appearing (most visible in Pill theme, where plain text showed for a frame before the pill caught up). The overlay's image control had a hardcoded real texture (the Text-theme intro glyph) baked into its XML as a placeholder, which painted for one frame before onInit() had a chance to set the actual theme/kind-correct texture. That placeholder is now fully transparent instead, same trick already used for the invisible hit-button beside it.
+v0.01.25
+- New: button themes. Settings &gt; Appearance now has a "Button theme" choice: Text (the current no-background style, still the default) or Pill, a translucent rounded-pill background behind the exact same icon/label glyph. The pill uses the same intro/recap colour settings as Text -- one colour tint produces both the dim pill fill and the bright glyph automatically, no separate pill colour setting needed.
+v0.01.24
+- Changed: default button colours are now Amber (FFBF00) for Skip Intro and deep blue (002DB2) for Skip Recap, matching the values already in use, rather than the original Orange/light blue.
+- New: Settings &gt; Colours has a "Restore default colours" button, resetting both to the above with a brief on-screen confirmation.
+v0.01.23
+- Fixed: the colour picker had no visible indicator of which swatch/field was currently focused when navigating by keyboard/remote (every grid swatch shares one texture and tint for both its focused and unfocused state, so they looked pixel-identical). Added a two-tone (black+white) focus-ring overlay that follows the current focus onto whichever control it lands on, visible against any swatch colour including pure black or white.
+v0.01.22
+- Fixed: the colour picker dialog only responded to mouse clicks, not keyboard/remote d-pad navigation. None of its controls declared onup/ondown/onleft/onright, and Kodi's automatic geometry-based navigation fallback doesn't reliably link a mixed grid-of-buttons-plus-edit-fields layout like this one. Every one of the 54 focusable controls (the 48-swatch grid, the 4 hex/R/G/B fields, OK, Cancel) now has an explicit navigation graph wired up.
+v0.01.21
+- Fixed: "Choose colour..." crashed with RuntimeError "No valid addon id could be obtained" -- xbmcaddon.Addon() was called with no argument, which only resolves automatically when a script is launched through a declared extension point; the colour picker is launched via RunScript() against a raw file path instead, so that inference has nothing to go on. Now passes the addon id explicitly everywhere xbmcaddon.Addon() is called.
+v0.01.20
+- New: Settings &gt; Colours now has a "Choose colour..." button per segment kind, opening a custom hex/RGB picker dialog: a 48-swatch colour grid (8-hue x 6-row HSV spectrum) to click/navigate through, plus a live preview swatch and separate hex/R/G/B fields for exact values. Built from scratch rather than Kodi's native colour picker, which only exists on Kodi 20 (Nexus) and newer -- this works on Nexus and older too, and stays fully usable from a remote/d-pad (no drag-to-sample gradient that needs a pointer).
+v0.01.19
+- New: Skip Intro / Skip Recap button colour is now configurable (Settings &gt; Colours), either by typing a hex value directly or via the new colour-picker button. Defaults unchanged (Orange for intro, Blue for recap). The baked button art is now a neutral white/alpha shape tinted at render time, rather than pre-colored, so any chosen colour renders accurately.
+v0.01.18
 - Fixed: the invisible hit-button behind the overlay art was showing the active Kodi skin's own default focused-button box (a colored pill), because it lost its explicit texture override when the old composed-pill assets were removed. Restored an explicit (fully transparent) texture reference.
 v0.01.17
 - Fixed: repo listing showed a generic/black thumbnail. addon.xml never declared an &lt;assets&gt; block, so the repo generator wasn't copying icon.png/fanart.jpg alongside the packaged zip where Kodi actually fetches them from (repo uses datadir zip="true").
