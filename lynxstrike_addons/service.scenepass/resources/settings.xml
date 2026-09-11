@@ -45,5 +45,124 @@
                 </setting>
             </group>
         </category>
+        <category id="colours" label="32029">
+            <group id="1">
+                <setting id="button_theme" type="string" label="32026">
+                    <default>text</default>
+                    <constraints>
+                        <options>
+                            <option label="32027">text</option>
+                            <option label="32028">pill</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="string" />
+                </setting>
+                <setting id="preview_button_theme" type="action" label="32035">
+                    <data>RunScript(special://home/addons/service.scenepass/theme_picker.py)</data>
+                    <control type="button" format="action" />
+                </setting>
+            </group>
+            <group id="2">
+                <!-- A plain <group label="..."> can't be theme-conditional (its
+                     heading stays visible even with every setting under it
+                     hidden; see group 3's dependencies below, added after
+                     exactly that bug was observed live). An lsep is a real
+                     setting, so it can carry its own <dependencies> instead:
+                     shown only in Pill theme, where these accent-colour
+                     settings are conceptually "the pill colour"; no heading at
+                     all in Text theme, where they're just "the button colour"
+                     and a specific label would be redundant with the two
+                     settings' own "Skip Intro/Recap button colour" labels. -->
+                <setting id="pill_colour_heading" type="lsep" label="32036">
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="intro_button_color" type="string" label="32012">
+                    <default>FFBF00</default>
+                    <control type="edit" format="string" />
+                </setting>
+                <setting id="intro_button_color_picker" type="action" label="32023">
+                    <data>RunScript(special://home/addons/service.scenepass/color_picker.py,intro_accent)</data>
+                    <control type="button" format="action" />
+                </setting>
+                <setting id="recap_button_color" type="string" label="32013">
+                    <default>002DB2</default>
+                    <control type="edit" format="string" />
+                </setting>
+                <setting id="recap_button_color_picker" type="action" label="32024">
+                    <data>RunScript(special://home/addons/service.scenepass/color_picker.py,recap_accent)</data>
+                    <control type="button" format="action" />
+                </setting>
+                <setting id="restore_button_colors" type="action" label="32025">
+                    <data>RunScript(special://home/addons/service.scenepass/restore_colors.py)</data>
+                    <control type="button" format="action" />
+                </setting>
+            </group>
+            <group id="3">
+                <!-- lsep instead of a plain group label, so this heading hides
+                     along with the rest of the group in Text theme; see the
+                     comment on group 2's pill_colour_heading above. -->
+                <setting id="pill_text_colour_heading" type="lsep" label="32030">
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="intro_pill_text_color" type="string" label="32031">
+                    <default>FFFFFF</default>
+                    <control type="edit" format="string" />
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="intro_pill_text_color_picker" type="action" label="32032">
+                    <data>RunScript(special://home/addons/service.scenepass/color_picker.py,intro_pill_text)</data>
+                    <control type="button" format="action" />
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="recap_pill_text_color" type="string" label="32033">
+                    <default>FFFFFF</default>
+                    <control type="edit" format="string" />
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <setting id="recap_pill_text_color_picker" type="action" label="32034">
+                    <data>RunScript(special://home/addons/service.scenepass/color_picker.py,recap_pill_text)</data>
+                    <control type="button" format="action" />
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+                <!-- Same action as restore_button_colors above (resets every
+                     registered colour, not just the pill-text ones; see
+                     lib/settings.py:restore_default_button_colors) duplicated
+                     here for convenience while working in this section, so
+                     there's no need to scroll back up to group 2 for it. -->
+                <setting id="restore_pill_text_colors" type="action" label="32025">
+                    <data>RunScript(special://home/addons/service.scenepass/restore_colors.py)</data>
+                    <control type="button" format="action" />
+                    <dependencies>
+                        <dependency type="visible">
+                            <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                    </dependencies>
+                </setting>
+            </group>
+        </category>
     </section>
 </settings>

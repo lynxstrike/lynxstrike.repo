@@ -44,3 +44,103 @@ msgstr ""
 msgctxt "#32010"
 msgid "Debug logging"
 msgstr ""
+
+msgctxt "#32011"
+msgid "Colours"
+msgstr ""
+
+msgctxt "#32012"
+msgid "Skip Intro button colour"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Skip Recap button colour"
+msgstr ""
+
+msgctxt "#32014"
+msgid "White"
+msgstr ""
+
+msgctxt "#32015"
+msgid "Orange"
+msgstr ""
+
+msgctxt "#32016"
+msgid "Blue"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Red"
+msgstr ""
+
+msgctxt "#32018"
+msgid "Green"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Yellow"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Purple"
+msgstr ""
+
+msgctxt "#32021"
+msgid "Grey"
+msgstr ""
+
+msgctxt "#32023"
+msgid "Choose Skip Intro colour..."
+msgstr ""
+
+msgctxt "#32024"
+msgid "Choose Skip Recap colour..."
+msgstr ""
+
+msgctxt "#32025"
+msgid "Restore default colours"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Button theme"
+msgstr ""
+
+msgctxt "#32027"
+msgid "Text"
+msgstr ""
+
+msgctxt "#32028"
+msgid "Pill"
+msgstr ""
+
+msgctxt "#32029"
+msgid "Appearance"
+msgstr ""
+
+msgctxt "#32030"
+msgid "Pill text colour"
+msgstr ""
+
+msgctxt "#32031"
+msgid "Skip Intro pill text colour"
+msgstr ""
+
+msgctxt "#32032"
+msgid "Choose Skip Intro pill text colour..."
+msgstr ""
+
+msgctxt "#32033"
+msgid "Skip Recap pill text colour"
+msgstr ""
+
+msgctxt "#32034"
+msgid "Choose Skip Recap pill text colour..."
+msgstr ""
+
+msgctxt "#32035"
+msgid "Preview themes..."
+msgstr ""
+
+msgctxt "#32036"
+msgid "Pill colour"
+msgstr ""

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <!-- Visual "Button theme" preview/picker, launched via RunScript(theme_picker.py)
+         from Settings > Appearance's "Preview themes..." button (see
+         lib/theme_picker.py). Two side-by-side panels, each an actual live render of
+         that theme's Skip Intro AND Skip Recap buttons (stacked), using the real
+         production textures and the current colour settings for each segment kind
+         independently, not a static mockup; onInit() re-reads every colour setting
+         fresh each time this opens, so what's shown always matches your current
+         choices, never a stale/cached example. Clicking a panel sets button_theme
+         and closes immediately, since this is a single binary choice; Back/ESC
+         closes without changing anything.
+
+         Every focusable control has explicit onup/ondown/onleft/onright, learned
+         the hard way on service.scenepass-ColorPicker.xml: Kodi's automatic
+         geometry-based navigation fallback (used when these are omitted) is not
+         reliable enough to trust here.
+
+         No <font> is set on any control: this addon ships no Font.xml for its
+         minimal skin, so an unset <font> falls back to Kodi's guaranteed default
+         GUI font rather than risking a reference to an undefined font id. -->
+    <defaultcontrol always="true">411</defaultcontrol>
+    <controls>
+        <control type="group" id="200">
+            <left>510</left>
+            <top>345</top>
+            <width>900</width>
+            <height>390</height>
+
+            <control type="image" id="201">
+                <left>0</left>
+                <top>0</top>
+                <width>900</width>
+                <height>390</height>
+                <texture>swatch.png</texture>
+                <colordiffuse>E6141414</colordiffuse>
+            </control>
+
+            <control type="label" id="202">
+                <left>30</left>
+                <top>20</top>
+                <width>840</width>
+                <height>36</height>
+                <label>Button theme</label>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <!-- Text panel: the plain icon/label glyph, no background. Both segment
+                 kinds stacked (Intro above Recap), each tinted with its own accent
+                 colour in onInit(). -->
+            <control type="group" id="410">
+                <left>60</left>
+                <top>76</top>
+                <width>380</width>
+                <height>280</height>
+
+                <!-- Card backdrop, also the focusable/clickable control for this
+                     option. Its own colordiffuse can't differ by focus state (a
+                     Kodi limitation; see service.scenepass-ColorPicker.xml's
+                     focus-ring notes), so focus is shown via the shared ring
+                     overlay (id 490) instead, same as the colour picker. -->
+                <control type="button" id="411">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>380</width>
+                    <height>280</height>
+                    <label></label>
+                    <texturefocus>swatch.png</texturefocus>
+                    <texturenofocus>swatch.png</texturenofocus>
+                    <colordiffuse>CC1F1F1F</colordiffuse>
+                    <onup>411</onup>
+                    <ondown>411</ondown>
+                    <onleft>421</onleft>
+                    <onright>421</onright>
+                </control>
+                <!-- Skip Intro preview: real Text-theme glyph texture, tinted in
+                     onInit() with the current intro accent colour. -->
+                <control type="image" id="412">
+                    <left>32</left>
+                    <top>46</top>
+                    <width>316</width>
+                    <height>60</height>
+                    <texture>skip_intro_button.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                </control>
+                <!-- Skip Recap preview: tinted in onInit() with the current recap
+                     accent colour. -->
+                <control type="image" id="413">
+                    <left>19</left>
+                    <top>120</top>
+                    <width>342</width>
+                    <height>60</height>
+                    <texture>skip_recap_button.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                </control>
+                <control type="label" id="414">
+                    <left>0</left>
+                    <top>194</top>
+                    <width>380</width>
+                    <height>30</height>
+                    <label>Text</label>
+                    <align>center</align>
+                    <textcolor>FFFFFFFF</textcolor>
+                </control>
+                <control type="label" id="415">
+                    <left>0</left>
+                    <top>228</top>
+                    <width>380</width>
+                    <height>26</height>
+                    <label>No background</label>
+                    <align>center</align>
+                    <textcolor>FFAAAAAA</textcolor>
+                </control>
+            </control>
+
+            <!-- Pill panel: translucent rounded background + the same glyph on top,
+                 independently tinted; two image controls per segment kind, same as
+                 the real overlay (see SkipOverlayDialog._apply_layout in
+                 lib/skip_overlay.py). Both kinds stacked, same as the Text panel. -->
+            <control type="group" id="420">
+                <left>460</left>
+                <top>76</top>
+                <width>380</width>
+                <height>280</height>
+
+                <control type="button" id="421">
+                    <left>0</left>
+                    <top>0</top>
+                    <width>380</width>
+                    <height>280</height>
+                    <label></label>
+                    <texturefocus>swatch.png</texturefocus>
+                    <texturenofocus>swatch.png</texturenofocus>
+                    <colordiffuse>CC1F1F1F</colordiffuse>
+                    <onup>421</onup>
+                    <ondown>421</ondown>
+                    <onleft>411</onleft>
+                    <onright>411</onright>
+                </control>
+                <!-- Skip Intro pill background: tinted in onInit() with the current
+                     intro accent colour. -->
+                <control type="image" id="422">
+                    <left>73</left>
+                    <top>46</top>
+                    <width>234</width>
+                    <height>60</height>
+                    <texture>skip_intro_pill_bg.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                </control>
+                <!-- Skip Intro glyph overlay: same texture as the Text panel's intro
+                     row, tinted independently with the current intro pill-text
+                     colour (defaults white). Position/size match
+                     SkipOverlayDialog's glyph_rect_frac math for this asset, scaled
+                     to this preview's 234x60 pill row instead of the real button's
+                     on-screen size. -->
+                <control type="image" id="423">
+                    <left>93</left>
+                    <top>58</top>
+                    <width>197</width>
+                    <height>37</height>
+                    <texture>skip_intro_button.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                </control>
+                <!-- Skip Recap pill background: tinted with the current recap
+                     accent colour. -->
+                <control type="image" id="424">
+                    <left>66</left>
+                    <top>120</top>
+                    <width>248</width>
+                    <height>60</height>
+                    <texture>skip_recap_pill_bg.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                </control>
+                <!-- Skip Recap glyph overlay: tinted with the current recap
+                     pill-text colour. -->
+                <control type="image" id="425">
+                    <left>86</left>
+                    <top>132</top>
+                    <width>211</width>
+                    <height>37</height>
+                    <texture>skip_recap_button.png</texture>
+                    <colordiffuse>FFFFFFFF</colordiffuse>
+                </control>
+                <control type="label" id="426">
+                    <left>0</left>
+                    <top>194</top>
+                    <width>380</width>
+                    <height>30</height>
+                    <label>Pill</label>
+                    <align>center</align>
+                    <textcolor>FFFFFFFF</textcolor>
+                </control>
+                <control type="label" id="427">
+                    <left>0</left>
+                    <top>228</top>
+                    <width>380</width>
+                    <height>26</height>
+                    <label>Rounded background</label>
+                    <align>center</align>
+                    <textcolor>FFAAAAAA</textcolor>
+                </control>
+            </control>
+
+            <!-- Focus ring: same reusable overlay/texture as the colour picker,
+                 repositioned in Python onto whichever panel (411 or 421) currently
+                 has focus. Declared last so it paints on top of both panels. -->
+            <control type="image" id="490">
+                <left>54</left>
+                <top>70</top>
+                <width>392</width>
+                <height>292</height>
+                <texture border="4,4,4,4">focus_ring.png</texture>
+            </control>
+        </control>
+    </controls>
+</window>

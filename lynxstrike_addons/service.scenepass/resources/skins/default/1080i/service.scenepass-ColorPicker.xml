@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog">
+    <!-- Custom hex/RGB colour picker, launched via RunScript(color_picker.py, <kind>)
+         from Settings > Colours (see lib/color_picker.py). Built from scratch rather
+         than using Kodi's native colorbutton setting control, which only exists on
+         Kodi 20 (Nexus) and newer; this addon supports Nexus and older.
+         The 48-swatch grid (ids 300-347) is an 8-hue x 6-row HSV spectrum (grayscale
+         ramp + 5 saturation/value bands); see lib/color_picker.py:_PALETTE for the
+         exact hex value baked into each swatch's colordiffuse. A discrete grid rather
+         than a continuous drag-to-sample gradient is deliberate: Kodi is commonly
+         driven by a remote/d-pad with no pointer, and a button grid is fully
+         navigable that way, while pixel-accurate gradient sampling would not be.
+         No <font> is set on any control here: this addon ships no Font.xml for its
+         minimal skin, so an unset <font> falls back to Kodi's guaranteed default GUI
+         font rather than risking a reference to an undefined font id.
+
+         Every focusable control has an explicit onup/ondown/onleft/onright: Kodi's
+         automatic geometry-based navigation fallback (used when these are omitted)
+         proved unreliable here across the mix of button/edit controls, so keyboard
+         and remote/d-pad navigation didn't work at all until these were added.
+         Within the 48-swatch grid, up/down/left/right all wrap at the grid's edges
+         (e.g. top row up goes to the bottom row, same column); the rightmost column
+         additionally bridges right/left to the field column at the matching row
+         (row 0 <-> hex 205, row 1 <-> R 207, row 2 <-> G 209, row 3 <-> B 211, row 4
+         <-> OK 230, row 5 <-> Cancel 231). The field column (205/207/209/211) wraps
+         up/down among itself, with B (211) down into OK (230); OK/Cancel wrap up/down
+         back to B (211) and the top of the field column (205), and left/right between
+         each other. A control's onright/onleft pointing to its own id (e.g. 205's
+         onright, 231's onright) is the standard Kodi trick for "don't move" at an
+         edge, rather than leaving that direction unset and reintroducing the
+         unreliable automatic fallback for just that one direction. -->
+    <defaultcontrol always="true">300</defaultcontrol>
+    <controls>
+        <control type="group" id="200">
+            <left>510</left>
+            <top>200</top>
+            <width>900</width>
+            <height>680</height>
+
+            <!-- Backdrop panel -->
+            <control type="image" id="201">
+                <left>0</left>
+                <top>0</top>
+                <width>900</width>
+                <height>680</height>
+                <texture>swatch.png</texture>
+                <colordiffuse>E6141414</colordiffuse>
+            </control>
+
+            <control type="label" id="202">
+                <left>30</left>
+                <top>20</top>
+                <width>840</width>
+                <height>36</height>
+                <label>Choose colour</label>
+                <textcolor>FFFFFFFF</textcolor>
+            </control>
+
+            <control type="label" id="212">
+                <left>30</left>
+                <top>70</top>
+                <width>300</width>
+                <height>28</height>
+                <label>Colours</label>
+                <textcolor>FFCCCCCC</textcolor>
+            </control>
+
+            <!-- 48-swatch palette grid: 8 columns x 6 rows, 68px stride, 60x60 swatches -->
+            <control type="button" id="300"><left>30</left><top>104</top><width>60</width><height>60</height><label></label><onup>340</onup><ondown>308</ondown><onleft>307</onleft><onright>301</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF000000</colordiffuse></control>
+            <control type="button" id="301"><left>98</left><top>104</top><width>60</width><height>60</height><label></label><onup>341</onup><ondown>309</ondown><onleft>300</onleft><onright>302</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF242424</colordiffuse></control>
+            <control type="button" id="302"><left>166</left><top>104</top><width>60</width><height>60</height><label></label><onup>342</onup><ondown>310</ondown><onleft>301</onleft><onright>303</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF494949</colordiffuse></control>
+            <control type="button" id="303"><left>234</left><top>104</top><width>60</width><height>60</height><label></label><onup>343</onup><ondown>311</ondown><onleft>302</onleft><onright>304</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF6D6D6D</colordiffuse></control>
+            <control type="button" id="304"><left>302</left><top>104</top><width>60</width><height>60</height><label></label><onup>344</onup><ondown>312</ondown><onleft>303</onleft><onright>305</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF929292</colordiffuse></control>
+            <control type="button" id="305"><left>370</left><top>104</top><width>60</width><height>60</height><label></label><onup>345</onup><ondown>313</ondown><onleft>304</onleft><onright>306</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFB6B6B6</colordiffuse></control>
+            <control type="button" id="306"><left>438</left><top>104</top><width>60</width><height>60</height><label></label><onup>346</onup><ondown>314</ondown><onleft>305</onleft><onright>307</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFDBDBDB</colordiffuse></control>
+            <control type="button" id="307"><left>506</left><top>104</top><width>60</width><height>60</height><label></label><onup>347</onup><ondown>315</ondown><onleft>306</onleft><onright>205</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFFFFFF</colordiffuse></control>
+
+            <control type="button" id="308"><left>30</left><top>172</top><width>60</width><height>60</height><label></label><onup>300</onup><ondown>316</ondown><onleft>315</onleft><onright>309</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFF0000</colordiffuse></control>
+            <control type="button" id="309"><left>98</left><top>172</top><width>60</width><height>60</height><label></label><onup>301</onup><ondown>317</ondown><onleft>308</onleft><onright>310</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFFBF00</colordiffuse></control>
+            <control type="button" id="310"><left>166</left><top>172</top><width>60</width><height>60</height><label></label><onup>302</onup><ondown>318</ondown><onleft>309</onleft><onright>311</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF80FF00</colordiffuse></control>
+            <control type="button" id="311"><left>234</left><top>172</top><width>60</width><height>60</height><label></label><onup>303</onup><ondown>319</ondown><onleft>310</onleft><onright>312</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF00FF40</colordiffuse></control>
+            <control type="button" id="312"><left>302</left><top>172</top><width>60</width><height>60</height><label></label><onup>304</onup><ondown>320</ondown><onleft>311</onleft><onright>313</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF00FFFF</colordiffuse></control>
+            <control type="button" id="313"><left>370</left><top>172</top><width>60</width><height>60</height><label></label><onup>305</onup><ondown>321</ondown><onleft>312</onleft><onright>314</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF0040FF</colordiffuse></control>
+            <control type="button" id="314"><left>438</left><top>172</top><width>60</width><height>60</height><label></label><onup>306</onup><ondown>322</ondown><onleft>313</onleft><onright>315</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF8000FF</colordiffuse></control>
+            <control type="button" id="315"><left>506</left><top>172</top><width>60</width><height>60</height><label></label><onup>307</onup><ondown>323</ondown><onleft>314</onleft><onright>207</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFF00BF</colordiffuse></control>
+
+            <control type="button" id="316"><left>30</left><top>240</top><width>60</width><height>60</height><label></label><onup>308</onup><ondown>324</ondown><onleft>323</onleft><onright>317</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFB20000</colordiffuse></control>
+            <control type="button" id="317"><left>98</left><top>240</top><width>60</width><height>60</height><label></label><onup>309</onup><ondown>325</ondown><onleft>316</onleft><onright>318</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFB28600</colordiffuse></control>
+            <control type="button" id="318"><left>166</left><top>240</top><width>60</width><height>60</height><label></label><onup>310</onup><ondown>326</ondown><onleft>317</onleft><onright>319</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF59B200</colordiffuse></control>
+            <control type="button" id="319"><left>234</left><top>240</top><width>60</width><height>60</height><label></label><onup>311</onup><ondown>327</ondown><onleft>318</onleft><onright>320</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF00B22D</colordiffuse></control>
+            <control type="button" id="320"><left>302</left><top>240</top><width>60</width><height>60</height><label></label><onup>312</onup><ondown>328</ondown><onleft>319</onleft><onright>321</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF00B2B2</colordiffuse></control>
+            <control type="button" id="321"><left>370</left><top>240</top><width>60</width><height>60</height><label></label><onup>313</onup><ondown>329</ondown><onleft>320</onleft><onright>322</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF002DB2</colordiffuse></control>
+            <control type="button" id="322"><left>438</left><top>240</top><width>60</width><height>60</height><label></label><onup>314</onup><ondown>330</ondown><onleft>321</onleft><onright>323</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF5900B2</colordiffuse></control>
+            <control type="button" id="323"><left>506</left><top>240</top><width>60</width><height>60</height><label></label><onup>315</onup><ondown>331</ondown><onleft>322</onleft><onright>209</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFB20086</colordiffuse></control>
+
+            <control type="button" id="324"><left>30</left><top>308</top><width>60</width><height>60</height><label></label><onup>316</onup><ondown>332</ondown><onleft>331</onleft><onright>325</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFF7373</colordiffuse></control>
+            <control type="button" id="325"><left>98</left><top>308</top><width>60</width><height>60</height><label></label><onup>317</onup><ondown>333</ondown><onleft>324</onleft><onright>326</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFFDC73</colordiffuse></control>
+            <control type="button" id="326"><left>166</left><top>308</top><width>60</width><height>60</height><label></label><onup>318</onup><ondown>334</ondown><onleft>325</onleft><onright>327</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFB9FF73</colordiffuse></control>
+            <control type="button" id="327"><left>234</left><top>308</top><width>60</width><height>60</height><label></label><onup>319</onup><ondown>335</ondown><onleft>326</onleft><onright>328</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF73FF96</colordiffuse></control>
+            <control type="button" id="328"><left>302</left><top>308</top><width>60</width><height>60</height><label></label><onup>320</onup><ondown>336</ondown><onleft>327</onleft><onright>329</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF73FFFF</colordiffuse></control>
+            <control type="button" id="329"><left>370</left><top>308</top><width>60</width><height>60</height><label></label><onup>321</onup><ondown>337</ondown><onleft>328</onleft><onright>330</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF7396FF</colordiffuse></control>
+            <control type="button" id="330"><left>438</left><top>308</top><width>60</width><height>60</height><label></label><onup>322</onup><ondown>338</ondown><onleft>329</onleft><onright>331</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFB973FF</colordiffuse></control>
+            <control type="button" id="331"><left>506</left><top>308</top><width>60</width><height>60</height><label></label><onup>323</onup><ondown>339</ondown><onleft>330</onleft><onright>211</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFFF73DC</colordiffuse></control>
+
+            <control type="button" id="332"><left>30</left><top>376</top><width>60</width><height>60</height><label></label><onup>324</onup><ondown>340</ondown><onleft>339</onleft><onright>333</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF730000</colordiffuse></control>
+            <control type="button" id="333"><left>98</left><top>376</top><width>60</width><height>60</height><label></label><onup>325</onup><ondown>341</ondown><onleft>332</onleft><onright>334</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF735600</colordiffuse></control>
+            <control type="button" id="334"><left>166</left><top>376</top><width>60</width><height>60</height><label></label><onup>326</onup><ondown>342</ondown><onleft>333</onleft><onright>335</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF397300</colordiffuse></control>
+            <control type="button" id="335"><left>234</left><top>376</top><width>60</width><height>60</height><label></label><onup>327</onup><ondown>343</ondown><onleft>334</onleft><onright>336</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF00731D</colordiffuse></control>
+            <control type="button" id="336"><left>302</left><top>376</top><width>60</width><height>60</height><label></label><onup>328</onup><ondown>344</ondown><onleft>335</onleft><onright>337</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF007373</colordiffuse></control>
+            <control type="button" id="337"><left>370</left><top>376</top><width>60</width><height>60</height><label></label><onup>329</onup><ondown>345</ondown><onleft>336</onleft><onright>338</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF001D73</colordiffuse></control>
+            <control type="button" id="338"><left>438</left><top>376</top><width>60</width><height>60</height><label></label><onup>330</onup><ondown>346</ondown><onleft>337</onleft><onright>339</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF390073</colordiffuse></control>
+            <control type="button" id="339"><left>506</left><top>376</top><width>60</width><height>60</height><label></label><onup>331</onup><ondown>347</ondown><onleft>338</onleft><onright>230</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF730056</colordiffuse></control>
+
+            <control type="button" id="340"><left>30</left><top>444</top><width>60</width><height>60</height><label></label><onup>332</onup><ondown>300</ondown><onleft>347</onleft><onright>341</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFF29D9D</colordiffuse></control>
+            <control type="button" id="341"><left>98</left><top>444</top><width>60</width><height>60</height><label></label><onup>333</onup><ondown>301</ondown><onleft>340</onleft><onright>342</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFF2DD9D</colordiffuse></control>
+            <control type="button" id="342"><left>166</left><top>444</top><width>60</width><height>60</height><label></label><onup>334</onup><ondown>302</ondown><onleft>341</onleft><onright>343</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFC8F29D</colordiffuse></control>
+            <control type="button" id="343"><left>234</left><top>444</top><width>60</width><height>60</height><label></label><onup>335</onup><ondown>303</ondown><onleft>342</onleft><onright>344</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF9DF2B3</colordiffuse></control>
+            <control type="button" id="344"><left>302</left><top>444</top><width>60</width><height>60</height><label></label><onup>336</onup><ondown>304</ondown><onleft>343</onleft><onright>345</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF9DF2F2</colordiffuse></control>
+            <control type="button" id="345"><left>370</left><top>444</top><width>60</width><height>60</height><label></label><onup>337</onup><ondown>305</ondown><onleft>344</onleft><onright>346</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FF9DB3F2</colordiffuse></control>
+            <control type="button" id="346"><left>438</left><top>444</top><width>60</width><height>60</height><label></label><onup>338</onup><ondown>306</ondown><onleft>345</onleft><onright>347</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFC89DF2</colordiffuse></control>
+            <control type="button" id="347"><left>506</left><top>444</top><width>60</width><height>60</height><label></label><onup>339</onup><ondown>307</ondown><onleft>346</onleft><onright>231</onright><texturefocus>swatch.png</texturefocus><texturenofocus>swatch.png</texturenofocus><colordiffuse>FFF29DDD</colordiffuse></control>
+
+            <!-- Right column: live preview + exact hex/RGB entry -->
+            <control type="image" id="203">
+                <left>610</left>
+                <top>70</top>
+                <width>260</width>
+                <height>140</height>
+                <texture>swatch.png</texture>
+                <colordiffuse>FFFFFFFF</colordiffuse>
+            </control>
+
+            <control type="label" id="204">
+                <left>610</left>
+                <top>226</top>
+                <width>200</width>
+                <height>32</height>
+                <label>Hex</label>
+                <textcolor>FFCCCCCC</textcolor>
+            </control>
+            <control type="edit" id="205">
+                <left>610</left>
+                <top>258</top>
+                <width>260</width>
+                <height>40</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>Hex</label>
+                <hinttext>RRGGBB</hinttext>
+                <inputtype>text</inputtype>
+                <onup>211</onup>
+                <ondown>207</ondown>
+                <onleft>307</onleft>
+                <onright>205</onright>
+            </control>
+
+            <control type="label" id="206">
+                <left>610</left>
+                <top>314</top>
+                <width>200</width>
+                <height>32</height>
+                <label>R (0-255)</label>
+                <textcolor>FFFF8080</textcolor>
+            </control>
+            <control type="edit" id="207">
+                <left>610</left>
+                <top>346</top>
+                <width>260</width>
+                <height>40</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>R</label>
+                <hinttext>0-255</hinttext>
+                <inputtype>number</inputtype>
+                <onup>205</onup>
+                <ondown>209</ondown>
+                <onleft>315</onleft>
+                <onright>207</onright>
+            </control>
+
+            <control type="label" id="208">
+                <left>610</left>
+                <top>402</top>
+                <width>200</width>
+                <height>32</height>
+                <label>G (0-255)</label>
+                <textcolor>FF80FF80</textcolor>
+            </control>
+            <control type="edit" id="209">
+                <left>610</left>
+                <top>434</top>
+                <width>260</width>
+                <height>40</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>G</label>
+                <hinttext>0-255</hinttext>
+                <inputtype>number</inputtype>
+                <onup>207</onup>
+                <ondown>211</ondown>
+                <onleft>323</onleft>
+                <onright>209</onright>
+            </control>
+
+            <control type="label" id="210">
+                <left>610</left>
+                <top>490</top>
+                <width>200</width>
+                <height>32</height>
+                <label>B (0-255)</label>
+                <textcolor>FF8080FF</textcolor>
+            </control>
+            <control type="edit" id="211">
+                <left>610</left>
+                <top>522</top>
+                <width>260</width>
+                <height>40</height>
+                <textcolor>FFFFFFFF</textcolor>
+                <label>B</label>
+                <hinttext>0-255</hinttext>
+                <inputtype>number</inputtype>
+                <onup>209</onup>
+                <ondown>230</ondown>
+                <onleft>331</onleft>
+                <onright>211</onright>
+            </control>
+
+            <control type="button" id="230">
+                <left>618</left>
+                <top>610</top>
+                <width>120</width>
+                <height>50</height>
+                <label>OK</label>
+                <textcolor>FFFFFFFF</textcolor>
+                <texturefocus>swatch.png</texturefocus>
+                <texturenofocus>swatch.png</texturenofocus>
+                <colordiffuse>FF2ECC71</colordiffuse>
+                <onup>211</onup>
+                <ondown>205</ondown>
+                <onleft>339</onleft>
+                <onright>231</onright>
+            </control>
+            <control type="button" id="231">
+                <left>750</left>
+                <top>610</top>
+                <width>120</width>
+                <height>50</height>
+                <label>Cancel</label>
+                <textcolor>FFFFFFFF</textcolor>
+                <texturefocus>swatch.png</texturefocus>
+                <texturenofocus>swatch.png</texturenofocus>
+                <colordiffuse>FF555555</colordiffuse>
+                <onup>211</onup>
+                <ondown>205</ondown>
+                <onleft>230</onleft>
+                <onright>231</onright>
+            </control>
+
+            <!-- Focus ring: a single reusable, non-focusable overlay that
+                 lib/color_picker.py repositions/resizes onto whichever control
+                 currently has focus (see ColorPickerDialog._update_focus_ring).
+                 Declared last so it paints on top of every swatch/field/button.
+                 texturefocus/texturenofocus on every button share one texture
+                 and colordiffuse, so a focused grid swatch is otherwise pixel-
+                 identical to an unfocused one; with no ring, keyboard/remote
+                 navigation (added in a previous pass) had no visible indicator
+                 of the current position at all. Initial rect below matches
+                 swatch 300's (the XML defaultcontrol) as a same-frame fallback
+                 in case onInit's first _update_focus_ring() call is ever late. -->
+            <control type="image" id="290">
+                <left>26</left>
+                <top>100</top>
+                <width>68</width>
+                <height>68</height>
+                <texture border="4,4,4,4">focus_ring.png</texture>
+            </control>
+        </control>
+    </controls>
+</window>
