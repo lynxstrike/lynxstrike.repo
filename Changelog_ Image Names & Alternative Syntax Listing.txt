@@ -393,6 +393,7 @@ Channel 83
 Channel Nine
 Channel Ten
 Chaos Cedar
+Chappelle
 Chargeurs
 Charles Chaplin Productions
 Chessman Park Productions
@@ -615,6 +616,7 @@ Euro Film Funding
 Evamere Entertainment
 Everett Lewis Films
 Every Cloud Productions Pty Ltd
+Exclusive Media
 Eén
 Fable House
 Fabula Pictures
@@ -994,6 +996,7 @@ Legendary East
 Legendary Entertainment
 Legendary Television
 Leisure Investment Company
+Lemon Studios
 Leonine Studios
 Lerche
 Les Films Alain Sarde
@@ -1315,6 +1318,7 @@ Pathe!
 Pathé
 Pathé Production
 Pathé!
+Patriot Pictures
 Peace Arch Entertainment
 Peacock
 Peacock Premium
@@ -1357,6 +1361,7 @@ Price Entertainment
 Pride Of Gypsies
 Primate Pictures
 Prime Video
+Prime Zero Productions
 Pro-Fun Media
 Producciones Alatriste
 Producciones Balcázar
@@ -1368,6 +1373,7 @@ PTV Networks
 PTV Pakistan Television
 Pukka Films
 Pulse Films
+Punch Palace Productios
 Pupkin
 Pupkin Film
 Quibi
@@ -1499,6 +1505,7 @@ Santa Fe Films
 Santa Fe Productions
 SBS (Au)
 SBS (KR)
+Scandinavian Content Group
 Scarlett Pictures
 Schweizer Radio und Fernsehen (SRF)
 Science Saru
@@ -1644,6 +1651,7 @@ Stewart Wade Films
 Storm Post Production
 Storyboard Media
 Strand Releasing
+Strike Entertaiment
 Studio 8
 Studio Bind
 Studio Khara
@@ -1679,6 +1687,7 @@ SUN-TV
 Sundance Channel
 Sundance TV
 SundanceTV
+Sunday Night Productions
 SunnyMarch
 Super Channel
 Super Cool ManChu
@@ -1892,6 +1901,7 @@ Vimeo On Demand
 Vinegar Syndrome
 Virgin Films
 Virgin Media
+Vision Distribution
 Visual Works
 Viva Films
 Vivamax
@@ -1919,6 +1929,7 @@ Warner TV Serie
 Warp Films
 Warparty Films
 Water Bearer Films
+Wayans Bros. Entertainment
 WB
 WB Kids
 WDR
