@@ -8,6 +8,7 @@ import xbmc
 
 from lib import settings
 from lib.player_hook import ScenePassPlayer
+from lib.share_beat import PlaybackBeat
 from lib.segments import Segment
 from lib.sidecar import log
 from lib.skip_overlay import SkipOverlayDialog, create_overlay
@@ -23,6 +24,7 @@ class SkipEngine:
         self._overlay_kind: Optional[str] = None
         self._last_position = 0.0
         self._last_playback_key: Optional[str] = None
+        self._beat = PlaybackBeat()
 
     def run(self) -> None:
         log('Service started', xbmc.LOGINFO)
@@ -31,16 +33,26 @@ class SkipEngine:
                 break
             self._tick()
         self._close_overlay()
+        self._beat.stop()
         log('Service stopped', xbmc.LOGINFO)
 
     def _tick(self) -> None:
         if not self.player.isPlayingVideo():
+            self._beat.stop()
             if self._overlay is not None:
                 log('Playback stopped, closing overlay')
             self._close_overlay()
             self._last_playback_key = None
             self._last_position = 0.0
             return
+
+        if settings.announce_playback():
+            try:
+                self._beat.tick(self.player.getPlayingFile() or '')
+            except RuntimeError:
+                pass
+        else:
+            self._beat.stop()
 
         schedule = self.player.schedule
         playback_key = self.player.playback_key

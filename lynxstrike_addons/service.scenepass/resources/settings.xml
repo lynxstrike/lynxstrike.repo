@@ -43,6 +43,10 @@
                     <default>false</default>
                     <control type="toggle" />
                 </setting>
+                <setting id="announce_playback" type="boolean" label="32037" help="32038">
+                    <default>true</default>
+                    <control type="toggle" />
+                </setting>
             </group>
         </category>
         <category id="colours" label="32029">

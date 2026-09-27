@@ -144,3 +144,11 @@ msgstr ""
 msgctxt "#32036"
 msgid "Pill colour"
 msgstr ""
+
+msgctxt "#32037"
+msgid "Let ScenePass scanners ease off the drive while playing"
+msgstr ""
+
+msgctxt "#32038"
+msgid "While a video plays from a library shared by ScenePass (Family Share), ScenePass on your PCs reads that drive more gently so playback never stutters. Nothing is written on libraries without ScenePass Family Share."
+msgstr ""

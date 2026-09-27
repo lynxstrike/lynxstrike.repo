@@ -1,2 +1,4 @@
 *.lnk
 *.ini
+__pycache__/
+*.pyc

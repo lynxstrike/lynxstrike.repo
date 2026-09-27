@@ -38,6 +38,12 @@ def debug_logging() -> bool:
     return _addon.getSettingBool('debug_log')
 
 
+def announce_playback() -> bool:
+    """Family Share: let ScenePass scanners on the PCs ease off this library's
+    drive while it's playing here (lib/share_beat.py)."""
+    return _addon.getSettingBool('announce_playback')
+
+
 _VALID_BUTTON_THEMES = ('text', 'pill')
 
 
