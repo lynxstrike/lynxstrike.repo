@@ -164,6 +164,50 @@
   .btn-primary:hover{background:#ffd23d;}
   .btn-ghost{border:1px solid var(--edge);color:var(--ink);}
   .btn-ghost:hover{border-color:var(--ink-dim);}
+  .btn-app{
+    font-family:'Public Sans',sans-serif;font-weight:700;font-size:14px;
+    padding:13px 22px;border-radius:10px;text-decoration:none;
+    display:inline-flex;align-items:center;gap:8px;
+    background:linear-gradient(135deg,#32C8FF,#008BFF);color:#04111f;
+    transition:transform .25s ease,box-shadow .25s ease;
+  }
+  .btn-app:hover{transform:translateY(-2px);box-shadow:0 12px 30px -10px rgba(50,200,255,.55);}
+  .btn-app svg,.app-card svg{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+  .btn-app svg{width:16px;height:16px;}
+  .inline-link{color:#32C8FF;text-decoration:none;border-bottom:1px solid rgba(50,200,255,.4);}
+  .inline-link:hover{border-bottom-color:#32C8FF;}
+
+  /* cross-link to the ScenePass desktop app, in the app's own blue/orange */
+  .app-card{
+    position:relative;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:28px;
+    margin-top:48px;padding:28px 32px;border-radius:18px;overflow:hidden;
+    background:
+      radial-gradient(120% 140% at 0% 0%,rgba(50,200,255,.14),transparent 55%),
+      radial-gradient(120% 140% at 100% 100%,rgba(255,152,30,.12),transparent 55%),
+      var(--surface);
+    border:1px solid var(--edge);color:var(--ink);text-decoration:none;
+    transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+  }
+  .app-card:hover{transform:translateY(-3px);border-color:rgba(50,200,255,.5);box-shadow:0 24px 60px -28px rgba(50,200,255,.45);}
+  .app-card:focus-visible{outline:2px solid var(--focus);outline-offset:4px;}
+  .app-card-art{
+    width:72px;height:72px;border-radius:18px;display:grid;place-items:center;
+    background:linear-gradient(145deg,#32C8FF,#FF981E);color:#04111f;
+  }
+  .app-card-art svg{width:36px;height:36px;}
+  .app-card-kicker{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#32C8FF;margin-bottom:6px;}
+  .app-card-body h3{margin:0 0 6px;font-size:20px;}
+  .app-card-body p{margin:0;color:var(--ink-dim);font-size:15px;line-height:1.6;}
+  .app-card-cta{
+    display:inline-flex;align-items:center;gap:8px;white-space:nowrap;
+    padding:13px 22px;border-radius:999px;font-weight:700;font-size:14px;
+    background:linear-gradient(135deg,#32C8FF,#008BFF);color:#04111f;
+  }
+  .app-card-cta svg{width:16px;height:16px;transition:transform .25s ease;}
+  .app-card:hover .app-card-cta svg{transform:translateX(4px);}
+  @media (max-width:760px){
+    .app-card{grid-template-columns:1fr;text-align:center;justify-items:center;padding:24px 20px;}
+  }
 
   /* the "on screen" mock */
   .screen{
@@ -493,6 +537,7 @@
       <p class="lede">ScenePass reads the intro and recap boundaries your library was already scanned for, then puts one unobtrusive button on screen at exactly the right second &mdash; never before, never a beat late.</p>
       <div class="hero-ctas">
         <a class="btn-primary" href="https://lynxstrike.github.io/lynxstrike.repo/" target="_blank" rel="noopener">Get it from lynxstrike.repo</a>
+        <a class="btn-app" href="https://lynxstrike.github.io/ScenePass.repo/ScenePass_Website/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>Get the ScenePass app</a>
         <a class="btn-ghost" href="#themes">See the two looks</a>
       </div>
     </div>
@@ -649,7 +694,7 @@
         <span class="feature-num">02</span>
         <div>
           <h3>No sidecar, no button</h3>
-          <p>ScenePass looks for a <code>.sp.json</code> file next to each video &mdash; the output of a ScenePass library scan &mdash; and simply does nothing without one.</p>
+          <p>ScenePass looks for a <code>.sp.json</code> file next to each video &mdash; the output of a library scan in the <a class="inline-link" href="https://lynxstrike.github.io/ScenePass.repo/ScenePass_Website/" target="_blank" rel="noopener">ScenePass desktop app</a> &mdash; and simply does nothing without one.</p>
         </div>
       </div>
       <div class="feature-row">
@@ -660,6 +705,17 @@
         </div>
       </div>
     </div>
+    <a class="app-card" href="https://lynxstrike.github.io/ScenePass.repo/ScenePass_Website/" target="_blank" rel="noopener">
+      <div class="app-card-art" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 11l2-2 2 2 3-3 3 3"/></svg>
+      </div>
+      <div class="app-card-body">
+        <span class="app-card-kicker">Step zero &middot; Windows 10 / 11</span>
+        <h3>Need the markers first? Get ScenePass for Windows.</h3>
+        <p>The free desktop app scans your library, finds every intro and recap, and writes the <code>.sp.json</code> files this add-on reads. Your video files are never touched.</p>
+      </div>
+      <span class="app-card-cta">Get the desktop app<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></span>
+    </a>
   </div>
 </section>
 
