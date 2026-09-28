@@ -21,7 +21,7 @@ v1.0.0027 (28.08.2026)
 Updated ITV1, ITV 1 logos
 		</news>
 	</extension>
-</addon><addon id="service.scenepass" name="ScenePass" version="0.01.29" provider-name="lynxstrike">
+</addon><addon id="service.scenepass" name="ScenePass" version="0.01.30" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -35,7 +35,9 @@ Updated ITV1, ITV 1 logos
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.29
+        <news>v0.01.30
+- New: Settings &gt; ScenePass &gt; Quality gates has "Let ScenePass scanners ease off the drive while playing" (on by default). While a video plays from a library set up with ScenePass Family Share, this addon writes a small heartbeat file into that library's shared folder so ScenePass on other PCs can drop to a single scanner reading that drive, keeping playback smooth. It only ever writes inside a library that already has Family Share configured -- nothing is written anywhere else -- and the heartbeat is removed the instant playback stops.
+v0.01.29
 - Fixed: "Pill text colour" stayed visible as an empty heading in Text theme even though every setting under it was correctly hidden -- a plain settings-group heading doesn't hide itself just because its contents do. Replaced with an lsep (a real, individually hideable setting) carrying the same visibility rule as its siblings.
 - New: a "Pill colour" heading now appears above the Skip Intro/Recap button colour settings when Button theme is set to Pill (no heading there in Text theme, where a "pill" label wouldn't make sense).
 - New: a second "Restore default colours" button now also appears in the Pill text colour section (Pill theme only) -- same action as the one further up, so there's no need to scroll back to reset while working in this section.
