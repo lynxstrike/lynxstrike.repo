@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="service.scenepass" name="ScenePass" version="0.01.30" provider-name="lynxstrike">
+<addon id="service.scenepass" name="ScenePass" version="0.01.32" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -13,7 +13,12 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.30
+        <news>v0.01.32
+- Fixed: the "Pill colour" and "Pill text colour" headings (added in v0.01.29) never appeared, and Kodi logged "unknown setting type lsep" each time the settings loaded. They now show, in Pill theme only, and appear or disappear straight away when Button theme is switched.
+- Changed: "Could not resolve playback path for sidecar lookup" is now only logged with Debug logging on. It appeared after almost every trailer closed (the player had already let go of the file) and wasn't an error.
+v0.01.31
+- Fixed: the Family Share playback heartbeat no longer slows down the start of playback on network shares. It used to search every parent folder of each file the moment it opened, all the way up to the server itself, where Kodi tried to look up ".scenepass" as a server name (blocking lookups and "Unable to lookup host" errors in the log). It now stops at the share, remembers each folder's answer for 10 minutes, only checks real files (network shares and local paths, never pvr://, upnp:// and the like), and waits until a video has played for 10 seconds, so trailers and clips stopped early skip it entirely.
+v0.01.30
 - New: Settings &gt; ScenePass &gt; Quality gates has "Let ScenePass scanners ease off the drive while playing" (on by default). While a video plays from a library set up with ScenePass Family Share, this addon writes a small heartbeat file into that library's shared folder so ScenePass on other PCs can drop to a single scanner reading that drive, keeping playback smooth. It only ever writes inside a library that already has Family Share configured -- nothing is written anywhere else -- and the heartbeat is removed the instant playback stops.
 v0.01.29
 - Fixed: "Pill text colour" stayed visible as an empty heading in Text theme even though every setting under it was correctly hidden -- a plain settings-group heading doesn't hide itself just because its contents do. Replaced with an lsep (a real, individually hideable setting) carrying the same visibility rule as its siblings.

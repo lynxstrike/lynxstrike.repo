@@ -57,7 +57,9 @@ def sidecar_path(player) -> Optional[str]:
 def load_deploy_sidecar(player) -> Optional[dict[str, Any]]:
     path = sidecar_path(player)
     if not path:
-        log('Could not resolve playback path for sidecar lookup', xbmc.LOGINFO)
+        # Normal when a video is stopped right as it starts (trailers): the
+        # player has already let go of the file. Debug only, not log noise.
+        log('Could not resolve playback path for sidecar lookup')
         return None
     if not xbmcvfs.exists(path):
         log(f'No sidecar: {path}')

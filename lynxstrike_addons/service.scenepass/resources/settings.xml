@@ -70,17 +70,25 @@
                 <!-- A plain <group label="..."> can't be theme-conditional (its
                      heading stays visible even with every setting under it
                      hidden; see group 3's dependencies below, added after
-                     exactly that bug was observed live). An lsep is a real
-                     setting, so it can carry its own <dependencies> instead:
-                     shown only in Pill theme, where these accent-colour
+                     exactly that bug was observed live). A permanently disabled
+                     action button (empty <data/>) is a real setting row, so its
+                     <dependencies> update live. lsep is old-format only and
+                     add-ons can't use <control type="label">; Kodi drops
+                     both. Shown only in Pill theme, where these accent-colour
                      settings are conceptually "the pill colour"; no heading at
                      all in Text theme, where they're just "the button colour"
                      and a specific label would be redundant with the two
                      settings' own "Skip Intro/Recap button colour" labels. -->
-                <setting id="pill_colour_heading" type="lsep" label="32036">
+                <setting id="pill_colour_heading" type="action" label="32036">
+                    <level>0</level>
+                    <data/>
+                    <control type="button" format="action" />
                     <dependencies>
                         <dependency type="visible">
                             <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                        <dependency type="enable">
+                            <condition on="property" name="InfoBool">false</condition>
                         </dependency>
                     </dependencies>
                 </setting>
@@ -106,13 +114,19 @@
                 </setting>
             </group>
             <group id="3">
-                <!-- lsep instead of a plain group label, so this heading hides
+                <!-- Disabled button instead of a plain group label, so this heading hides
                      along with the rest of the group in Text theme; see the
                      comment on group 2's pill_colour_heading above. -->
-                <setting id="pill_text_colour_heading" type="lsep" label="32030">
+                <setting id="pill_text_colour_heading" type="action" label="32030">
+                    <level>0</level>
+                    <data/>
+                    <control type="button" format="action" />
                     <dependencies>
                         <dependency type="visible">
                             <condition operator="is" setting="button_theme">pill</condition>
+                        </dependency>
+                        <dependency type="enable">
+                            <condition on="property" name="InfoBool">false</condition>
                         </dependency>
                     </dependencies>
                 </setting>

@@ -1,0 +1,77 @@
+TITLE:  [RELEASE] ScenePass - skip intros & recaps on cue (Kodi 19+)
+
+(Post in: Add-ons > Add-on Releases > Service add-ons.  Text below is MyBB BBCode - paste it as-is.)
+
+------------------------------------------------------------------------
+
+[size=xx-large][b]ScenePass[/b][/size]
+[size=large][i]Skip intro. Skip recap. Repeat.[/i][/size]
+
+ScenePass is a background [b]service add-on[/b] that puts one small, unobtrusive "Skip Intro" / "Skip Recap" button on screen at exactly the right second - never before, never a beat late. It works on Kodi [b]19 (Matrix), 20 (Nexus), 21 (Omega) and newer[/b].
+
+It does no detection itself. It reads intro/recap boundaries that were already found by a library scan (see [b]How it works[/b]), so playback starts instantly and nothing is analysed while you watch.
+
+
+[size=large][b]Features[/b][/size]
+
+[list]
+[*][b]Two skip buttons, independent[/b] - Skip Intro (amber by default) and Skip Recap (blue by default). Each is decided separately.
+[*][b]Two looks[/b] - [b]Text[/b] (icon and label only, nothing behind it; the default) or [b]Pill[/b] (a translucent rounded backing). In Pill mode the pill and the label are tinted separately, so a dark pill can still carry a bright, readable label.
+[*][b]Built-in colour picker[/b] - Kodi's own colour wheel only exists from v20 (Nexus). ScenePass ships its own: a 48-swatch grid plus hex and R/G/B fields for an exact match, so it works back to Kodi 19.
+[*][b]Made for a remote[/b] - everything (the button, the picker, the theme preview) is reachable with just up / down / left / right / select. Visible two-tone focus ring that reads on pure black and pure white swatches.
+[*][b]One press to skip[/b] - the button appears already focused. Select skips; Back, or a moment of inaction, dismisses it. Playback is never blocked waiting for a choice.
+[*][b]Auto-skip[/b] - optional, per segment kind. Turn it on for intros, recaps, or both, and the skip happens the moment the button would have appeared.
+[*][b]Confidence gate[/b] - a segment is only offered if it clears a minimum confidence (default 75%), and a minimum length (default 5 s). Both adjustable, both fine left alone.
+[/list]
+
+
+[size=large][b]How it works[/b][/size]
+
+ScenePass looks for a [b].sp.json[/b] file next to each video. That file holds the intro/recap timestamps and is written by the free [b]ScenePass desktop app[/b] (Windows 10 / 11), which scans your library and never modifies your video files.
+
+[b]No .sp.json next to a video = the add-on simply does nothing for it.[/b] There is no "where do my episodes live" setup inside Kodi - it uses the sidecars that are already there.
+
+
+[size=large][b]Installation[/b][/size]
+
+[list=1]
+[*]Install [b]repository.lynxstrike[/b] from a zip (Settings > Add-ons > Install from zip file) - get it here: [url=https://lynxstrike.github.io/lynxstrike.repo/]https://lynxstrike.github.io/lynxstrike.repo/[/url]
+[*]Install [b]ScenePass (service.scenepass)[/b] from that repository: Install from repository > lynxstrike.repo > Services.
+[*]Scan your library with the ScenePass desktop app so the .sp.json files exist.
+[*]Press play. Colours and look can be changed any time in [b]Add-on settings > Appearance[/b].
+[/list]
+
+
+[size=large][b]Links[/b][/size]
+
+[list]
+[*]Add-on page: [url=https://lynxstrike.github.io/lynxstrike.repo/]lynxstrike.github.io/lynxstrike.repo[/url]
+[*]Source / repository: [url=https://github.com/lynxstrike/lynxstrike.repo]github.com/lynxstrike/lynxstrike.repo[/url]
+[*]ScenePass desktop app (creates the markers): [url=https://lynxstrike.github.io/ScenePass.repo/ScenePass_Website/]lynxstrike.github.io/ScenePass.repo/ScenePass_Website[/url]
+[/list]
+
+
+[size=large][b]Screenshots[/b][/size]
+
+[b]Text look[/b] (default):
+[img]PASTE_DIRECT_IMAGE_URL_text-intro.png[/img]
+
+[b]Pill look[/b]:
+[img]PASTE_DIRECT_IMAGE_URL_pill-recap.png[/img]
+
+(The four button images are in the website folder: text-intro, text-recap, pill-intro, pill-recap - upload them to any image host and put the direct links above.)
+
+
+[size=large][b]Compatibility[/b][/size]
+
+[list]
+[*]Kodi 19 Matrix, 20 Nexus, 21 Omega and newer
+[*]The Kodi add-on is platform-independent; the desktop scanner is Windows 10 / 11
+[/list]
+
+
+[size=large][b]Feedback[/b][/size]
+
+Bug reports and ideas are welcome - please reply here or open an issue on GitHub. If something misbehaves, include your Kodi version, a debug log, and whether the video has a .sp.json next to it.
+
+[b]License:[/b] LICENSE_HERE

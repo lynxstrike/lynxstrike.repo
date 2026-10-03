@@ -41,6 +41,7 @@ Configure via **Add-ons > My add-ons > Services > ScenePass > Configure**:
 **Quality gates**
 - Minimum confidence (0–100%, default 75%)
 - Minimum segment length in seconds (default 5s)
+- Let ScenePass scanners ease off the drive while playing (default on). Only does anything for a library set up with ScenePass Family Share: once a video has played for 10 seconds, a small heartbeat file in that library's `.scenepass` folder tells ScenePass on your PCs to scan more gently until playback stops. Kodi remembers for 10 minutes which folders have no `.scenepass` folder, so if Family Share is set up while Kodi is running, it can take up to 10 minutes to be noticed (or restart Kodi).
 - Debug logging
 
 ---
