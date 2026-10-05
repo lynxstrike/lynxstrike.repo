@@ -67,6 +67,7 @@ ABC News Studios
 ABC Pictures
 ABC Pictures International
 ABC Studios
+ABC TV
 ABC TV Plus
 ABC1
 ABC1 (Australia)
@@ -1475,6 +1476,7 @@ RTBF
 RTE One
 RTE Two
 RTL Zwei
+RTL+
 RTP1
 RTÉ One
 RTÉ Two
