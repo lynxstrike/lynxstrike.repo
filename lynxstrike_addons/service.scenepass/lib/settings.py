@@ -18,10 +18,6 @@ def auto_skip(kind: str) -> bool:
     return _addon.getSettingBool(f'auto_skip_{kind}')
 
 
-def min_confidence() -> float:
-    return _addon.getSettingInt('min_confidence') / 100.0
-
-
 def min_segment_seconds() -> float:
     return float(_addon.getSettingInt('min_segment_seconds'))
 
@@ -121,3 +117,17 @@ def restore_default_button_colors() -> None:
     """
     for setting_id, default in _COLOR_SETTINGS.values():
         _addon.setSetting(setting_id, default)
+
+
+# Skip button corner on screen, numbered as in Settings > Appearance's
+# "Button position" (1 = bottom right, the original placement, then
+# clockwise: 2 bottom left, 3 top left, 4 top right).
+_VALID_BUTTON_POSITIONS = (1, 2, 3, 4)
+
+
+def button_position() -> int:
+    try:
+        pos = _addon.getSettingInt('button_position')
+    except (RuntimeError, TypeError, ValueError):
+        return 1
+    return pos if pos in _VALID_BUTTON_POSITIONS else 1

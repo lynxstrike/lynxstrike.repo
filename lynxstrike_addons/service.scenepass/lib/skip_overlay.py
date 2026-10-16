@@ -95,8 +95,17 @@ class SkipOverlayDialog(xbmcgui.WindowXMLDialog):
 
         screen_w = self.getWidth() or REF_WIDTH
         screen_h = self.getHeight() or REF_HEIGHT
-        left = screen_w - btn_w - margin_right
-        top = screen_h - margin_bottom - btn_h
+        # Corner per settings.button_position(); margins mirror onto the
+        # opposite edges so every corner sits the same distance in.
+        position = settings.button_position()
+        if position in (2, 3):
+            left = margin_right
+        else:
+            left = screen_w - btn_w - margin_right
+        if position in (3, 4):
+            top = margin_bottom
+        else:
+            top = screen_h - margin_bottom - btn_h
 
         group = self.getControl(CTRL_GROUP)
         group.setPosition(left, top)

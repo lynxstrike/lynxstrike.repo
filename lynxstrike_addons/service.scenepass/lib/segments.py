@@ -37,17 +37,6 @@ def _segment_from_block(kind: str, block: Any, min_duration: float) -> Optional[
 
 def segments_from_payload(payload: dict[str, Any]) -> list[Segment]:
     min_duration = settings.min_segment_seconds()
-    min_conf = settings.min_confidence()
-    meta = payload.get('scenepass')
-    confidence = 1.0
-    if isinstance(meta, dict) and meta.get('confidence') is not None:
-        try:
-            confidence = float(meta['confidence'])
-        except (TypeError, ValueError):
-            confidence = 0.0
-    if confidence < min_conf:
-        return []
-
     found: list[Segment] = []
     if settings.recap_enabled():
         recap = _segment_from_block('recap', payload.get('recap'), min_duration)

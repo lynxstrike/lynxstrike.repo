@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="service.scenepass" name="ScenePass" version="0.01.32" provider-name="lynxstrike">
+<addon id="service.scenepass" name="ScenePass" version="0.01.33" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -13,7 +13,13 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.32
+        <news>v0.01.33
+- New: Settings &gt; Appearance "Button position" -- put the Skip button in any corner of the screen (1 bottom right, the original place; 2 bottom left; 3 top left; 4 top right).
+- Changed: "Preview theme..." is now one screen: a mini TV screen with the button in all four corners, in your theme (Text/Pill) and colours. Pick Text or Pill underneath, then click a corner to save both.
+- Changed: the colour chooser is redesigned: 36 named colours, Red/Green/Blue sliders (left/right to adjust, OK to type a value), a NOW | NEW comparison bar, Custom hex entry, and Default / Reset for that colour. The bottom row shows the colour name, its hex code and which setting it saves to.
+- Removed: the "Minimum confidence" setting. Every .sp sidecar is now used, whatever its confidence.
+- Changed: "Quality gates" heading renamed to "Quality gate".
+v0.01.32
 - Fixed: the "Pill colour" and "Pill text colour" headings (added in v0.01.29) never appeared, and Kodi logged "unknown setting type lsep" each time the settings loaded. They now show, in Pill theme only, and appear or disappear straight away when Button theme is switched.
 - Changed: "Could not resolve playback path for sidecar lookup" is now only logged with Debug logging on. It appeared after almost every trailer closed (the player had already let go of the file) and wasn't an error.
 v0.01.31

@@ -30,11 +30,7 @@ msgid "Automatically skip recaps"
 msgstr ""
 
 msgctxt "#32007"
-msgid "Quality gates"
-msgstr ""
-
-msgctxt "#32008"
-msgid "Minimum confidence"
+msgid "Quality gate"
 msgstr ""
 
 msgctxt "#32009"
@@ -138,7 +134,7 @@ msgid "Choose Skip Recap pill text colour..."
 msgstr ""
 
 msgctxt "#32035"
-msgid "Preview themes..."
+msgid "Preview theme..."
 msgstr ""
 
 msgctxt "#32036"
@@ -151,4 +147,24 @@ msgstr ""
 
 msgctxt "#32038"
 msgid "While a video plays from a library shared by ScenePass (Family Share), ScenePass on your PCs reads that drive more gently so playback never stutters. Nothing is written on libraries without ScenePass Family Share."
+msgstr ""
+
+msgctxt "#32039"
+msgid "Button position"
+msgstr ""
+
+msgctxt "#32040"
+msgid "1 - Bottom right"
+msgstr ""
+
+msgctxt "#32041"
+msgid "2 - Bottom left"
+msgstr ""
+
+msgctxt "#32042"
+msgid "3 - Top left"
+msgstr ""
+
+msgctxt "#32043"
+msgid "4 - Top right"
 msgstr ""

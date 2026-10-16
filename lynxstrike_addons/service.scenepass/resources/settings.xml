@@ -21,15 +21,6 @@
                 </setting>
             </group>
             <group id="2" label="32007">
-                <setting id="min_confidence" type="integer" label="32008">
-                    <default>75</default>
-                    <constraints>
-                        <minimum>0</minimum>
-                        <maximum>100</maximum>
-                        <step>5</step>
-                    </constraints>
-                    <control type="slider" format="percentage" />
-                </setting>
                 <setting id="min_segment_seconds" type="integer" label="32009">
                     <default>5</default>
                     <constraints>
@@ -60,6 +51,18 @@
                         </options>
                     </constraints>
                     <control type="list" format="string" />
+                </setting>
+                <setting id="button_position" type="integer" label="32039">
+                    <default>1</default>
+                    <constraints>
+                        <options>
+                            <option label="32040">1</option>
+                            <option label="32041">2</option>
+                            <option label="32042">3</option>
+                            <option label="32043">4</option>
+                        </options>
+                    </constraints>
+                    <control type="list" format="integer" />
                 </setting>
                 <setting id="preview_button_theme" type="action" label="32035">
                     <data>RunScript(special://home/addons/service.scenepass/theme_picker.py)</data>

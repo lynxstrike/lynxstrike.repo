@@ -1,12 +1,13 @@
-"""Custom hex/RGB colour picker dialog, shared by every colour setting this
-addon has (the accent colour and, in Pill theme, the independent pill-text
-colour -- see lib/settings.py:_COLOR_SETTINGS for the full registry).
+"""Custom colour picker dialog, shared by every colour setting this addon has
+(the accent colour and, in Pill theme, the independent pill-text colour --
+see lib/settings.py:_COLOR_SETTINGS for the full registry).
 
 Kodi's native full colour picker (the `colorbutton` setting control) only
 exists on Kodi 20 (Nexus) and newer, and this addon targets Nexus and older,
-so this is a hand-built replacement: a WindowXMLDialog with a hex field,
-separate R/G/B number fields, a live preview swatch, and the 8 preset swatches
-also offered in the plain settings list.
+so this is a hand-built replacement laid out like a skin colour chooser:
+a menu (OK / Custom hex / Default / Cancel), R/G/B sliders, a NOW | NEW
+comparison bar, a grid of named swatches, and an info row naming the chosen
+colour and the setting it applies to.
 
 Entered from Settings > Appearance via RunScript(color_picker.py, <target>)
 -- <target> a _COLOR_SETTINGS key -- see color_picker.py at the addon root,
@@ -36,49 +37,63 @@ ADDON = xbmcaddon.Addon('service.scenepass')
 ADDON_PATH = ADDON.getAddonInfo('path')
 
 _ACTION_BACK = (10, 92)
+_ACTION_LEFT = 1
+_ACTION_RIGHT = 2
 
 CTRL_TITLE = 202
-CTRL_PREVIEW = 203
-CTRL_HEX = 205
-CTRL_R = 207
-CTRL_G = 209
-CTRL_B = 211
-CTRL_OK = 230
-CTRL_CANCEL = 231
+CTRL_NOW = 203
+CTRL_NEW = 204
+CTRL_NOW_LABEL = 205
+CTRL_NEW_LABEL = 206
+CTRL_INFO_SWATCH = 207
+CTRL_INFO_NAME = 208
+CTRL_INFO_HEX = 209
+CTRL_INFO_TARGET = 210
+CTRL_OK = 220
+CTRL_CUSTOM = 221
+CTRL_DEFAULT = 222
+CTRL_CANCEL = 223
 CTRL_FOCUS_RING = 290
+CTRL_SELECT_RING = 291
 
-# Local (group-relative) (left, top, width, height) for every focusable
-# control, matching service.scenepass-ColorPicker.xml exactly -- used to move
-# the focus-ring overlay (see _update_focus_ring) without needing to query
-# control geometry back from Kodi at runtime.
+# Slider rows: focus button id -> channel. Fill/nib/value controls are at
+# +10/+20/+30 from the row id.
+_SLIDERS = {240: 'r', 241: 'g', 242: 'b'}
+_SLIDER_STEP = 5
+_SLIDER_X, _SLIDER_Y, _SLIDER_STEP_Y, _SLIDER_W, _SLIDER_H = 30, 350, 52, 370, 44
+_TRACK_X, _TRACK_W, _NIB_W = 16, 190, 12
+
+# Named palette, in grid order (button ids 300+), matching
+# service.scenepass-ColorPicker.xml's swatch colordiffuse values exactly.
+_PALETTE_LIST = [
+    ('Turquoise', '40E0D0'), ('Cyan', '00FFFF'), ('Pale Blue', 'AFEEEE'),
+    ('Sky Blue', '87CEEB'), ('Deep Sky Blue', '00BFFF'), ('Royal Blue', '4169E1'),
+    ('ScenePass Blue', '002DB2'), ('Teal', '008080'), ('Navy', '001F5B'),
+    ('Mint', '98FB98'), ('Green', '00B22D'), ('Lime', '32CD32'),
+    ('Chartreuse', '7FFF00'), ('Yellow Green', 'ADFF2F'), ('Lemon', 'FFF44F'),
+    ('Khaki', 'F0E68C'), ('Gold', 'FFD700'), ('Amber', 'FFBF00'),
+    ('Goldenrod', 'DAA520'), ('Orange', 'FFA500'), ('Dark Orange', 'FF8C00'),
+    ('Orange Red', 'FF4500'), ('Red', 'FF0000'), ('Dark Red', 'B20000'),
+    ('Crimson', 'DC143C'), ('Medium Purple', '9370DB'), ('Purple', '8000FF'),
+    ('Magenta', 'FF00FF'), ('Hot Pink', 'FF69B4'), ('Light Pink', 'FFB6C1'),
+    ('Lavender', 'E6E6FA'), ('Black', '000000'), ('Dark Grey', '404040'),
+    ('Grey', '808080'), ('Silver', 'C0C0C0'), ('White', 'FFFFFF'),
+]
+_PALETTE = {300 + i: hexv for i, (_name, hexv) in enumerate(_PALETTE_LIST)}
+_NAME_BY_HEX = {hexv: name for name, hexv in _PALETTE_LIST}
+_GRID_COLS, _GRID_X, _GRID_Y, _CELL, _CELL_STEP = 9, 452, 124, 80, 92
+
+# Group-relative (left, top, width, height) for every focusable control,
+# used to move the focus ring without querying geometry back from Kodi.
 _RING_MARGIN = 4
-_CONTROL_RECT = {300 + i: (30 + (i % 8) * 68, 104 + (i // 8) * 68, 60, 60) for i in range(48)}
-_CONTROL_RECT.update({
-    CTRL_HEX: (610, 258, 260, 40),
-    CTRL_R: (610, 346, 260, 40),
-    CTRL_G: (610, 434, 260, 40),
-    CTRL_B: (610, 522, 260, 40),
-    CTRL_OK: (618, 610, 120, 50),
-    CTRL_CANCEL: (750, 610, 120, 50),
-})
-
-# 48-swatch palette grid (control ids 300-347): an 8-hue x 6-row HSV spectrum
-# (grayscale ramp + 5 saturation/value bands), matching the swatch colours
-# baked into service.scenepass-ColorPicker.xml's colordiffuse attributes.
-_PALETTE = {
-    300: '000000', 301: '242424', 302: '494949', 303: '6D6D6D',
-    304: '929292', 305: 'B6B6B6', 306: 'DBDBDB', 307: 'FFFFFF',
-    308: 'FF0000', 309: 'FFBF00', 310: '80FF00', 311: '00FF40',
-    312: '00FFFF', 313: '0040FF', 314: '8000FF', 315: 'FF00BF',
-    316: 'B20000', 317: 'B28600', 318: '59B200', 319: '00B22D',
-    320: '00B2B2', 321: '002DB2', 322: '5900B2', 323: 'B20086',
-    324: 'FF7373', 325: 'FFDC73', 326: 'B9FF73', 327: '73FF96',
-    328: '73FFFF', 329: '7396FF', 330: 'B973FF', 331: 'FF73DC',
-    332: '730000', 333: '735600', 334: '397300', 335: '00731D',
-    336: '007373', 337: '001D73', 338: '390073', 339: '730056',
-    340: 'F29D9D', 341: 'F2DD9D', 342: 'C8F29D', 343: '9DF2B3',
-    344: '9DF2F2', 345: '9DB3F2', 346: 'C89DF2', 347: 'F29DDD',
+_CONTROL_RECT = {
+    cid: (_GRID_X + (i % _GRID_COLS) * _CELL_STEP, _GRID_Y + (i // _GRID_COLS) * _CELL_STEP, _CELL, _CELL)
+    for i, cid in enumerate(_PALETTE)
 }
+_CONTROL_RECT.update({cid: (30, 104 + k * 58, 370, 50)
+                      for k, cid in enumerate((CTRL_OK, CTRL_CUSTOM, CTRL_DEFAULT, CTRL_CANCEL))})
+_CONTROL_RECT.update({cid: (_SLIDER_X, _SLIDER_Y + k * _SLIDER_STEP_Y, _SLIDER_W, _SLIDER_H)
+                      for k, cid in enumerate(_SLIDERS)})
 
 _HEX_RE = re.compile(r'^[0-9A-Fa-f]{6}$')
 
@@ -100,31 +115,54 @@ class ColorPickerDialog(xbmcgui.WindowXMLDialog):
         self.target = 'intro_accent'
         self.confirmed = False
         self.result_hex: Optional[str] = None
-        self._r = self._g = self._b = 255
+        self._initial_hex = 'FFFFFF'
+        self._rgb = {'r': 255, 'g': 255, 'b': 255}
 
     def configure(self, target: str, initial_hex: str) -> None:
         self.target = target
         self._set_from_hex(initial_hex)
+        self._initial_hex = self._current_hex()
 
     def _set_from_hex(self, hexval: str) -> None:
         hexval = hexval.strip().lstrip('#')
         if _HEX_RE.match(hexval):
-            self._r = int(hexval[0:2], 16)
-            self._g = int(hexval[2:4], 16)
-            self._b = int(hexval[4:6], 16)
+            self._rgb = {'r': int(hexval[0:2], 16), 'g': int(hexval[2:4], 16), 'b': int(hexval[4:6], 16)}
 
     def _current_hex(self) -> str:
-        return f'{self._r:02X}{self._g:02X}{self._b:02X}'
+        return '{r:02X}{g:02X}{b:02X}'.format(**self._rgb)
 
     def _refresh_controls(self) -> None:
+        hexv = self._current_hex()
         try:
-            self.getControl(CTRL_HEX).setLabel(self._current_hex())
-            self.getControl(CTRL_R).setLabel(str(self._r))
-            self.getControl(CTRL_G).setLabel(str(self._g))
-            self.getControl(CTRL_B).setLabel(str(self._b))
-            self.getControl(CTRL_PREVIEW).setColorDiffuse(f'FF{self._current_hex()}')
+            self.getControl(CTRL_NEW).setColorDiffuse(f'FF{hexv}')
+            self.getControl(CTRL_NEW_LABEL).setLabel(f'NEW  #{hexv}')
+            self.getControl(CTRL_INFO_SWATCH).setColorDiffuse(f'FF{hexv}')
+            self.getControl(CTRL_INFO_NAME).setLabel(_NAME_BY_HEX.get(hexv, 'Custom'))
+            self.getControl(CTRL_INFO_HEX).setLabel(f'#{hexv}')
+            for cid, channel in _SLIDERS.items():
+                value = self._rgb[channel]
+                fill_w = int(_TRACK_W * value / 255)
+                self.getControl(cid + 10).setWidth(fill_w)
+                nib_x = _SLIDER_X + _TRACK_X + fill_w - _NIB_W // 2
+                self.getControl(cid + 20).setPosition(
+                    max(_SLIDER_X + _TRACK_X, min(nib_x, _SLIDER_X + _TRACK_X + _TRACK_W - _NIB_W)),
+                    _SLIDER_Y + list(_SLIDERS).index(cid) * _SLIDER_STEP_Y + 8)
+                self.getControl(cid + 30).setLabel(str(value))
+            self._update_select_ring(hexv)
         except RuntimeError as exc:
             log(f'Colour picker refresh failed: {exc!r}', xbmc.LOGWARNING)
+
+    def _update_select_ring(self, hexv: str) -> None:
+        ring = self.getControl(CTRL_SELECT_RING)
+        cid = next((c for c, h in _PALETTE.items() if h == hexv), None)
+        if cid is None:
+            ring.setWidth(0)
+            ring.setHeight(0)
+            return
+        x, y, w, h = _CONTROL_RECT[cid]
+        ring.setPosition(x - 3, y - 3)
+        ring.setWidth(w + 6)
+        ring.setHeight(h + 6)
 
     def _update_focus_ring(self) -> None:
         rect = _CONTROL_RECT.get(self.getFocusId())
@@ -142,63 +180,73 @@ class ColorPickerDialog(xbmcgui.WindowXMLDialog):
     def onInit(self) -> None:
         try:
             self.getControl(CTRL_TITLE).setLabel(_TARGET_TITLES.get(self.target, 'Choose colour'))
+            self.getControl(CTRL_NOW).setColorDiffuse(f'FF{self._initial_hex}')
+            self.getControl(CTRL_NOW_LABEL).setLabel(f'NOW  #{self._initial_hex}')
+            setting_id = addon_settings._COLOR_SETTINGS.get(self.target, ('',))[0]
+            self.getControl(CTRL_INFO_TARGET).setLabel(f'Saves to  |  {setting_id}')
         except RuntimeError as exc:
-            log(f'Colour picker title failed: {exc!r}', xbmc.LOGWARNING)
+            log(f'Colour picker header failed: {exc!r}', xbmc.LOGWARNING)
         self._refresh_controls()
-        # Initial focus comes from the XML's <defaultcontrol> (the top-left
-        # grid swatch), not forced here, so it stays in one place to reason
-        # about; getFocusId() already reflects that by the time onInit runs.
+        # Start on the current colour's swatch when it's in the palette.
+        cid = next((c for c, h in _PALETTE.items() if h == self._initial_hex), None)
+        if cid is not None:
+            self.setFocusId(cid)
         self._update_focus_ring()
 
     def onClick(self, controlId: int) -> None:
-        self._update_focus_ring()
         if controlId == CTRL_OK:
             self.result_hex = self._current_hex()
             self.confirmed = True
             self.close()
         elif controlId == CTRL_CANCEL:
             self.close()
-        elif controlId == CTRL_HEX:
+        elif controlId == CTRL_CUSTOM:
             self._on_hex_input()
-        elif controlId in (CTRL_R, CTRL_G, CTRL_B):
+        elif controlId == CTRL_DEFAULT:
+            default = addon_settings._COLOR_SETTINGS.get(self.target, ('', 'FFFFFF'))[1]
+            self._set_from_hex(default)
+            self._refresh_controls()
+        elif controlId in _SLIDERS:
             self._on_channel_input(controlId)
         elif controlId in _PALETTE:
             self._set_from_hex(_PALETTE[controlId])
             self._refresh_controls()
-            # Picking a swatch is a complete, one-step colour choice (unlike
-            # a hex/R/G/B edit, which is usually one step in fine-tuning) --
-            # jump straight to OK so confirming is a single further press.
+            # Picking a swatch is a complete, one-step colour choice -- jump
+            # straight to OK so confirming is a single further press.
             self.setFocusId(CTRL_OK)
-            self._update_focus_ring()
+        self._update_focus_ring()
 
     def _on_hex_input(self) -> None:
-        text = self.getControl(CTRL_HEX).getText()
-        if _HEX_RE.match(text.strip().lstrip('#')):
+        text = xbmcgui.Dialog().input('Hex colour (RRGGBB)', self._current_hex(),
+                                      type=xbmcgui.INPUT_ALPHANUM)
+        if text and _HEX_RE.match(text.strip().lstrip('#')):
             self._set_from_hex(text)
-        self._refresh_controls()
+            self._refresh_controls()
 
     def _on_channel_input(self, controlId: int) -> None:
-        text = self.getControl(controlId).getText()
+        channel = _SLIDERS[controlId]
+        text = xbmcgui.Dialog().numeric(0, f'{channel.upper()} (0-255)', str(self._rgb[channel]))
         try:
-            value = _clamp255(int(text))
-        except ValueError:
-            value = 0
-        if controlId == CTRL_R:
-            self._r = value
-        elif controlId == CTRL_G:
-            self._g = value
-        else:
-            self._b = value
+            self._rgb[channel] = _clamp255(int(text))
+        except (TypeError, ValueError):
+            return
         self._refresh_controls()
 
     def onAction(self, action: xbmcgui.Action) -> None:
-        if action.getId() in _ACTION_BACK:
+        action_id = action.getId()
+        if action_id in _ACTION_BACK:
             self.close()
             return
-        # Runs after Kodi's own default handling has already moved focus for
-        # a directional press (same reasoning as the slider-tracking pattern
-        # many Kodi addons use), so getFocusId() here reflects the new
-        # control, not the one focus just left.
+        focus = self.getFocusId()
+        # Slider rows point left/right at themselves in the XML, so focus
+        # stays put and the press changes the value instead.
+        if focus in _SLIDERS and action_id in (_ACTION_LEFT, _ACTION_RIGHT):
+            channel = _SLIDERS[focus]
+            delta = _SLIDER_STEP if action_id == _ACTION_RIGHT else -_SLIDER_STEP
+            self._rgb[channel] = _clamp255(self._rgb[channel] + delta)
+            self._refresh_controls()
+        # Runs after Kodi has already moved focus for a directional press,
+        # so getFocusId() reflects the new control.
         self._update_focus_ring()
 
 
