@@ -57,6 +57,13 @@
                 <colordiffuse>00FFFFFF</colordiffuse>
                 <aspectratio>keep</aspectratio>
             </control>
+            <!-- Original full-colour Madnox logo, independent of user tints. -->
+            <control type="image" id="108">
+                <left>0</left><top>0</top><width>0</width><height>0</height>
+                <texture>swatch.png</texture>
+                <colordiffuse>00FFFFFF</colordiffuse>
+                <aspectratio>keep</aspectratio>
+            </control>
             <!-- Invisible hit/focus button, sized to match the baked art. Must have an
                  explicit texturefocus/texturenofocus — without one, Kodi falls back to
                  the active skin's own default button chrome for the focused state (this

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="service.scenepass" name="ScenePass" version="0.01.33" provider-name="lynxstrike">
+<addon id="service.scenepass" name="ScenePass" version="0.01.48" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0"/>
     </requires>
@@ -13,7 +13,47 @@
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.33
+        <news>v0.01.48
+- Collaboration themes always require the matching skin to be installed and active. Removed the testing toggle.
+v0.01.47
+- New: testing switch in Themes to enforce collaboration skin restrictions. Off allows Cinema and Madnox on any skin in previews and playback; turn it on again before release. This testing build defaults to off.
+v0.01.46
+- New: four approved Madnox collaboration themes: original artwork, icon and glow, charcoal pill, and addon-coloured dimensional lettering. Full red/gold logos remain untinted. The original legacy Madnox Pill settings are preserved.
+v0.01.45
+- Improved: preview captions move slightly right for left-corner buttons and left for right-corner buttons, giving the examples more space.
+v0.01.44
+- Fixed: coloured glows retain their soft transparency instead of rendering as solid shapes. This applies to Accent underline and the new Accent + icon style.
+v0.01.43
+- New: Cinema Pill style 5, Accent + icon, using the supplied 05-addon-accent-icon artwork. The chosen segment accent colours the icon, underline and glow; ivory lettering and charcoal background stay fixed.
+v0.01.42
+- Removed: Cinema Pill style 5, Coloured icon + glow. Pill now has four styles; both Text styles are retained. Existing selections of the removed Pill style fall back to Original gold.
+v0.01.41
+- Fixed: colour picker now occupies one full page, with clear Current/New values, spatial navigation, RGB/hex entry, Use colour and Cancel. The manager is hidden while editing so its Apply/Cancel cannot be confused with picker actions.
+- Fixed: the coloured under-button footprint now matches the supplied Cinema design, drawn behind the original panel rather than as a faint line overlay.
+v0.01.40
+- Fixed: Cinema accent-coloured glows were barely visible in the supplied masks. An independent glow layer now makes Intro/Recap accent colours visible in Pill and Text previews and playback, preserving the original artwork and solid gold underline.
+v0.01.39
+- Improved: Up on the top row wraps to the bottom row; Down on the bottom row wraps to the top, preserving horizontal alignment where possible.
+v0.01.38
+- Fixed: all Theme Manager navigation follows visible control geometry. Arrows stay in the same row/column where possible, otherwise choose the nearest control in that direction. At an outside edge focus stays put.
+v0.01.37
+- Fixed: theme-row Left/Right stays on Text, Pill and Cinema. Down from Text enters Pill (5) when Cinema is selected; Down from Pill enters the mockup top-left corner.
+v0.01.36
+- Improved: Theme Manager groups themes into ScenePass and Collaborations.
+- Improved: collaboration focus explains the skin requirement.
+- Fixed: mockup arrows move between corners in their actual direction; outer edges return to the left pane or the theme section above.
+v0.01.35
+- New: Theme Manager with staged live previews, relevant colour controls, named screen corners, Apply and Cancel.
+- New: Cinema with five Pill styles and two Text styles, for approved Aeon SceneCast skins.
+- Changed: Pill offers a clean capsule and the existing Madnox-logo design; collaboration themes will be added separately.
+- Fixed: collaboration themes recheck the installed active skin when rendering, and fall back to Text if unavailable.
+v0.01.34
+- New: Settings &gt; Appearance "Restore default position" puts the Skip button back at bottom right.
+- Changed: "Preview theme..." now shows Skip Intro in the left corners and Skip Recap in the right, each in its own colours, and the unselected corners are easier to see. It uses what you just changed without saving first, opens on your current position, and afterwards returns you to the Appearance tab with your choice shown.
+- Fixed: in the colour chooser and theme preview, the white focus ring could start on the wrong item.
+- New: Settings &gt; ScenePass "Hide skip button automatically" (off by default, so the button stays for the whole intro or recap as before). Turn it on and an unpressed Skip button disappears after "Hide after (seconds)" (default 10) and the intro or recap plays on.
+- Changed: "Minimum segment length" now defaults to 8 seconds (was 5). If you never changed it, it now uses 8.
+v0.01.33
 - New: Settings &gt; Appearance "Button position" -- put the Skip button in any corner of the screen (1 bottom right, the original place; 2 bottom left; 3 top left; 4 top right).
 - Changed: "Preview theme..." is now one screen: a mini TV screen with the button in all four corners, in your theme (Text/Pill) and colours. Pick Text or Pill underneath, then click a corner to save both.
 - Changed: the colour chooser is redesigned: 36 named colours, Red/Green/Blue sliders (left/right to adjust, OK to type a value), a NOW | NEW comparison bar, Custom hex entry, and Default / Reset for that colour. The bottom row shows the colour name, its hex code and which setting it saves to.

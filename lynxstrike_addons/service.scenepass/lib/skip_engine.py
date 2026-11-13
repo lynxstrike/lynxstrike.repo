@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import time
 from typing import Optional
 
 import xbmc
@@ -12,6 +13,7 @@ from lib.share_beat import PlaybackBeat
 from lib.segments import Segment
 from lib.sidecar import log
 from lib.skip_overlay import SkipOverlayDialog, create_overlay
+from lib.theme_access import skin_context
 
 
 class SkipEngine:
@@ -22,6 +24,7 @@ class SkipEngine:
         self.player = ScenePassPlayer()
         self._overlay: Optional[SkipOverlayDialog] = None
         self._overlay_kind: Optional[str] = None
+        self._overlay_shown_at = 0.0
         self._last_position = 0.0
         self._last_playback_key: Optional[str] = None
         self._beat = PlaybackBeat()
@@ -99,6 +102,17 @@ class SkipEngine:
             self._finish_overlay(overlay, schedule)
             return
 
+        # A skin switch can happen while the dialog is open. Re-resolve the
+        # collaboration theme immediately, without marking the segment handled.
+        if skin_context() != overlay.rendered_skin:
+            overlay._apply_layout(self._overlay_kind)
+
+        timeout = settings.skip_button_timeout()
+        if timeout and time.monotonic() - self._overlay_shown_at >= timeout:
+            log(f'Skip button for {self._overlay_kind!r} hidden after {timeout}s')
+            overlay.close()
+            return
+
         active = schedule.active_at(position)
         if active is None or active.kind != self._overlay_kind:
             log(f'Segment no longer active at {position:.2f}s '
@@ -136,6 +150,7 @@ class SkipEngine:
         overlay.show()
         self._overlay = overlay
         self._overlay_kind = segment.kind
+        self._overlay_shown_at = time.monotonic()
         log(f'Showing skip button for {segment.kind}', xbmc.LOGINFO)
 
     def _close_overlay(self) -> None:

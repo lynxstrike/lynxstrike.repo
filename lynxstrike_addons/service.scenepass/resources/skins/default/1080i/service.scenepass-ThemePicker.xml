@@ -1,282 +1,754 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <window type="dialog">
-    <!-- Unified "Preview theme..." dialog, launched via RunScript(theme_picker.py)
-         from Settings > Appearance (see lib/theme_picker.py). A miniature TV
-         screen with the four corner slots numbered as in the Button position
-         setting (1 bottom right, 2 bottom left, 3 top left, 4 top right), each
-         drawing the Skip Intro button in the chosen theme (Text/Pill) and the
-         current colours. The current corner is full colour, the others dimmed.
-         Text/Pill buttons below switch the theme live; clicking a corner saves
-         theme + position and closes; Back/ESC closes without changing anything.
-         Explicit navigation and no <font>: see the ColorPicker skin. Slot rects
-         must match lib/theme_picker.py:_SLOT_RECT. -->
-    <defaultcontrol always="true">511</defaultcontrol>
-    <controls>
-        <control type="group" id="200">
-            <left>510</left>
-            <top>215</top>
-            <width>900</width>
-            <height>650</height>
-
-            <control type="image" id="201">
-                <left>0</left>
-                <top>0</top>
-                <width>900</width>
-                <height>650</height>
-                <texture>swatch.png</texture>
-                <colordiffuse>E6141414</colordiffuse>
-            </control>
-            <control type="label" id="202">
-                <left>30</left>
-                <top>20</top>
-                <width>840</width>
-                <height>36</height>
-                <label>Button theme and position</label>
-                <textcolor>FFFFFFFF</textcolor>
-            </control>
-
-            <control type="group" id="500">
-                <left>50</left>
-                <top>76</top>
-                <width>800</width>
-                <height>450</height>
-                <control type="image" id="501">
-                    <left>0</left>
-                    <top>0</top>
-                    <width>800</width>
-                    <height>450</height>
-                    <texture>swatch.png</texture>
-                    <colordiffuse>FF000000</colordiffuse>
-                </control>
-                <control type="image" id="502">
-                    <left>0</left>
-                    <top>0</top>
-                    <width>800</width>
-                    <height>450</height>
-                    <texture border="4,4,4,4">focus_ring.png</texture>
-                    <colordiffuse>FF777777</colordiffuse>
-                </control>
-                <control type="label" id="503">
-                    <left>0</left>
-                    <top>205</top>
-                    <width>800</width>
-                    <height>40</height>
-                    <label>TV screen</label>
-                    <align>center</align>
-                    <textcolor>FF555555</textcolor>
-                </control>
-                <!-- Corner 1: slot button, number, pill background, glyph.
-                     Background/glyph rects are set in Python per theme. -->
-                <control type="button" id="511">
-                    <left>516</left>
-                    <top>350</top>
-                    <width>260</width>
-                    <height>76</height>
-                    <label></label>
-                    <texturefocus>swatch.png</texturefocus>
-                    <texturenofocus>swatch.png</texturenofocus>
-                    <colordiffuse>CC2A2A2A</colordiffuse>
-                    <onleft>512</onleft>
-                    <onright>512</onright>
-                    <onup>514</onup>
-                    <ondown>562</ondown>
-                </control>
-                <control type="label" id="531">
-                    <left>526</left>
-                    <top>350</top>
-                    <width>40</width>
-                    <height>76</height>
-                    <label>1</label>
-                    <aligny>center</aligny>
-                    <textcolor>FFAAAAAA</textcolor>
-                </control>
-                <control type="image" id="541">
-                    <left>516</left>
-                    <top>350</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_pill_bg.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <control type="image" id="521">
-                    <left>516</left>
-                    <top>350</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_button.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <!-- Corner 2: slot button, number, pill background, glyph.
-                     Background/glyph rects are set in Python per theme. -->
-                <control type="button" id="512">
-                    <left>24</left>
-                    <top>350</top>
-                    <width>260</width>
-                    <height>76</height>
-                    <label></label>
-                    <texturefocus>swatch.png</texturefocus>
-                    <texturenofocus>swatch.png</texturenofocus>
-                    <colordiffuse>CC2A2A2A</colordiffuse>
-                    <onleft>511</onleft>
-                    <onright>511</onright>
-                    <onup>513</onup>
-                    <ondown>561</ondown>
-                </control>
-                <control type="label" id="532">
-                    <left>34</left>
-                    <top>350</top>
-                    <width>40</width>
-                    <height>76</height>
-                    <label>2</label>
-                    <aligny>center</aligny>
-                    <textcolor>FFAAAAAA</textcolor>
-                </control>
-                <control type="image" id="542">
-                    <left>24</left>
-                    <top>350</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_pill_bg.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <control type="image" id="522">
-                    <left>24</left>
-                    <top>350</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_button.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <!-- Corner 3: slot button, number, pill background, glyph.
-                     Background/glyph rects are set in Python per theme. -->
-                <control type="button" id="513">
-                    <left>24</left>
-                    <top>24</top>
-                    <width>260</width>
-                    <height>76</height>
-                    <label></label>
-                    <texturefocus>swatch.png</texturefocus>
-                    <texturenofocus>swatch.png</texturenofocus>
-                    <colordiffuse>CC2A2A2A</colordiffuse>
-                    <onleft>514</onleft>
-                    <onright>514</onright>
-                    <onup>512</onup>
-                    <ondown>512</ondown>
-                </control>
-                <control type="label" id="533">
-                    <left>34</left>
-                    <top>24</top>
-                    <width>40</width>
-                    <height>76</height>
-                    <label>3</label>
-                    <aligny>center</aligny>
-                    <textcolor>FFAAAAAA</textcolor>
-                </control>
-                <control type="image" id="543">
-                    <left>24</left>
-                    <top>24</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_pill_bg.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <control type="image" id="523">
-                    <left>24</left>
-                    <top>24</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_button.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <!-- Corner 4: slot button, number, pill background, glyph.
-                     Background/glyph rects are set in Python per theme. -->
-                <control type="button" id="514">
-                    <left>516</left>
-                    <top>24</top>
-                    <width>260</width>
-                    <height>76</height>
-                    <label></label>
-                    <texturefocus>swatch.png</texturefocus>
-                    <texturenofocus>swatch.png</texturenofocus>
-                    <colordiffuse>CC2A2A2A</colordiffuse>
-                    <onleft>513</onleft>
-                    <onright>513</onright>
-                    <onup>511</onup>
-                    <ondown>511</ondown>
-                </control>
-                <control type="label" id="534">
-                    <left>526</left>
-                    <top>24</top>
-                    <width>40</width>
-                    <height>76</height>
-                    <label>4</label>
-                    <aligny>center</aligny>
-                    <textcolor>FFAAAAAA</textcolor>
-                </control>
-                <control type="image" id="544">
-                    <left>516</left>
-                    <top>24</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_pill_bg.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-                <control type="image" id="524">
-                    <left>516</left>
-                    <top>24</top>
-                    <width>0</width>
-                    <height>0</height>
-                    <texture>skip_intro_button.png</texture>
-                    <colordiffuse>00FFFFFF</colordiffuse>
-                </control>
-            </control>
-
-            <control type="button" id="561">
-                <left>240</left>
-                <top>550</top>
-                <width>200</width>
-                <height>56</height>
-                <label>Text</label>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texturefocus>swatch.png</texturefocus>
-                <texturenofocus>swatch.png</texturenofocus>
-                <colordiffuse>CC2A2A2A</colordiffuse>
-                <textcolor>FFAAAAAA</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
-                <onleft>562</onleft>
-                <onright>562</onright>
-                <onup>512</onup>
-                <ondown>512</ondown>
-            </control>
-            <control type="button" id="562">
-                <left>460</left>
-                <top>550</top>
-                <width>200</width>
-                <height>56</height>
-                <label>Pill</label>
-                <align>center</align>
-                <aligny>center</aligny>
-                <texturefocus>swatch.png</texturefocus>
-                <texturenofocus>swatch.png</texturenofocus>
-                <colordiffuse>CC2A2A2A</colordiffuse>
-                <textcolor>FFAAAAAA</textcolor>
-                <focusedcolor>FFFFFFFF</focusedcolor>
-                <onleft>561</onleft>
-                <onright>561</onright>
-                <onup>511</onup>
-                <ondown>511</ondown>
-            </control>
-
-            <!-- Focus ring (window-group coords), moved in Python onto the
-                 focused control. Declared last so it paints on top. -->
-            <control type="image" id="590">
-                <left>0</left>
-                <top>0</top>
-                <width>0</width>
-                <height>0</height>
-                <texture border="4,4,4,4">focus_ring.png</texture>
-            </control>
-        </control>
-    </controls>
+  <defaultcontrol>601</defaultcontrol>
+  <controls>
+    <control type="image" id="198">
+      <left>0</left>
+      <top>0</top>
+      <width>1920</width>
+      <height>1080</height>
+      <texture>swatch.png</texture>
+      <colordiffuse>E6000000</colordiffuse>
+    </control>
+    <control type="group" id="200">
+      <left>140</left>
+      <top>70</top>
+      <width>1640</width>
+      <height>940</height>
+      <control type="image" id="199">
+        <left>0</left>
+        <top>0</top>
+        <width>1640</width>
+        <height>940</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF14171D</colordiffuse>
+      </control>
+      <control type="image" id="197">
+        <left>0</left>
+        <top>0</top>
+        <width>1640</width>
+        <height>4</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FFFFCE78</colordiffuse>
+      </control>
+      <control type="image" id="206">
+        <left>799</left>
+        <top>140</top>
+        <width>841</width>
+        <height>701</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF181C23</colordiffuse>
+      </control>
+      <control type="image" id="205">
+        <left>799</left>
+        <top>140</top>
+        <width>1</width>
+        <height>701</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF363C47</colordiffuse>
+      </control>
+      <control type="image" id="207">
+        <left>0</left>
+        <top>139</top>
+        <width>1640</width>
+        <height>1</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF363C47</colordiffuse>
+      </control>
+      <control type="image" id="208">
+        <left>0</left>
+        <top>841</top>
+        <width>1640</width>
+        <height>1</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF363C47</colordiffuse>
+      </control>
+      <control type="image" id="209">
+        <left>54</left>
+        <top>575</top>
+        <width>704</width>
+        <height>1</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF363C47</colordiffuse>
+      </control>
+      <control type="label" id="202">
+        <left>54</left>
+        <top>22</top>
+        <width>500</width>
+        <height>36</height>
+        <label>ScenePass</label>
+        <textcolor>FFFFCE78</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="label" id="201">
+        <left>54</left>
+        <top>62</top>
+        <width>900</width>
+        <height>62</height>
+        <label>[B]Theme Manager[/B]</label>
+        <textcolor>FFF0E9DC</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="label" id="706">
+        <left>1115</left>
+        <top>62</top>
+        <width>497</width>
+        <height>62</height>
+        <label />
+        <textcolor>FFB8BAC3</textcolor>
+        <aligny>center</aligny>
+        <align>right</align>
+      </control>
+      <control type="label" id="203">
+        <left>54</left>
+        <top>161</top>
+        <width>235</width>
+        <height>40</height>
+        <label>[B]Theme[/B]</label>
+        <textcolor>FFF0E9DC</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="image" id="204">
+        <left>340</left>
+        <top>164</top>
+        <width>1</width>
+        <height>396</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF695237</colordiffuse>
+      </control>
+      <control type="button" id="601">
+        <left>72</left>
+        <top>211</top>
+        <width>244</width>
+        <height>64</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>601</onup>
+        <ondown>601</ondown>
+        <onleft>601</onleft>
+        <onright>601</onright>
+      </control>
+      <control type="button" id="602">
+        <left>72</left>
+        <top>288</top>
+        <width>244</width>
+        <height>64</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>602</onup>
+        <ondown>602</ondown>
+        <onleft>602</onleft>
+        <onright>602</onright>
+      </control>
+      <control type="button" id="603">
+        <left>72</left>
+        <top>365</top>
+        <width>244</width>
+        <height>64</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>603</onup>
+        <ondown>603</ondown>
+        <onleft>603</onleft>
+        <onright>603</onright>
+      </control>
+      <control type="image" id="695">
+        <left>66</left>
+        <top>211</top>
+        <width>4</width>
+        <height>64</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FFFFCE78</colordiffuse>
+      </control>
+      <control type="image" id="697">
+        <left>361</left>
+        <top>163</top>
+        <width>397</width>
+        <height>113</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FF0E1015</colordiffuse>
+      </control>
+      <control type="image" id="696">
+        <left>374</left>
+        <top>172</top>
+        <width>371</width>
+        <height>95</height>
+        <texture>manager/scenepass.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="button" id="611">
+        <left>367</left>
+        <top>292</top>
+        <width>188</width>
+        <height>55</height>
+        <label>Pill</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>611</onup>
+        <ondown>611</ondown>
+        <onleft>611</onleft>
+        <onright>611</onright>
+      </control>
+      <control type="button" id="612">
+        <left>570</left>
+        <top>292</top>
+        <width>188</width>
+        <height>55</height>
+        <label>Text</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>612</onup>
+        <ondown>612</ondown>
+        <onleft>612</onleft>
+        <onright>612</onright>
+      </control>
+      <control type="button" id="613">
+        <left>367</left>
+        <top>292</top>
+        <width>125</width>
+        <height>55</height>
+        <label>Text</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>613</onup>
+        <ondown>613</ondown>
+        <onleft>613</onleft>
+        <onright>613</onright>
+      </control>
+      <control type="button" id="614">
+        <left>500</left>
+        <top>292</top>
+        <width>125</width>
+        <height>55</height>
+        <label>Classic</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>614</onup>
+        <ondown>614</ondown>
+        <onleft>614</onleft>
+        <onright>614</onright>
+      </control>
+      <control type="button" id="615">
+        <left>633</left>
+        <top>292</top>
+        <width>125</width>
+        <height>55</height>
+        <label>Modern</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>615</onup>
+        <ondown>615</ondown>
+        <onleft>615</onleft>
+        <onright>615</onright>
+      </control>
+      <control type="button" id="621">
+        <left>385</left>
+        <top>360</top>
+        <width>373</width>
+        <height>45</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>621</onup>
+        <ondown>621</ondown>
+        <onleft>621</onleft>
+        <onright>621</onright>
+      </control>
+      <control type="button" id="622">
+        <left>385</left>
+        <top>411</top>
+        <width>373</width>
+        <height>45</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>622</onup>
+        <ondown>622</ondown>
+        <onleft>622</onleft>
+        <onright>622</onright>
+      </control>
+      <control type="button" id="623">
+        <left>385</left>
+        <top>462</top>
+        <width>373</width>
+        <height>45</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>623</onup>
+        <ondown>623</ondown>
+        <onleft>623</onleft>
+        <onright>623</onright>
+      </control>
+      <control type="button" id="624">
+        <left>385</left>
+        <top>513</top>
+        <width>373</width>
+        <height>45</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>624</onup>
+        <ondown>624</ondown>
+        <onleft>624</onleft>
+        <onright>624</onright>
+      </control>
+      <control type="button" id="625">
+        <left>385</left>
+        <top>564</top>
+        <width>373</width>
+        <height>45</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>625</onup>
+        <ondown>625</ondown>
+        <onleft>625</onleft>
+        <onright>625</onright>
+      </control>
+      <control type="label" id="704">
+        <left>54</left>
+        <top>585</top>
+        <width>400</width>
+        <height>40</height>
+        <label>[B]Colours[/B]</label>
+        <textcolor>FFF0E9DC</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="label" id="705">
+        <left>54</left>
+        <top>631</top>
+        <width>704</width>
+        <height>44</height>
+        <label />
+        <textcolor>FFB8BAC3</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="button" id="641">
+        <left>54</left>
+        <top>631</top>
+        <width>704</width>
+        <height>44</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>641</onup>
+        <ondown>641</ondown>
+        <onleft>641</onleft>
+        <onright>641</onright>
+      </control>
+      <control type="image" id="741">
+        <left>695</left>
+        <top>641</top>
+        <width>44</width>
+        <height>24</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <control type="button" id="642">
+        <left>54</left>
+        <top>683</top>
+        <width>704</width>
+        <height>44</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>642</onup>
+        <ondown>642</ondown>
+        <onleft>642</onleft>
+        <onright>642</onright>
+      </control>
+      <control type="image" id="742">
+        <left>695</left>
+        <top>693</top>
+        <width>44</width>
+        <height>24</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <control type="button" id="643">
+        <left>54</left>
+        <top>735</top>
+        <width>704</width>
+        <height>44</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>643</onup>
+        <ondown>643</ondown>
+        <onleft>643</onleft>
+        <onright>643</onright>
+      </control>
+      <control type="image" id="743">
+        <left>695</left>
+        <top>745</top>
+        <width>44</width>
+        <height>24</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <control type="button" id="644">
+        <left>54</left>
+        <top>787</top>
+        <width>704</width>
+        <height>44</height>
+        <label />
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>644</onup>
+        <ondown>644</ondown>
+        <onleft>644</onleft>
+        <onright>644</onright>
+      </control>
+      <control type="image" id="744">
+        <left>695</left>
+        <top>797</top>
+        <width>44</width>
+        <height>24</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <control type="label" id="716">
+        <left>832</left>
+        <top>160</top>
+        <width>230</width>
+        <height>43</height>
+        <label>[B]Preview[/B]</label>
+        <textcolor>FFF0E9DC</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="label" id="717">
+        <left>1035</left>
+        <top>160</top>
+        <width>577</width>
+        <height>43</height>
+        <label />
+        <textcolor>FFB8BAC3</textcolor>
+        <aligny>center</aligny>
+        <align>right</align>
+      </control>
+      <control type="image" id="708">
+        <left>832</left>
+        <top>215</top>
+        <width>780</width>
+        <height>439</height>
+        <texture>manager/preview.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+      <control type="image" id="709">
+        <left>832</left>
+        <top>215</top>
+        <width>780</width>
+        <height>439</height>
+        <texture border="4,4,4,4">focus_ring.png</texture>
+        <colordiffuse>FF49515F</colordiffuse>
+      </control>
+      <control type="button" id="651">
+        <left>1538</left>
+        <top>581</top>
+        <width>56</width>
+        <height>55</height>
+        <label>1</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>651</onup>
+        <ondown>651</ondown>
+        <onleft>651</onleft>
+        <onright>651</onright>
+      </control>
+      <control type="button" id="652">
+        <left>850</left>
+        <top>581</top>
+        <width>56</width>
+        <height>55</height>
+        <label>2</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>652</onup>
+        <ondown>652</ondown>
+        <onleft>652</onleft>
+        <onright>652</onright>
+      </control>
+      <control type="button" id="653">
+        <left>850</left>
+        <top>233</top>
+        <width>56</width>
+        <height>55</height>
+        <label>3</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>653</onup>
+        <ondown>653</ondown>
+        <onleft>653</onleft>
+        <onright>653</onright>
+      </control>
+      <control type="button" id="654">
+        <left>1538</left>
+        <top>233</top>
+        <width>56</width>
+        <height>55</height>
+        <label>4</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>654</onup>
+        <ondown>654</ondown>
+        <onleft>654</onleft>
+        <onright>654</onright>
+      </control>
+      <control type="label" id="718">
+        <left>832</left>
+        <top>665</top>
+        <width>370</width>
+        <height>43</height>
+        <label>Choose position</label>
+        <textcolor>FFF0E9DC</textcolor>
+        <aligny>center</aligny>
+      </control>
+      <control type="label" id="707">
+        <left>1210</left>
+        <top>665</top>
+        <width>402</width>
+        <height>43</height>
+        <label />
+        <textcolor>FFB8BAC3</textcolor>
+        <aligny>center</aligny>
+        <align>right</align>
+      </control>
+      <control type="label" id="702">
+        <left>832</left>
+        <top>722</top>
+        <width>780</width>
+        <height>44</height>
+        <label />
+        <textcolor>FFB8BAC3</textcolor>
+        <aligny>center</aligny>
+        <scroll>true</scroll>
+      </control>
+      <control type="image" id="710">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>00FFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="image" id="711">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>00FFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="image" id="712">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>00FFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="image" id="713">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>00FFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="image" id="714">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>00FFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="image" id="715">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture>swatch.png</texture>
+        <colordiffuse>00FFFFFF</colordiffuse>
+        <aspectratio>keep</aspectratio>
+      </control>
+      <control type="button" id="661">
+        <left>54</left>
+        <top>862</top>
+        <width>270</width>
+        <height>56</height>
+        <label>Reset Colours</label>
+        <textoffsetx>16</textoffsetx>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>661</onup>
+        <ondown>661</ondown>
+        <onleft>661</onleft>
+        <onright>661</onright>
+      </control>
+      <control type="button" id="662">
+        <left>1240</left>
+        <top>862</top>
+        <width>164</width>
+        <height>56</height>
+        <label>Cancel</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FF252B34</colordiffuse>
+        <textcolor>FFF0E9DC</textcolor>
+        <focusedcolor>FFFFFFFF</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>662</onup>
+        <ondown>662</ondown>
+        <onleft>662</onleft>
+        <onright>662</onright>
+      </control>
+      <control type="button" id="663">
+        <left>1422</left>
+        <top>862</top>
+        <width>190</width>
+        <height>56</height>
+        <label>Apply</label>
+        <align>center</align>
+        <texturefocus>swatch.png</texturefocus>
+        <texturenofocus>swatch.png</texturenofocus>
+        <colordiffuse>FFFFCE78</colordiffuse>
+        <textcolor>FF21170A</textcolor>
+        <focusedcolor>FF21170A</focusedcolor>
+        <disabledcolor>FF777B82</disabledcolor>
+        <onup>663</onup>
+        <ondown>663</ondown>
+        <onleft>663</onleft>
+        <onright>663</onright>
+      </control>
+      <control type="image" id="690">
+        <left>0</left>
+        <top>0</top>
+        <width>0</width>
+        <height>0</height>
+        <texture border="4,4,4,4">focus_ring.png</texture>
+        <colordiffuse>FFFFFFFF</colordiffuse>
+      </control>
+    </control>
+  </controls>
 </window>

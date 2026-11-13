@@ -1,5 +1,5 @@
 """Standalone entry point for RunScript(theme_picker.py), launched from
-Settings > Appearance's "Preview themes..." button. Runs as its own
+Settings > Themes > "Open Theme Manager..." button. Runs as its own
 short-lived Kodi Python process, separate from the persistent service.py
 process -- see lib/color_picker.py's docstring for why that's fine here
 (same reasoning, same RunScript()-against-a-raw-file-path setup).

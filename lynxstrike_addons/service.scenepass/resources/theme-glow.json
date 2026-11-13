@@ -1,0 +1,42 @@
+[
+  {
+    "source": "themes/cinema/text/icon-glow/skip_intro_text_tint.png",
+    "source_sha256": "870200514ab5a241c395cca0238331ebed6098d8930894eb3638584425136765",
+    "asset": "themes/cinema/glow/skip_intro_glow_soft.png",
+    "sha256": "e932f7ae0f71db928a05ca1422ac67c02fa57bed70b12904d62fbf16ebbada57",
+    "alpha_mapping": "linear gain with translucent cap",
+    "alpha_gain": 6,
+    "max_alpha": 112,
+    "glow_top_reference": 72
+  },
+  {
+    "source": "themes/cinema/text/icon-glow/skip_recap_text_tint.png",
+    "source_sha256": "2ca0ba826d39039f230578bdb5faddc7044bbe63d48668053767f9c7050f7243",
+    "asset": "themes/cinema/glow/skip_recap_glow_soft.png",
+    "sha256": "fa2803eba7b9ac1619aa7ccadd1f9c5d8cdb30d1d9ef4111128988ae2d4dc869",
+    "alpha_mapping": "linear gain with translucent cap",
+    "alpha_gain": 6,
+    "max_alpha": 112,
+    "glow_top_reference": 72
+  },
+  {
+    "source": "themes/cinema/pill/accent-icon/skip_intro_cinema_tint.png",
+    "source_sha256": "05435490ef1f120a1c45ef26a04ceced0ccc397291e90cb96842a21816225b8a",
+    "asset": "themes/cinema/glow/skip_intro_accent_icon_soft.png",
+    "sha256": "ad2d44e03a2d025eb4f09b2ab1012c17a3af597b522e684ee09b9fbf42af3726",
+    "alpha_mapping": "linear gain with translucent cap",
+    "alpha_gain": 6,
+    "max_alpha": 112,
+    "glow_top_reference": 72
+  },
+  {
+    "source": "themes/cinema/pill/accent-icon/skip_recap_cinema_tint.png",
+    "source_sha256": "ffa46983e654ec64ef585d6317613983e76707d55ef4e307404d218288a520f4",
+    "asset": "themes/cinema/glow/skip_recap_accent_icon_soft.png",
+    "sha256": "8646714b81c9b1903557d88a6688f247af5e430bf75655e8b4c2d4bdb232b042",
+    "alpha_mapping": "linear gain with translucent cap",
+    "alpha_gain": 6,
+    "max_alpha": 112,
+    "glow_top_reference": 72
+  }
+]

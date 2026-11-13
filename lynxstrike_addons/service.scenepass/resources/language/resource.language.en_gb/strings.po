@@ -168,3 +168,32 @@ msgstr ""
 msgctxt "#32043"
 msgid "4 - Top right"
 msgstr ""
+
+msgctxt "#32044"
+msgid "Restore default position"
+msgstr ""
+
+msgctxt "#32045"
+msgid "Hide skip button automatically"
+msgstr ""
+
+msgctxt "#32046"
+msgid "Off: the Skip button stays on screen for the whole intro or recap. On: if it isn't pressed, it disappears after the time below and the intro or recap plays on."
+msgstr ""
+
+msgctxt "#32047"
+msgid "Hide after (seconds)"
+msgstr ""
+
+msgctxt "#32048"
+msgid "Themes"
+msgstr ""
+
+msgctxt "#32049"
+msgid "Open Theme Manager..."
+msgstr ""
+
+msgctxt "#32050"
+msgid "Choose ScenePass, SceneCast or Madnox, pick a style, colours and screen corner, then Apply to save. SceneCast and Madnox themes need their matching skin installed and active."
+msgstr ""
+

@@ -1,0 +1,82 @@
+[
+  {
+    "source": "01-theme-1/masters/skip_intro_base.png",
+    "asset": "themes/madnox/theme-1/skip_intro_base.png",
+    "sha256": "a2cd9cda67b5561a76de297337b2ca853db27580846e10e43702a7363f26c27f"
+  },
+  {
+    "source": "01-theme-1/masters/skip_recap_base.png",
+    "asset": "themes/madnox/theme-1/skip_recap_base.png",
+    "sha256": "928caad54b14804a3da36ace233763c4c67a45c2f3e1688312fd8b536a746673"
+  },
+  {
+    "source": "02-theme-2/masters/skip_intro_glow.png",
+    "asset": "themes/madnox/theme-2/skip_intro_glow.png",
+    "sha256": "3e61cf63a15e3f93fbae20cbcc2ea79a42bb02eb95c5c36d56c81aee40c8bf98"
+  },
+  {
+    "source": "02-theme-2/masters/skip_intro_base.png",
+    "asset": "themes/madnox/theme-2/skip_intro_base.png",
+    "sha256": "8501a58aaf981f5c74d2bfe28304f2703da65d421cab810e18333cb5c1f42a82"
+  },
+  {
+    "source": "02-theme-2/masters/skip_intro_tint.png",
+    "asset": "themes/madnox/theme-2/skip_intro_tint.png",
+    "sha256": "fa2347ddebdfe8d2ceadc60a66d7cfcea28be26a6fd3cae15805007fdb252e7e"
+  },
+  {
+    "source": "02-theme-2/masters/skip_recap_glow.png",
+    "asset": "themes/madnox/theme-2/skip_recap_glow.png",
+    "sha256": "bf4b4e21e4dea30b2514e988c7c40932b7ff62d04b4ba3f5abac275f29b4a7ec"
+  },
+  {
+    "source": "02-theme-2/masters/skip_recap_base.png",
+    "asset": "themes/madnox/theme-2/skip_recap_base.png",
+    "sha256": "8501a58aaf981f5c74d2bfe28304f2703da65d421cab810e18333cb5c1f42a82"
+  },
+  {
+    "source": "02-theme-2/masters/skip_recap_tint.png",
+    "asset": "themes/madnox/theme-2/skip_recap_tint.png",
+    "sha256": "879829b0cb0aca2a6bcd50dd17af9223dda44f33efe50dfcbf7457fd8c471365"
+  },
+  {
+    "source": "03-theme-3/masters/skip_intro_base.png",
+    "asset": "themes/madnox/theme-3/skip_intro_base.png",
+    "sha256": "1a68f09024ff578abae02537642c8efedac156f230cefeeff87c81cdbc94069d"
+  },
+  {
+    "source": "03-theme-3/masters/skip_intro_tint.png",
+    "asset": "themes/madnox/theme-3/skip_intro_tint.png",
+    "sha256": "cadb308b913d71cdb6174cc3e1ccf2496755084c645fb50e678fd3623adad603"
+  },
+  {
+    "source": "03-theme-3/masters/skip_recap_base.png",
+    "asset": "themes/madnox/theme-3/skip_recap_base.png",
+    "sha256": "1a68f09024ff578abae02537642c8efedac156f230cefeeff87c81cdbc94069d"
+  },
+  {
+    "source": "03-theme-3/masters/skip_recap_tint.png",
+    "asset": "themes/madnox/theme-3/skip_recap_tint.png",
+    "sha256": "d3978773f1ea784459faf9c75b04b88ad8f2021d89856bf4a52e26c41c74c96e"
+  },
+  {
+    "source": "04-theme-4/masters/skip_intro_base.png",
+    "asset": "themes/madnox/theme-4/skip_intro_base.png",
+    "sha256": "a68f90d5e9e8738983b9010f27ad392d08803a30e333179e2ffd6048512b9461"
+  },
+  {
+    "source": "04-theme-4/masters/skip_intro_tint.png",
+    "asset": "themes/madnox/theme-4/skip_intro_tint.png",
+    "sha256": "3cb0c68e95d0852b5e47a9abd14ad6375618292a57f9fd1abe48215618ed3480"
+  },
+  {
+    "source": "04-theme-4/masters/skip_recap_base.png",
+    "asset": "themes/madnox/theme-4/skip_recap_base.png",
+    "sha256": "a68f90d5e9e8738983b9010f27ad392d08803a30e333179e2ffd6048512b9461"
+  },
+  {
+    "source": "04-theme-4/masters/skip_recap_tint.png",
+    "asset": "themes/madnox/theme-4/skip_recap_tint.png",
+    "sha256": "5276dd0262a16bc73a1c3ea2b58b1cd87119bce64f835d2a8ea168e65d7666e7"
+  }
+]

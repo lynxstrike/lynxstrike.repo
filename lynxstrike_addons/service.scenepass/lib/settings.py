@@ -18,6 +18,18 @@ def auto_skip(kind: str) -> bool:
     return _addon.getSettingBool(f'auto_skip_{kind}')
 
 
+def skip_button_timeout() -> int:
+    """Seconds before an untouched Skip button hides itself (the segment then
+    plays on, as if the user chose to keep it); 0 = "Hide skip button" is off,
+    so the button stays until the segment ends."""
+    try:
+        if not _addon.getSettingBool('hide_skip_button'):
+            return 0
+        return max(1, _addon.getSettingInt('skip_button_timeout'))
+    except (RuntimeError, TypeError, ValueError):
+        return 0
+
+
 def min_segment_seconds() -> float:
     return float(_addon.getSettingInt('min_segment_seconds'))
 
@@ -40,7 +52,7 @@ def announce_playback() -> bool:
     return _addon.getSettingBool('announce_playback')
 
 
-_VALID_BUTTON_THEMES = ('text', 'pill')
+_VALID_BUTTON_THEMES = ('text', 'pill', 'cinema', 'madnox', 'madnox-collection')
 
 
 def button_theme() -> str:
@@ -131,3 +143,34 @@ def button_position() -> int:
     except (RuntimeError, TypeError, ValueError):
         return 1
     return pos if pos in _VALID_BUTTON_POSITIONS else 1
+
+
+def appearance_config():
+    """Snapshot for staged edits. Preserve the previous Pill's Madnox artwork."""
+    theme = button_theme()
+    legacy_pill = (theme == 'pill' and _addon.getSettingInt('theme_catalog_version') < 1) or theme == 'madnox'
+    if theme == 'madnox':
+        theme = 'pill'
+    pill_variant = _addon.getSettingString('pill_style')
+    fmt = _addon.getSettingString('cinema_format')
+    pill_style = _addon.getSettingString('cinema_pill_style')
+    text_style = _addon.getSettingString('cinema_text_style')
+    from lib.theme_registry import PILL_STYLES, TEXT_STYLES, MADNOX_STYLES, SCENEPASS_PILL_STYLES
+    madnox_style = _addon.getSettingString('madnox_style')
+    return {'theme': theme, 'position': button_position(),
+            'madnox_style': madnox_style if madnox_style in {s[0] for s in MADNOX_STYLES} else 'theme-1',
+            'pill_style': ('madnox' if legacy_pill else
+                           pill_variant if pill_variant in {s[0] for s in SCENEPASS_PILL_STYLES} else 'classic'),
+            'cinema_format': fmt if fmt in ('pill', 'text') else 'pill',
+            'cinema_pill_style': pill_style if pill_style in {s[0] for s in PILL_STYLES} else 'original',
+            'cinema_text_style': text_style if text_style in {s[0] for s in TEXT_STYLES} else 'original',
+            'colors': {key: get_color_hex(key) for key in _COLOR_SETTINGS}}
+
+
+def save_appearance(config):
+    for key in ('button_theme', 'pill_style', 'cinema_format', 'cinema_pill_style', 'cinema_text_style', 'madnox_style'):
+        _addon.setSetting(key, config['theme'] if key == 'button_theme' else config[key])
+    _addon.setSettingInt('button_position', config['position'])
+    for target, color in config['colors'].items():
+        set_color_hex(target, color)
+    _addon.setSettingInt('theme_catalog_version', 1)

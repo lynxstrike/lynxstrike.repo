@@ -1,0 +1,162 @@
+[
+  {
+    "source": "ScenePass-Cinema/production/01-addon-accent/masters/skip_intro_cinema_base.png",
+    "asset": "themes/cinema/pill/accent/skip_intro_cinema_base.png",
+    "sha256": "310cf4d5b55dcdcbea3e744519ef8fead6531d8774dc89e08377fd7b0f938efb"
+  },
+  {
+    "source": "ScenePass-Cinema/production/01-addon-accent/masters/skip_intro_cinema_tint.png",
+    "asset": "themes/cinema/pill/accent/skip_intro_cinema_tint.png",
+    "sha256": "6b9b8030f864dafe7733e5d09baff871787cd323226bc645f0e95df87575ebd7"
+  },
+  {
+    "source": "ScenePass-Cinema/production/01-addon-accent/masters/skip_recap_cinema_base.png",
+    "asset": "themes/cinema/pill/accent/skip_recap_cinema_base.png",
+    "sha256": "6515aa1f830c9a3236cd7005d44f502d95e6e08193082fe03d0a8f5c9ded5654"
+  },
+  {
+    "source": "ScenePass-Cinema/production/01-addon-accent/masters/skip_recap_cinema_tint.png",
+    "asset": "themes/cinema/pill/accent/skip_recap_cinema_tint.png",
+    "sha256": "eb8c863dceae95667c36f1c4e67b2787da5f5bd029f9b5e83c76980e5f3c4f83"
+  },
+  {
+    "source": "ScenePass-Cinema/production/02-addon-font/masters/skip_intro_cinema_base.png",
+    "asset": "themes/cinema/pill/font/skip_intro_cinema_base.png",
+    "sha256": "91065826f95f59ae4b513befa73520a514c9d0f3c9f17b8a772246eabec2300c"
+  },
+  {
+    "source": "ScenePass-Cinema/production/02-addon-font/masters/skip_intro_cinema_tint.png",
+    "asset": "themes/cinema/pill/font/skip_intro_cinema_tint.png",
+    "sha256": "455a7ba62313cc06a0cbe8931358b1804f58d5bd26d553a4ddd785e1f54a3190"
+  },
+  {
+    "source": "ScenePass-Cinema/production/02-addon-font/masters/skip_recap_cinema_base.png",
+    "asset": "themes/cinema/pill/font/skip_recap_cinema_base.png",
+    "sha256": "c2dc7f27638b9fe347e65adc1068432d4eb3e9130f0645ab9b28d0adca6371d2"
+  },
+  {
+    "source": "ScenePass-Cinema/production/02-addon-font/masters/skip_recap_cinema_tint.png",
+    "asset": "themes/cinema/pill/font/skip_recap_cinema_tint.png",
+    "sha256": "ce2975f8f4a8833c777ab5ebefdd15a8f69659e9df1155a965e95d22cc8f0f59"
+  },
+  {
+    "source": "ScenePass-Cinema/production/03-addon-icon/masters/skip_intro_cinema_base.png",
+    "asset": "themes/cinema/pill/icon/skip_intro_cinema_base.png",
+    "sha256": "28d986c44dda8bb1f1d760598fdf1b0e29271bf1a9f642cc9f958c3c659b4c36"
+  },
+  {
+    "source": "ScenePass-Cinema/production/03-addon-icon/masters/skip_intro_cinema_tint.png",
+    "asset": "themes/cinema/pill/icon/skip_intro_cinema_tint.png",
+    "sha256": "cf6a6ede9de527306c06a5d9c6342a83cf241d84f22b85abcf92251497b5728a"
+  },
+  {
+    "source": "ScenePass-Cinema/production/03-addon-icon/masters/skip_recap_cinema_base.png",
+    "asset": "themes/cinema/pill/icon/skip_recap_cinema_base.png",
+    "sha256": "2ef767f4035934f32084528c1cd3b3c58e4aeff18039ac4105c75479935b8a2d"
+  },
+  {
+    "source": "ScenePass-Cinema/production/03-addon-icon/masters/skip_recap_cinema_tint.png",
+    "asset": "themes/cinema/pill/icon/skip_recap_cinema_tint.png",
+    "sha256": "5c8001342c7e3c07824772a05cc07875a6e990f2d69c9aadbe9d27139201f3db"
+  },
+  {
+    "source": "ScenePass-Cinema/production/04-original/masters/skip_intro_cinema_base.png",
+    "asset": "themes/cinema/pill/original/skip_intro_cinema_base.png",
+    "sha256": "4d7d3b0c23d6ffa20e047b576f5df320fefad2a87ba4f33c89bbd626f1a0c92d"
+  },
+  {
+    "source": "ScenePass-Cinema/production/04-original/masters/skip_intro_cinema_tint.png",
+    "asset": "themes/cinema/pill/original/skip_intro_cinema_tint.png",
+    "sha256": "03617e717848457cfd6dbda114fada1c513fa355718fa2441211e7357f58295b"
+  },
+  {
+    "source": "ScenePass-Cinema/production/04-original/masters/skip_recap_cinema_base.png",
+    "asset": "themes/cinema/pill/original/skip_recap_cinema_base.png",
+    "sha256": "5e8dbfca416f25706af4cf08d29f1cacd2e93567f3edc2b15278c251f5002004"
+  },
+  {
+    "source": "ScenePass-Cinema/production/04-original/masters/skip_recap_cinema_tint.png",
+    "asset": "themes/cinema/pill/original/skip_recap_cinema_tint.png",
+    "sha256": "d0e022dd968b2b7dfeee50d6ddb1178fcc03b1c85de82f40f677119725e66d19"
+  },
+  {
+    "source": "ScenePass-Cinema/ScenePass-Cinema-All-5-Production/05-addon-accent-icon/masters/skip_intro_cinema_base.png",
+    "asset": "themes/cinema/pill/accent-icon/skip_intro_cinema_base.png",
+    "sha256": "2b152e4afa71d29a61917ac8b9629a499d30a3d08ad265aa4f92edd1e7320f01"
+  },
+  {
+    "source": "ScenePass-Cinema/ScenePass-Cinema-All-5-Production/05-addon-accent-icon/masters/skip_intro_cinema_tint.png",
+    "asset": "themes/cinema/pill/accent-icon/skip_intro_cinema_tint.png",
+    "sha256": "05435490ef1f120a1c45ef26a04ceced0ccc397291e90cb96842a21816225b8a"
+  },
+  {
+    "source": "ScenePass-Cinema/ScenePass-Cinema-All-5-Production/05-addon-accent-icon/masters/skip_recap_cinema_base.png",
+    "asset": "themes/cinema/pill/accent-icon/skip_recap_cinema_base.png",
+    "sha256": "ec70b41d02084bc8706820ffb1ae29923e153a39203d4a04af9d1c42c440eb3f"
+  },
+  {
+    "source": "ScenePass-Cinema/ScenePass-Cinema-All-5-Production/05-addon-accent-icon/masters/skip_recap_cinema_tint.png",
+    "asset": "themes/cinema/pill/accent-icon/skip_recap_cinema_tint.png",
+    "sha256": "ffa46983e654ec64ef585d6317613983e76707d55ef4e307404d218288a520f4"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/01-default-original/masters/skip_intro_text_base.png",
+    "asset": "themes/cinema/text/original/skip_intro_text_base.png",
+    "sha256": "13b997ccd74efc195f20f41ea35b1636bdb6cde25940e2c785d622cd6f147082"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/01-default-original/masters/skip_intro_text_tint.png",
+    "asset": "themes/cinema/text/original/skip_intro_text_tint.png",
+    "sha256": "03617e717848457cfd6dbda114fada1c513fa355718fa2441211e7357f58295b"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/01-default-original/masters/skip_recap_text_base.png",
+    "asset": "themes/cinema/text/original/skip_recap_text_base.png",
+    "sha256": "323f7d90c708b4f13812e754bf91562843dd6cbf646bada1e7ba46109341f4a5"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/01-default-original/masters/skip_recap_text_tint.png",
+    "asset": "themes/cinema/text/original/skip_recap_text_tint.png",
+    "sha256": "d0e022dd968b2b7dfeee50d6ddb1178fcc03b1c85de82f40f677119725e66d19"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/02-addon-icon-glow/masters/skip_intro_text_base.png",
+    "asset": "themes/cinema/text/icon-glow/skip_intro_text_base.png",
+    "sha256": "acbe0c7b3aaa3be1d95c4fcf36ff5bee03735c8d85d719a22c3e6ad2c6f686cb"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/02-addon-icon-glow/masters/skip_intro_text_tint.png",
+    "asset": "themes/cinema/text/icon-glow/skip_intro_text_tint.png",
+    "sha256": "870200514ab5a241c395cca0238331ebed6098d8930894eb3638584425136765"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/02-addon-icon-glow/masters/skip_recap_text_base.png",
+    "asset": "themes/cinema/text/icon-glow/skip_recap_text_base.png",
+    "sha256": "a619407fbe77ce5402aaaac9c99d0ca39d204c75a0e938a9fcaeea91348c48d3"
+  },
+  {
+    "source": "ScenePass-Cinema/production-text/02-addon-icon-glow/masters/skip_recap_text_tint.png",
+    "asset": "themes/cinema/text/icon-glow/skip_recap_text_tint.png",
+    "sha256": "2ca0ba826d39039f230578bdb5faddc7044bbe63d48668053767f9c7050f7243"
+  },
+  {
+    "source": "ScenePass-UHD/media/skip_intro_pill_bg.png",
+    "asset": "themes/pill/skip_intro_pill_bg.png",
+    "sha256": "acf3013e4608bcbb9f89b3057f7fd07ecef7572edb43e3bea13e5143ea4eef14"
+  },
+  {
+    "source": "ScenePass-UHD/media/skip_intro_button.png",
+    "asset": "skip_intro_button.png",
+    "sha256": "80be6afb505b9c7350c3cd723a2d70578c6537811d6a0c9bfae5eb02fd677752"
+  },
+  {
+    "source": "ScenePass-UHD/media/skip_recap_pill_bg.png",
+    "asset": "themes/pill/skip_recap_pill_bg.png",
+    "sha256": "96e3c69a9895a2dfbaeaae43505ef559764b5b4c8b0382076242a64df68038ef"
+  },
+  {
+    "source": "ScenePass-UHD/media/skip_recap_button.png",
+    "asset": "skip_recap_button.png",
+    "sha256": "4c187cb0de21cb6d02efc40aad03aef13db1fbfb0ceab8adb21f350c07b2100c"
+  }
+]

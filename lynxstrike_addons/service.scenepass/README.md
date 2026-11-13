@@ -1,71 +1,58 @@
-## <p align="center"><ins>ScenePass for KODI</ins></p>
+# ScenePass for Kodi
 
-<p align="center">
-  <img width="70%" src="https://github.com/lynxstrike/lynxstrike.repo/blob/master/lynxstrike_addons/service.scenepass/banner.png" alt="ScenePass banner">
-</p>
+Skip TV intros and recaps using ScenePass `.sp.json` sidecars beside each video.
+The service reads Intro/Recap start and end times; it does not scan video itself.
 
-<p align="center"><strong>Skip TV intros and recaps.</strong></p>
+## Playback
 
-<p align="center"><strong>ScenePass is a Kodi service add-on that reads <code>.sp.json</code> sidecar files sitting next to your video files and automatically detects intro and recap segments during playback — offering on-screen Skip Intro / Skip Recap buttons, or auto-skipping them entirely.
-</strong></p>
+Enable Intro and Recap independently, and choose a skip button or automatic
+skipping for each. The minimum segment length defaults to 8 seconds. Confidence
+scores do not filter sidecars. Optionally hide an untouched skip button after
+1-60 seconds (10 by default); otherwise it stays for the segment's duration.
 
----
+## Theme Manager
 
-### 🎬 <ins>Features</ins>
+Open **Configure > Themes > Open Theme Manager**. Choose **ScenePass**,
+**SceneCast** or **Madnox**, then use the branded submenu to choose a style.
+The Intro and Recap previews open in the centre. Select a numbered corner
+to preview placement there.
+Choose **Apply** to save, or **Cancel/Back** to discard the whole preview,
+including colour-picker edits. The colour editor opens on its own page:
+**Use colour** returns to the preview, and **Cancel** keeps the previous colour.
+Only **Apply** in Theme Manager saves it. Reset colours affects the current design.
 
-- Reads ScenePass `.sp.json` sidecars next to each video file — no extra scanning inside Kodi
-- On-screen **Skip Intro** / **Skip Recap** pill buttons during playback (not a blocking dialog)
-- Optional automatic skipping, independently for intros and recaps
-- Confidence and minimum-segment-duration gates, so low-confidence detections are ignored
+- **ScenePass:** **Text**, **Classic**, and **Modern** are available with every skin.
+  Classic offers Solid, Outlined, and Split rectangles. Modern offers Solid,
+  Outlined, and Split round pills.
+  Both pill themes have separate background and lettering colours.
+- **SceneCast:** Aeon SceneCast collaboration. Choose Pill (five styles) or Text
+  (two styles). Original gold designs use fixed gold/ivory; custom styles
+  expose only the colours that change the selected design.
+- **Madnox:** Aeon Madnox collaboration, with four numbered themes: fixed
+  original artwork, coloured icon/text with glow, a Madnox-logo pill, and
+  dimensional lettering coloured independently of the red/gold M emblem.
+  Theme 5 contains the legacy Madnox-logo Pill and remains available with every skin.
 
----
+Collaboration themes require an approved skin installed **and active**. The manager
+explains locked themes. Playback checks the active skin again whenever a skip
+button appears, and after a skin switch. If unavailable it uses default Text,
+preserving your saved preference. SceneCast (internal ID `cinema`) approves the exact skin ID `skin.aeon.scenecast`;
+Madnox approves `skin.aeon.madnox` (verified from the supplied skin manifest).
 
-### 📦 <ins>Installation</ins>
+Legacy Pill settings retain the Madnox-logo style because that was the artwork
+shown by the previous version. Your colours and corner are retained.
+See [THEME-SPEC.md](THEME-SPEC.md) for collaboration and theme registration.
 
-Once you've added the `lynxstrike.repo` source in Kodi (see the [repository README](../../README.md) for those steps):
+## Family Share
 
-**System > Add-ons > Install from repository** → select **lynxstrike.repo** → **Services** → click **ScenePass** to install.
+“Let ScenePass scanners ease off the drive while playing” defaults on. After
+10 seconds of playback, a small heartbeat in an existing library `.scenepass`
+folder tells ScenePass PCs to read that drive more gently. It is removed when
+playback stops. Libraries without Family Share are not written to. Negative
+folder lookups are cached for 10 minutes.
 
-The service starts automatically and watches for `.sp.json` sidecars alongside the video currently playing.
+## Installation and support
 
----
-
-### ⚙️ <ins>Settings</ins>
-
-Configure via **Add-ons > My add-ons > Services > ScenePass > Configure**:
-
-**Skip behaviour**
-- Enable intro skip / Enable recap skip
-- Automatically skip intros / Automatically skip recaps
-
-**Quality gates**
-- Minimum confidence (0–100%, default 75%)
-- Minimum segment length in seconds (default 5s)
-- Let ScenePass scanners ease off the drive while playing (default on). Only does anything for a library set up with ScenePass Family Share: once a video has played for 10 seconds, a small heartbeat file in that library's `.scenepass` folder tells ScenePass on your PCs to scan more gently until playback stops. Kodi remembers for 10 minutes which folders have no `.scenepass` folder, so if Family Share is set up while Kodi is running, it can take up to 10 minutes to be noticed (or restart Kodi).
-- Debug logging
-
----
-
-### 🌐 <ins>Translations</ins>
-
-English (en_GB) only at present.
-
----
-
-### 🤖 <ins>AI-Generated Content Disclosure</ins>
-
-All source code and artwork for this add-on were produced through AI tools. This disclosure is provided for transparency and regulatory compliance.
-
-This notice is provided for transparency and to comply with applicable regulations on AI-generated content.
-
----
-
-### 📄 <ins>License</ins>
-
-MIT.
-
----
-
-### 📬 <ins>Contact & Support</ins>
-
-For bug reports, create a GitHub issue on this repository.
+Install ScenePass from the lynxstrike Kodi repository, under Services.
+English (en_GB) is currently included. Report bugs in the repository's issues.
+MIT licensed. Source code and artwork were produced with AI tools.
