@@ -17,7 +17,7 @@ v1.0.0029 (14.11.2026)
 - Logos requested by @kittmaster
 		</news>
 	</extension>
-</addon><addon id="service.scenepass" name="ScenePass" version="0.01.48" provider-name="lynxstrike">
+</addon><addon id="service.scenepass" name="ScenePass" version="0.01.49" provider-name="lynxstrike">
     <requires>
         <import addon="xbmc.python" version="3.0.0" />
     </requires>
@@ -31,7 +31,11 @@ v1.0.0029 (14.11.2026)
             <icon>icon.png</icon>
             <fanart>fanart.jpg</fanart>
         </assets>
-        <news>v0.01.48
+        <news>v0.01.49
+- Fixed: Madnox themes now unlock when the Madnox skin (skin.madnox) is in use. Theme 5 / Madnox logo (legacy) now needs the Madnox skin like Themes 1-4.
+- Fixed: in the SceneCast skin the Theme Manager corner buttons show 1-4 instead of dots, and the selected style shows a tick instead of a box.
+- New: ScenePass, SceneCast and Madnox banners in the Theme Manager.
+v0.01.48
 - Collaboration themes always require the matching skin to be installed and active. Removed the testing toggle.
 v0.01.47
 - New: testing switch in Themes to enforce collaboration skin restrictions. Off allows Cinema and Madnox on any skin in previews and playback; turn it on again before release. This testing build defaults to off.

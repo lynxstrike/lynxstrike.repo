@@ -17,7 +17,7 @@ THEMES = {
                'restricted': True,
                'description': 'Cinema typography, champagne details and a soft underline glow.'},
     'madnox-collection': {'name': 'Madnox', 'credit': 'Madnox collaboration',
-                          'skins': ('skin.aeon.madnox',), 'skin_name': 'Aeon Madnox',
+                          'skins': ('skin.madnox', 'skin.aeon.madnox'), 'skin_name': 'Aeon Madnox',
                           'restricted': True,
                           'description': 'Four approved Madnox designs with original red and gold artwork.'},
 }

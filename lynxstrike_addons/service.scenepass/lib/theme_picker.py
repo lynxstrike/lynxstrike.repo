@@ -5,11 +5,11 @@ import xbmcaddon
 import xbmcgui
 from lib import settings
 from lib.color_picker import create_picker
-from lib.theme_access import eligibility, effective_config, skin_context, requirement
+from lib.theme_access import eligibility, config_eligibility, effective_config, skin_context, requirement
 from lib.theme_registry import (POSITION_NAMES, DEFAULT_COLORS, MADNOX_STYLES, RECTANGULAR_STYLES,
                                 MODERN_STYLES,
                                 styles, selected_style, color_roles, asset_for)
-from lib.theme_layout import (FAMILY_IDS, FORMAT_IDS, SCENEPASS_MODE_IDS, STYLE_IDS, COLOR_IDS,
+from lib.theme_layout import (TICK_SIZE, FAMILY_IDS, FORMAT_IDS, SCENEPASS_MODE_IDS, STYLE_IDS, COLOR_IDS,
                               POSITION_IDS, PREVIEW, CONTROL_RECTS, FAMILY_LOGOS)
 from lib.theme_render import paint
 from lib.spatial_navigation import navigation_map
@@ -62,7 +62,7 @@ class ThemePickerDialog(xbmcgui.WindowXMLDialog):
         return styles(self.config)
 
     def _style_allowed(self, style):
-        theme = 'pill' if style == 'madnox' else self._family()
+        theme = 'madnox-collection' if style == 'madnox' else self._family()
         if theme == 'scenepass':
             return True, ''
         return eligibility(theme, self.context)
@@ -103,7 +103,7 @@ class ThemePickerDialog(xbmcgui.WindowXMLDialog):
         if family == 'cinema':
             self._label(702, requirement(family))
             return
-        allowed, reason = eligibility(self.config['theme'], self.context)
+        allowed, reason = config_eligibility(self.config, self.context)
         description = next(s[2] for s in self._options() if s[0] == selected_style(self.config))
         self._label(702, description if allowed else reason)
 
@@ -130,7 +130,7 @@ class ThemePickerDialog(xbmcgui.WindowXMLDialog):
         family = self._family()
         scenepass_mode = self._current_scenepass_mode() if family == 'scenepass' else None
         self.context = skin_context()
-        allowed, reason = eligibility(theme, self.context)
+        allowed, reason = config_eligibility(config, self.context)
         self.active_controls = list(FAMILY_IDS.values())
         for key, cid in FAMILY_IDS.items():
             self._label(cid, FAMILY_NAMES[key] + '   ›', key == family)
@@ -153,6 +153,8 @@ class ThemePickerDialog(xbmcgui.WindowXMLDialog):
                 self.active_controls.append(cid)
         options = self._options()
         selected_id = selected_style(config)
+        tick = self.getControl(698)
+        tick.setVisible(False)
         for i, cid in enumerate(STYLE_IDS):
             visible = i < len(options) and scenepass_mode != 'Text'
             self.getControl(cid).setVisible(visible)
@@ -160,7 +162,11 @@ class ThemePickerDialog(xbmcgui.WindowXMLDialog):
                 style, name, _ = options[i]
                 selectable, _ = self._style_allowed(style)
                 self.getControl(cid).setEnabled(selectable)
-                self._label(cid, ('✓  ' if style == selected_id else '') + name, style == selected_id)
+                self._label(cid, name, style == selected_id)
+                if style == selected_id:
+                    sx, sy, sw, sh = CONTROL_RECTS[cid]
+                    tick.setPosition(sx + sw - TICK_SIZE - 14, sy + (sh - TICK_SIZE) // 2)
+                    tick.setVisible(True)
                 if selectable:
                     self.active_controls.append(cid)
         _, selected_name, description = next(s for s in options if s[0] == selected_id)
@@ -276,7 +282,7 @@ class ThemePickerDialog(xbmcgui.WindowXMLDialog):
             self.close()
             return
         elif cid == 663:
-            allowed, reason = eligibility(self.config['theme'])
+            allowed, reason = config_eligibility(self.config)
             if allowed:
                 settings.save_appearance(self.config)
                 self.confirmed = True

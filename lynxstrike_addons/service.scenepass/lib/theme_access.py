@@ -29,9 +29,21 @@ def eligibility(theme, context=None):
     return False, requirement(theme)
 
 
+def access_theme(config):
+    """The collaboration a saved config belongs to. Theme 5 is stored as a Pill style
+    but is Madnox artwork, so it needs the Madnox skin like the other Madnox themes."""
+    if config['theme'] == 'pill' and config.get('pill_style') == 'madnox':
+        return 'madnox-collection'
+    return config['theme']
+
+
+def config_eligibility(config, context=None):
+    return eligibility(access_theme(config), context)
+
+
 def effective_config(config):
     """Resolve immediately before painting. Keep the saved preference intact."""
-    allowed, reason = eligibility(config['theme'])
+    allowed, reason = config_eligibility(config)
     if allowed:
         return config, reason
     result = dict(config)

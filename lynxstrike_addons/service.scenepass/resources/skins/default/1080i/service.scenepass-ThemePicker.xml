@@ -187,11 +187,11 @@
         <colordiffuse>FF0E1015</colordiffuse>
       </control>
       <control type="image" id="696">
-        <left>374</left>
-        <top>172</top>
-        <width>371</width>
-        <height>95</height>
-        <texture>manager/scenepass.png</texture>
+        <left>361</left>
+        <top>163</top>
+        <width>397</width>
+        <height>113</height>
+        <texture>manager/scenepass_banner.png</texture>
         <colordiffuse>FFFFFFFF</colordiffuse>
         <aspectratio>keep</aspectratio>
       </control>
@@ -202,6 +202,7 @@
         <height>55</height>
         <label>Pill</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -220,6 +221,7 @@
         <height>55</height>
         <label>Text</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -238,6 +240,7 @@
         <height>55</height>
         <label>Text</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -256,6 +259,7 @@
         <height>55</height>
         <label>Classic</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -274,6 +278,7 @@
         <height>55</height>
         <label>Modern</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -374,6 +379,14 @@
         <ondown>625</ondown>
         <onleft>625</onleft>
         <onright>625</onright>
+      </control>
+      <control type="image" id="698">
+        <left>0</left>
+        <top>0</top>
+        <width>24</width>
+        <height>24</height>
+        <texture>tick.png</texture>
+        <colordiffuse>FFFFCE78</colordiffuse>
       </control>
       <control type="label" id="704">
         <left>54</left>
@@ -539,6 +552,7 @@
         <height>55</height>
         <label>1</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -557,6 +571,7 @@
         <height>55</height>
         <label>2</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -575,6 +590,7 @@
         <height>55</height>
         <label>3</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -593,6 +609,7 @@
         <height>55</height>
         <label>4</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -712,6 +729,7 @@
         <height>56</height>
         <label>Cancel</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FF252B34</colordiffuse>
@@ -730,6 +748,7 @@
         <height>56</height>
         <label>Apply</label>
         <align>center</align>
+        <textoffsetx>0</textoffsetx>
         <texturefocus>swatch.png</texturefocus>
         <texturenofocus>swatch.png</texturenofocus>
         <colordiffuse>FFFFCE78</colordiffuse>

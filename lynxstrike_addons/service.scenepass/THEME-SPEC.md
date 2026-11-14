@@ -9,7 +9,7 @@
 - SceneCast (internal ID `cinema`): collaboration for `skin.aeon.scenecast`. Pill format has five styles (accent underline, lettering, icon, original gold, accent + icon); Text format has two (original gold, icon + glow).
 - Madnox: collaboration for `skin.aeon.madnox`, stable family ID `madnox-collection`.
   Four styles `theme-1` through `theme-4`, saved as `madnox_style`.
-- Madnox Theme 5 / Madnox logo (legacy): public, preserves the existing colour logo, pill mask and independent lettering layer. The manager still saves it as `pill` with `pill_style=madnox`.
+- Madnox Theme 5 / Madnox logo (legacy): Madnox-only like Themes 1-4 (same skin check, via `access_theme()`), preserves the existing colour logo, pill mask and independent lettering layer. The manager still saves it as `pill` with `pill_style=madnox`.
 
 Registry: `lib/theme_registry.py`. Add future partner themes with a stable ID,
 credit, artwork, colour roles and exact approved skin manifest IDs. Never use
@@ -105,6 +105,7 @@ that value continues to migrate to the legacy Pill design.
 
 The exact Madnox skin manifest was verified at
 `Kodi-22/addons/skin.aeon.madnox_Dev/addon.xml`; its ID is `skin.aeon.madnox`.
+The released Madnox skin (Kittmaster) has ID `skin.madnox` (2026-11-14); both IDs are allowed.
 Folder names grant no access. Manager and playback use the existing exact-ID
 installed-and-active checks and retain the user's preference during fallback.
 
@@ -123,7 +124,7 @@ Down below the preview reaches footer controls.
 
 The family list opens branded ScenePass, SceneCast and Madnox submenus.
 SceneCast focus explains the required skin.
-Madnox leaves the public legacy style selectable when its collaboration styles are locked.
+Madnox locks all five styles, including the legacy Theme 5, when the Madnox skin is not active.
 
 ## SceneCast under-button colour
 

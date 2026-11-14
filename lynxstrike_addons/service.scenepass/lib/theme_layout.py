@@ -7,6 +7,7 @@ STYLE_IDS = tuple(range(621, 626))
 COLOR_IDS = tuple(range(641, 645))
 POSITION_IDS = {1: 651, 2: 652, 3: 653, 4: 654}
 PREVIEW = (832, 215, 780, 439)
+TICK_SIZE = 24  # selected-style tick image (fonts may lack the check-mark glyph)
 
 CONTROL_RECTS = {
     **{cid: (72, 211 + i * 77, 244, 64) for i, cid in enumerate(FAMILY_IDS.values())},
@@ -20,7 +21,9 @@ CONTROL_RECTS = {
 }
 
 FAMILY_LOGOS = {
-    'scenepass': 'manager/scenepass.png',
-    'cinema': 'manager/scenecast.png',
-    'madnox-collection': 'manager/madnox.png',
+    'scenepass': 'manager/scenepass_banner.png',
+    'cinema': 'manager/scenecast_banner.png',
+    'madnox-collection': 'manager/madnox_banner.png',
 }
+# Family banners fill the whole width of the dark logo panel (whole picture kept).
+LOGO_RECT = (361, 163, 397, 113)
